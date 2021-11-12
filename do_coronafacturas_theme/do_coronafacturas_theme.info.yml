@@ -1,0 +1,14 @@
+name: DO Corona Diamond Sunset
+type: theme
+description: 'Tema corona sunset facturas'
+package: Core
+version: VERSION
+core: 8.x
+
+libraries:
+  - do_coronafacturas_theme/global-styling
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+  name: Name

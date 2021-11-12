@@ -1,0 +1,941 @@
+/*
+
+font-family: 'Inter', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Corona Headline', sans-serif;
+
+*/
+
+
+@font-face {
+  font-family: "Corona Headline";
+  src: url("../fonts/HelveticaNeueLTStd-MdCn.otf");
+}
+
+@font-face {
+  font-family: 'HelveticaMd';
+  src: url("../fonts/HelveticaNeueLTStd-MdCn.otf");
+}
+
+
+*{
+	margin:0;
+	padding: 0;
+}
+
+
+.content_p_g_{
+	margin-top: 2.5rem;
+}
+
+.p_g_title_{
+	font-family: 'HelveticaMd', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 2.6rem;
+	text-align: center;
+	color: #0D2240;
+}
+
+
+.p_g_navegacion_{
+	margin-top: 5.5rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	margin-left: -15rem;
+}
+
+.p_g_navegacion_2{
+	margin-left: -8rem;
+}
+
+
+.p_g_navegacion_ .p_g_active .p_g_circle{
+	width: 67px;
+	height: 67px;
+	border-radius: 50%;
+	background: rgba(255, 198, 39, 1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.p_g_navegacion_ .p_g_ .p_g_circle{
+	width: 67px;
+	height: 67px;
+	border-radius: 50%;
+	border: 2px solid #0D2240;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.p_g_navegacion_ .p_g_1 {
+	position: relative;
+	left: 4.5rem;
+	z-index: 999;
+}
+
+.p_g_navegacion_ .p_g_2{
+	position: relative;
+	top: 0rem;
+}
+
+
+.p_g_navegacion_ .p_g_3 {
+	position: relative;
+	left: -1.5rem;
+}
+
+
+.p_g_navegacion_ .p_g_ , .p_g_navegacion_ .p_g_active{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.p_g_navegacion_ .p_g_ .p_g_circle p ,
+.p_g_navegacion_ .p_g_active .p_g_circle p {
+	color: rgba(255, 198, 39, 1);
+	font-size: 2.8rem;
+	font-family: Corona Headline;
+	font-weight: bold;
+	position: relative;
+	top: -.3rem;
+}
+
+.p_g_navegacion_ .p_g_  .p_g_text,
+.p_g_navegacion_ .p_g_active  .p_g_text_r{
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: .9rem;
+	color: #0D2240;
+	margin-top: 1rem;
+}
+
+.p_g_navegacion_ .p_g_active  .p_g_text_r{
+	margin-top: 1.3rem;
+	font-weight: bold;
+}
+
+
+.p_g_navegacion_ hr{
+	width: 179px;
+	border: 1px solid #0D2240;
+	height: 0;
+	position: relative;
+	top: -1rem;
+}
+
+.p_g_navegacion_ .hr_pg_1{
+	right: -1rem;
+}
+
+.p_g_navegacion_ .hr_pg_2{
+	left:  -1rem;
+}
+
+.p_g_tag_{
+	margin: 0 auto;
+	width: 100%;
+	max-width: 30%;
+	margin-top: 3rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+}
+
+.p_g_tag_ p{
+	font-family: "Corona Headline";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.5rem;
+	text-align: center;
+	color: #0D2240;
+	opacity: 0.5;
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+}
+
+.p_g_tag_ .active{
+	opacity: 1;
+	color: #0D2240;
+	border-bottom: 2px solid rgba(255, 198, 39, 1);
+}
+
+.p_form_registro_ {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 50%;
+	margin-top: 3.5rem;
+
+}
+
+.p_form_login_{
+	margin: 0 auto;
+	width: 100%;
+	max-width: 60%;
+	margin-top: 3.5rem;
+	display: none;
+}
+
+.p_form_registro_ .title{
+	font-family: 'Corona Headline';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.4rem;
+  text-transform: uppercase;
+	color: #0D2240;
+}
+
+.p_form_registro_ p{
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: .9rem;
+	line-height: 24px;
+	color: #0D2240;
+	margin-top: .5rem;
+}
+
+.p_form_login_ p{
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1rem;
+	line-height: 24px;
+	color: #0D2240;
+	margin-top: .3rem;
+	text-align: center;
+}
+
+.p_formulario_{
+	margin: 0 auto;
+	width: 100%;
+	/* max-width: 80%; */
+	margin-top: 3rem;
+}
+.p_formulario_login{
+	max-width: 60%;
+}
+
+.p_formulario_ div{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.5rem;
+}
+
+.p_formulario_ div label{
+	font-family:  'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: .9rem;
+	color: #0D2240;
+}
+
+.p_formulario_ div label strong{
+	color: red;
+}
+
+.p_formulario_ div  span{
+	font-family:'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: .7rem;
+	color: #0D2240;
+}
+
+.p_formulario_ div input{
+	border: 1px solid #0D2240;
+	padding: .7rem 1.5rem;
+	border-radius: 10px;
+	font-family:  'Inter', sans-serif;
+	font-size: .9rem;
+	margin-top: .2rem;
+  width: 100%;
+}
+
+.p_formulario_ div .form-checkbox{
+  width: auto;
+}
+
+.p_formulario_ div .password-field,
+.p_formulario_ div .password-confirm {
+  width: auto;
+}
+
+.password-strength__title{
+  color: red;
+  font-family:  'Inter', sans-serif;
+}
+
+.p_formulario_ div div {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.form-item--error-message{
+  width: 100% !important;
+  margin-top: 5px;
+  color: red;
+}
+
+.p_formulario_ div div .form-item--error-message{
+  width: 100% !important;
+  font-family: 'Inter', sans-serif;
+  font-size: .8rem;
+}
+
+.p_formulario_ div .js-form-type-password-confirm{
+  flex-direction: column;
+}
+
+.p_formulario_ div div div{
+	width: 32%;
+}
+
+.p_formulario_ div div .js-form-item{
+	width: 100%;
+}
+
+.p_formulario_ div div .js-form-type-checkbox {
+  width: auto;
+}
+
+.p_formulario_ div .js-form-type-password-confirm div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family:  'Inter', sans-serif;
+  color: red;
+  font-size: .8rem;
+  margin: .2rem 0;
+}
+
+.p_formulario_ div div div select,
+.p_formulario_ div div select,
+.p_formulario_ div select{
+	border: 1px solid #0D2240;
+	padding: .7rem 1.5rem;
+	border-radius: 10px;
+	font-family:  'Inter', sans-serif;
+	font-size: .9rem;
+	margin-top: .2rem;
+	width: 100%;
+	background: url("../images/flecha_select.png") no-repeat 98% 50% #fff !important;
+	 -moz-appearance: none;
+	 -webkit-appearance: none;
+	 appearance: none;
+}
+
+.p_formulario_ div .js-form-item-day{
+  width: 100%;
+}
+
+.p_formulario_ div .js-form-item-month{
+  width: 100%;
+}
+
+.p_formulario_ div .js-form-item-year{
+  width: 100%;
+}
+
+
+
+.p_formulario_ div input::placeholder{
+	font-family:  'Inter', sans-serif;
+	color: rgba(141, 144, 149, 1);
+	font-size: .9rem;
+
+}
+
+.p_formulario_ .p_f_check_ {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 80%;
+	margin-top: 2.5rem;
+	margin-bottom: 2rem;
+}
+
+.p_formulario_ .p_f_check_ div{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin-bottom: 1rem;
+  /* width: 100%; */
+}
+
+.p_formulario_ .p_f_check_ div label{
+	margin-left: 1rem;
+	font-family:  'Inter', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: .8rem;
+	color: #0D2240;
+}
+
+.p_formulario_ .p_f_check_ div label strong{
+	font-weight: bold;
+	color: #0D2240;
+}
+
+
+.p_formulario_ .p_f_btn{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.p_formulario_ .p_f_btn_log {
+	margin-top: 3rem;
+}
+
+.p_formulario_ .p_f_btn input,
+.p_formulario_ .p_f_btn  button{
+	font-family: "Corona Headline";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1rem;
+	text-align: center;
+	text-transform: uppercase;
+	color: #0D2240;
+	display: inline-block;
+	background: #FFC627;
+	border-radius: 25px;
+	border: none;
+	cursor: pointer;
+	width: 268px;
+	height: 52px;
+}
+
+.p_formulario_ .p_f_btn  p{
+	font-family: "Corona Headline";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1rem;
+	margin-top: 1.5rem;
+	text-align: center;
+	color: #0D2240;
+}
+
+.p_formulario_ .p_f_btn a{
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: .7rem;
+	color: #0D2240;
+	margin-top: 1rem;
+}
+
+.p_formulario_ .p_f_btn p strong{
+	color: #FFC627;
+	border-bottom: 2px solid #FFC627;
+	cursor: pointer;
+}
+
+.form_upload_{
+	margin: 0 auto;
+	width: 100%;
+	max-width: 30%;
+	margin-top: 5.5rem;
+  min-height: 60vh;
+}
+
+.form_upload_ .title_f_up{
+	font-family: "Corona Headline";
+	font-size: 1.5rem;
+	color: #0D2240;
+	text-align: center;
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 600;
+}
+
+.form_upload_  .fm_up_ {
+	margin-top: 2.5rem;
+}
+
+
+.form_upload_  .fm_up_ div{
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.form_upload_  .fm_up_ div label{
+	font-family:  'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: .9rem;
+	color: #0D2240;
+}
+
+.form_upload_ .fm_up_ div select{
+	border: 1px solid #0D2240;
+	padding: .7rem 1.5rem;
+	border-radius: 10px;
+	font-family:  'Inter', sans-serif;
+	font-size: .9rem;
+	margin-top: .2rem;
+	width: 100%;
+	background: url("../images/flecha_select.png") no-repeat 98% 50% #fff !important;
+	 -moz-appearance: none;
+	 -webkit-appearance: none;
+	 appearance: none;
+	 margin-top: .4rem;
+}
+
+/*.form_upload_ .fm_up_ div #input_file_fac{
+	display: none;
+}*/
+
+.form_upload_ .fm_up_ div #edit-archivo-upload{
+	display: none;
+}
+
+.form_upload_ .fm_up_ div #edit-archivo--label{
+	display: none;
+}
+
+.form_upload_ .fm_up_ div button{
+	background: #C0C0C0;
+	/* Neutral / 60 */
+	height: 56px;
+	margin-top: 1rem;
+	cursor: pointer;
+	border: 1px solid #686868;
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+
+.form_upload_ .fm_up_ div span{
+	color: #282828;
+	margin-top: .6rem;
+	font-size: .8rem !important;
+	font-family:  'Inter', sans-serif;
+}
+
+.form_upload_ .fm_up_ .fm_up_btn{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2.5rem;
+}
+
+.form_upload_ .fm_up_ .fm_up_btn input,
+.form_upload_ .fm_up_ .fm_up_btn button{
+	width: 198.08px;
+	height: 52px;
+	cursor: pointer;
+	color: #F3EFE6;
+	background: #B2B2B2;
+	border-radius: 25px;
+	font-family: "Corona Headline";
+	border:0;
+	font-size: 1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.form_upload_ p {
+	margin-top: 2rem;
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1rem;
+	color: #0D2240;
+	text-align: center;
+}
+
+.form_upload_ p strong{
+	font-weight: bold;
+}
+
+.form_upload_ .btn {
+	display: flex;
+	justify-content: center;
+}
+
+.form_upload_ .btn a,
+.form_upload_ .btn button{
+	cursor: pointer;
+	border: 0;
+	font-family: Corona Headline;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1rem;
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #0D2240;
+	text-decoration: none;
+	width: 198.08px;
+	height: 52px;
+	margin-top: 3rem;
+	background: #FFC627;
+	border-radius: 25px;
+}
+
+/* MODAL CSS */
+
+.modal_c_content_{
+	position: fixed;
+	z-index: 99999;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 8, 18, 0.69);
+	mix-blend-mode: normal;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal_c_ {
+	width: 400px;
+	height: 200px;
+	position: relative;
+	top: -6rem;
+	/*background: red;*/
+}
+
+.modal_c_ .modal_c_head{
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.modal_c_ .modal_c_head p
+{
+	color: #FFC627;
+	font-size: 1.3rem;
+	cursor: pointer;
+	font-family: 'Inter', sans-serif;
+}
+
+.modal_c_ .modal_c_body{
+	width: 371px;
+	height: auto;
+	box-sizing: border-box;
+	padding: 3rem;
+	background: #FFFFFF;
+	border-radius: 19px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.modal_c_ .modal_c_body img{
+	width: 180.66px;
+	height: 123px;
+}
+
+.modal_c_ .modal_c_body h2{
+	margin-top: 1.5rem;
+	font-family: "Corona Headline";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.5rem;
+	text-align: center;
+	color: #0D2240;
+}
+
+.modal_c_ .modal_c_body p {
+	margin-top: 1rem;
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: .9rem;
+	text-align: center;
+	color: #0D2240;
+}
+
+.modal_c_ .modal_c_body button{
+	margin-top: 1.5rem;
+	border: 0;
+	background: #FFC627;
+	border-radius: 25px;
+	font-family: Corona Headline;
+	font-style: normal;
+	font-weight: 600;
+	font-size: .9rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: #0D2240;
+	padding: .7rem 3rem;
+	cursor: pointer;
+}
+
+
+
+
+/*//
+///////////////////////////////////////////////*/
+
+.header_perfil_{
+	background: #F9F9F9;
+	box-shadow: -3px 0px 14px rgba(13, 34, 64, 0.1);
+	border-radius: 11px;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 75%;
+	display: flex;
+	flex-direction: row;
+	padding-top: .7rem;
+	padding-bottom: 1.6rem;
+}
+.header_perfil_ .perfil_thumb_{
+	width: 100%;
+	max-width: 35%;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 1rem;
+}
+
+.header_perfil_ .perfil_thumb_ .p_t_img {
+	max-height: 150px;
+	max-width: 150px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.header_perfil_ .perfil_thumb_ .p_t_img img{
+	width: 100%;
+}
+
+.header_perfil_ .perfil_info_{
+	width: 100%;
+	max-width: 65%;
+	box-sizing: border-box;
+	padding-left: 1rem;
+}
+
+.header_perfil_ .perfil_info_ .p_t_welcome{
+	font-family: "Corona Headline";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.5rem;
+	margin-top: 1rem;
+	color: #0D2240;
+}
+
+.header_perfil_ .perfil_info_ .p_i_nav{
+	display: flex;
+	flex-direction: row;
+	width: auto;
+	justify-content: flex-start;
+	margin-top: 1rem;
+}
+
+.header_perfil_ .perfil_info_ .p_i_nav a{
+	text-decoration-line: underline;
+	display: flex;
+	flex-direction: row;
+	width: 20%;
+}
+
+.header_perfil_ .perfil_info_ .p_i_nav a img{
+	margin-right: .3rem;
+	width: 13.89px;
+	height: 13.89px;
+}
+
+.header_perfil_ .perfil_info_ .p_i_nav a p{
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: .9rem;
+	position:relative;
+	top: -0.2rem;
+	color: #0D2240;
+}
+
+.header_perfil_ .perfil_info_ .text_p{
+	margin-top: 1rem;
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: .9rem;
+	color: #838383;
+}
+
+.p_form_registro_ .p_formulario_  .title_edit_perfil{
+	font-family: "Corona Headline";
+	margin-bottom: 1.5rem;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 2rem;
+	color: #0D2240;
+}
+
+.p_formulario_ .p_f_btn_2{
+	margin-top: 6.5rem;
+}
+
+.p_formulario_2 div input{
+	background: url("../images/editar_perfil.png") no-repeat 98% 50% #fff !important;
+}
+
+
+.p_formulario_2 .p_f_btn_2  input{
+	background: #FFC627 !important;
+}
+
+.form_upload_ .fm_up_ .fm_up_btn_2 input,
+.form_upload_ .fm_up_ .fm_up_btn_2 button{
+	background: #FFC627;
+	color: #0D2240;
+}
+
+@media (max-width: 600px) {
+  .header_perfil_{
+  	max-width: 90%;
+  }
+
+  .p_formulario_ {
+    max-width: 80%;
+  }
+
+  .header_perfil_ .perfil_thumb_{
+  	padding-right: 0;
+  }
+
+  .header_perfil_ .perfil_info_ .p_i_nav a{
+  	width: 100%;
+  }
+
+  .header_perfil_ .perfil_info_{
+  	padding-left: .5rem;
+  }
+
+  .p_form_registro_{
+  	max-width: 100%;
+  }
+
+  .p_form_registro_ .p_formulario_ .title_edit_perfil{
+  	font-size: 25px;
+  }
+
+  .form_upload_{
+  	max-width: 85%;
+  }
+
+  .p_g_tag_{
+  	max-width: 80%;
+  }
+
+  .p_form_registro_ .title{
+  	text-align: center;
+  }
+
+  .p_form_registro_{
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  }
+
+  .p_form_registro_ p{
+  	width: 331px;
+  }
+
+  .p_form_registro_ p br{
+  	display: none;
+  }
+
+  .p_formulario_ .p_f_check_{
+  	max-width: 100%;
+  	margin-bottom: 1rem;
+  }
+
+  .p_formulario_ .p_f_btn{
+  	flex-direction: column-reverse;
+  }
+
+  .p_formulario_ .p_f_btn input, .p_formulario_ .p_f_btn button{
+  	margin-top: 2rem;
+  }
+
+  .p_formulario_login{
+  	max-width: 100%;
+  }
+
+  .p_form_login_{
+  	max-width: 85%;
+  }
+
+  .p_g_navegacion_ .p_g_ .p_g_circle, .p_g_navegacion_ .p_g_active .p_g_circle{
+  	width: 39px;
+  	height: 39px;
+  }
+
+  .p_g_navegacion_ .p_g_active .p_g_circle img{
+  	width: 21px;
+	height: 17px;
+   }
+
+  .p_g_navegacion_ .p_g_ .p_g_circle p, .p_g_navegacion_ .p_g_active .p_g_circle p{
+  	font-size: 30px;
+  }
+
+  .p_g_navegacion_ hr{
+  	width: 60px;
+  }
+
+  .p_g_navegacion_{
+  	margin-left: 0rem;
+  }
+
+  .p_g_navegacion_ .p_g_ .p_g_text, .p_g_navegacion_ .p_g_active .p_g_text_r{
+  	width: 98px;
+  	text-align: center;
+  }
+
+  .p_g_navegacion_ .p_g_1{
+  	left: 3.1rem;
+  }
+
+  .p_g_navegacion_ hr{
+  	top: -1.6rem;
+  }
+
+  .p_g_navegacion_ .hr_pg_1{
+  	right: -1.5rem;
+  }
+
+  .p_g_navegacion_ .p_g_3{
+  	left: -2.5rem;
+    top: -.6rem;
+  }
+
+  .p_g_navegacion_ .hr_pg_2{
+  	margin-left: -.6rem;
+  }
+
+}
+
+@media (max-width: 375px) {
+.header_perfil_ .perfil_info_ .p_i_nav a p
+	{
+		top: -0.1rem;
+		font-size: 0.8rem;
+	}
+}
+
+.p_f_check_ div div{
+  width: 100% !important;
+}

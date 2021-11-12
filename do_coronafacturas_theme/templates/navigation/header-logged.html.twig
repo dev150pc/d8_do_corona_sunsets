@@ -1,0 +1,43 @@
+<header class="header_m">
+    <nav class="nav_m" id="nav_mob_fix">
+      <div class="nav_logo_m"><img src="/{{ directory }}/images/corona-logo.jpg" alt="Corona Logo"></div>
+      <div id="header_links" class="header_links_m">
+        <ul>
+          <li class="submenu_mobile_m"><img class="submenu_icon_m" src="/{{ directory }}/images/person-circle-outline-white.svg"
+              alt="Person Circle Outline">
+            {{ drupal_block('block_name_user') }}<img id="second_submenu_m" class="arrow_right_m" src="/{{ directory }}/images/arrow right.svg"
+              alt="Flecha derecha">
+          </li>
+          {% for item in header_link_menu %}
+            <li><a href="{{ item['url'] }}" target="_blank">{{ item['title'] }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div id="header_registro" class="header_registro_m">
+        <div class="header_registrate_m header_registrate_logged_m"><a href="/subir-codigos">VER MIS FACTURAS</a></div>
+        <div id="header_iniciar" class="header_iniciar_m">
+          <img src="/{{ directory }}/images/person-circle-outline.svg" class="header_img1_m" alt="Person Circle Outline">
+          <div class="facturas_mobile_m"><img src="/{{ directory }}/images/Icon-1.svg" alt=""><a href="/subir-codigos">MIS FACTURAS</a></div>
+          <div class="header_div2_m header_div2_logged_m">
+            {{ drupal_block('block_name_user') }}
+          </div>
+          <img src="/{{ directory }}/images/arrow-down.svg" class="header_img2_m" alt="Flecha Abajo">
+          <div id="submenu_m" class="submenu_m">
+            <ul>
+              <li><img id="third_submenu_m" class="arrow_left_m" src="/{{ directory }}/images/arrow-left.svg"
+                  alt="Flecha Izquierda"><img class="secondary_submenu_icon_m"
+                  src="/{{ directory }}/images/person-circle-outline-white.svg" alt="Person Circle Outline">
+                {{ drupal_block('block_name_user') }}
+              </li>
+              <li><img src="/{{ directory }}/images/Icon-1.svg" alt=""><a class="facturas_submenu_m" href="#">MIS FACTURAS</a>
+              </li>
+              <li><img src="/{{ directory }}/images/Icon-2.svg" alt=""><a href="/subir-codigos">SUBIR FACTURA</a></li>
+              <li><img src="/{{ directory }}/images/Icon-3.svg" alt=""><a href="/editar-perfil">EDITAR PERFIL</a></li>
+              <li><img src="/{{ directory }}/images/Icon-4.svg" alt=""><a href="/user/logout">CERRAR SESIÓN</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="menu_header_m" class="menu_div_m"><img id="submenu_img_m" src="/{{ directory }}/images/barras.svg" class="menu_m" alt="Barras Menu"></div>
+    </nav>
+  </header>

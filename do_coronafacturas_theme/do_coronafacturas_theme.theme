@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function do_coronafacturas_theme_preprocess(&$variables)
+{
+  $config = \Drupal::config('corona_fac_form.config');
+  $variables['link_facebook'] = $config->get("facebook");
+  $variables['link_twitter'] = $config->get("twitter");
+  $variables['link_instagram'] = $config->get("instagram");
+  $variables['link_youtube'] = $config->get("youtube");
+  $variables['footer_link_menu']    = get_menu_items('footer');
+  $variables['header_link_menu']  = get_menu_items('main');
+ 
+}
+
+/**
+ * Load the tree of specific menu and convert to sort array by weight
+ */
+function get_menu_items($name, $unset_last = false)
+{
+  $tree = \Drupal::menuTree()->load($name, new \Drupal\Core\Menu\MenuTreeParameters());
+  $tree_array = loadMenu($tree);
+  uksort($tree_array, "sort_tree");
+  return $tree_array;
+}
+/**
+ * Sort the array by key. Remember the index is "weight|ID" and only wee need to sort by weight
+ */
+function sort_tree($a, $b)
+{
+  $a = explode("|", $a)[0];
+  $b = explode("|", $b)[0];
+  return $a <=> $b;
+}
+
+/**
+ * Load the structure of the tree in array.
+ * If have children, call the same function by recursion
+ */
+function loadMenu($tree)
+{
+  $menu = [];
+  foreach ($tree as $key => $item) {
+    if ($item->link->isEnabled()) {
+      $menu[$item->link->getWeight() . "|$key"] = [
+        'title' => $item->link->getTitle(),
+        'url' => $item->link->getUrlObject()->toString(),
+        'description' => $item->link->getDescription(),
+        'has_children' => $item->hasChildren,
+        'children' => loadMenu($item->subtree),
+      ];
+    }
+  }
+  return $menu;
+}

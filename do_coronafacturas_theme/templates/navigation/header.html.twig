@@ -1,0 +1,21 @@
+<header class="header_m">
+    <nav class="nav_m" id="nav_mob_fix">
+      <div class="nav_logo_m"><img src="/{{ directory }}/images/corona-logo.jpg" alt="Corona Logo"></div>
+      <div id="header_links" class="header_links_m">
+        <ul>
+            {% for item in header_link_menu %}
+            <li><a href="{{ item['url'] }}">{{ item['title'] }}</a></li>
+            {% endfor %}
+        </ul>
+      </div>
+      {# div usuario anonimo #}
+      <div class="header_registro_m header_registro_m-2">
+        <div class="header_registrate_m"><a href="/registro">REGISTRATE Y GANA</a></div>
+      </div>
+      <div id="menu_header_m" class="menu_div_m">
+        <img src="/{{directory}}/images/barras.svg" class="menu_m" alt="Barras Menu" id="m_bar">
+        <img src="/{{directory}}/images/x-menu.svg" class="menu_m" alt="Barras Menu" id="m_x">
+        </div>
+      {# end div usuario anonimo #}
+    </nav>
+</header>

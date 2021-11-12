@@ -1,0 +1,24 @@
+<footer class="footer-home_m">
+    <div class="footer-up_m">
+      <div class="footer-border_m"></div>
+      <div class="footer-logos_m">
+        <a href="{{ link_youtube }}" target"_blank"><img src="/{{ directory }}/images/youtube.svg" alt="Logo Twitter"></a>
+         <a href="{{ link_facebook }}" target"_blank"><img src="/{{ directory }}/images/facebook.svg" alt="Logo Instagram"></a>
+      </div>
+      <div class="footer-links_m">
+        <ul>
+        {% for item in footer_link_menu %}
+          <li><a href="{{ item['url'] }}" target="_blank">{{ item['title'] }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-corona_m">
+        <img src="/{{ directory }}/images/Corona-Logo-Footer.jpg">
+      </div>
+    </div>
+    <div class="footer-disclaim_m">
+      <p>NO COMPARTA ESTE CONTENIDO CON MENORES DE EDAD</p>
+      <p>|</p>
+      <p>EL CONSUMO ES PERJUDICIAL PARA LA SALUD (LEY 42-01)</p>
+    </div>
+  </footer>
