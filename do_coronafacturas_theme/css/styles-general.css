@@ -1481,6 +1481,7 @@ body.agegate-visible .header_m{
     font-size: .9rem;
     Height: 600px;
     overflow-x: hidden;
+    padding: 0 1rem;
   }
   
   .text_div .text_text p::-webkit-scrollbar {
