@@ -992,7 +992,7 @@
 
   .menu_div_m {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: center;
   }
 
