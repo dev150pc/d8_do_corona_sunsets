@@ -334,6 +334,7 @@ font-family: 'Corona Headline', sans-serif;
 	 -moz-appearance: none;
 	 -webkit-appearance: none;
 	 appearance: none;
+	 color: #000;
 }
 
 .p_formulario_ div .js-form-item-day{
