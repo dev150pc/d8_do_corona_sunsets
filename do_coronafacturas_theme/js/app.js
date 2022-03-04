@@ -1,58 +1,73 @@
+if (window.location.pathname === "/") {
+  const config = {
+    type: "carousel",
+    autoplay: 6000
+  };
+
+  new Glide('.glide', config).mount();
+
+  const link1 = document.querySelectorAll('.link_menu_corona');
+  link1[0].classList.add('link_menu_corona-active');
+}
+
+if (window.location.pathname === "/cocuyo/ganadores") {
+  const link2 = document.querySelectorAll('.link_menu_corona');
+  link2[2].classList.add('link_menu_corona-active');
+}
 
 
-
-$('.header_div2_m').click(function() {
-  if($("#submenu_m").is(":hidden")){
-    $('#submenu_m').show();
+jQuery('.header_div2_m').click(function () {
+  if (jQuery("#submenu_m").is(":hidden")) {
+    jQuery('#submenu_m').show();
   }
-  else if($("#submenu_m").is(":visible")){
-    $('#submenu_m').hide();
-  }
-});
-
-$('#bg-home').click(function() {
-  if($("#video-home").is(":hidden")){
-    $("#video-home").addClass("video-home_m-visible");
-  }
-  else if($("#video-home").is(":visible")){
-    $("#video-home").removeClass("video-home_m-visible");
-  }
-});
-
-
-$('#exit_video_m').click(function() {
-  if($("#video-home").is(":hidden")){
-    $("#video-home").addClass("video-home_m-visible");
-  }
-  else if($("#video-home").is(":visible")){
-    $("#video-home").removeClass("video-home_m-visible");
+  else if (jQuery("#submenu_m").is(":visible")) {
+    jQuery('#submenu_m').hide();
   }
 });
 
-$('#menu_header_m').click(function() {
-  if($("#header_links").is(":hidden")){
-    $("#header_links").addClass("header_links_m-visible");
-    $("#nav_mob_fix").addClass("nav_m_fixed");
-    $("#m_bar").hide();
-    $("#m_x").show();
+jQuery('#bg-home').click(function () {
+  if (jQuery("#video-home").is(":hidden")) {
+    jQuery("#video-home").addClass("video-home_m-visible");
   }
-  else if($("#menu_header_m").is(":visible")){
-    $("#header_links").removeClass("header_links_m-visible");
-    $("#nav_mob_fix").removeClass("nav_m_fixed");
-    $("#submenu_m").hide();
-    $("#m_bar").show();
-    $("#m_x").hide();
+  else if (jQuery("#video-home").is(":visible")) {
+    jQuery("#video-home").removeClass("video-home_m-visible");
   }
 });
 
-$('.submenu_mobile_m').click(function() {
-  $("#header_links").removeClass('header_links_m-visible');
-  $("#submenu_m").show();
+
+jQuery('#exit_video_m').click(function () {
+  if (jQuery("#video-home").is(":hidden")) {
+    jQuery("#video-home").addClass("video-home_m-visible");
+  }
+  else if (jQuery("#video-home").is(":visible")) {
+    jQuery("#video-home").removeClass("video-home_m-visible");
+  }
 });
 
-$('#third_submenu_m').click(function() {
-  $("#header_links").addClass('header_links_m-visible');
-  $("#submenu_m").hide();
+jQuery('#menu_header_m').click(function () {
+  if (jQuery("#header_links").is(":hidden")) {
+    jQuery("#header_links").addClass("header_links_m-visible");
+    jQuery("#nav_mob_fix").addClass("nav_m_fixed");
+    jQuery("#m_bar").hide();
+    jQuery("#m_x").show();
+  }
+  else if (jQuery("#menu_header_m").is(":visible")) {
+    jQuery("#header_links").removeClass("header_links_m-visible");
+    jQuery("#nav_mob_fix").removeClass("nav_m_fixed");
+    jQuery("#submenu_m").hide();
+    jQuery("#m_bar").show();
+    jQuery("#m_x").hide();
+  }
+});
+
+jQuery('.submenu_mobile_m').click(function () {
+  jQuery("#header_links").removeClass('header_links_m-visible');
+  jQuery("#submenu_m").show();
+});
+
+jQuery('#third_submenu_m').click(function () {
+  jQuery("#header_links").addClass('header_links_m-visible');
+  jQuery("#submenu_m").hide();
 });
 
 

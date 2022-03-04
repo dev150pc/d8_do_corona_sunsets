@@ -48,11 +48,12 @@
 
 
 {# Header component #}
-{% block header %}
-	{% include directory ~ '/templates/navigation/header.html.twig' %}
-	{#%  if logged_in %}
-		{% include directory ~ '/templates/navigation/header-logged.html.twig' %}		
-	{% endif %#}
+{% block header %}	
+	{%  if logged_in %}
+		{% include directory ~ '/templates/navigation/header-logged.html.twig' %}
+	{%  else  %}
+		{% include directory ~ '/templates/navigation/header.html.twig' %}		
+	{% endif %}
 
 {% endblock %}
 {# Page content component #}

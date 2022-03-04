@@ -1,6 +1,6 @@
 <header class="header_m">
     <nav class="nav_m" id="nav_mob_fix">
-      <div class="nav_logo_m"><img src="/{{ directory }}/images/corona-logo.jpg" alt="Corona Logo"></div>
+      <div class="nav_logo_m"><a href="/"><img src="/{{ directory }}/images/corona-logo.jpg" alt="Corona Logo"></a></div>
       <div id="header_links" class="header_links_m">
         <ul>
           <li class="submenu_mobile_m"><img class="submenu_icon_m" src="/{{ directory }}/images/person-circle-outline-white.svg"
@@ -9,7 +9,7 @@
               alt="Flecha derecha">
           </li>
           {% for item in header_link_menu %}
-            <li><a href="{{ item['url'] }}" target="_blank">{{ item['title'] }}</a></li>
+            <li><a class="link_menu_corona" href="{{ item['url'] }}">{{ item['title'] }}</a></li>
         {% endfor %}
         </ul>
       </div>
@@ -29,10 +29,10 @@
                   src="/{{ directory }}/images/person-circle-outline-white.svg" alt="Person Circle Outline">
                 {{ drupal_block('block_name_user') }}
               </li>
-              <li><img src="/{{ directory }}/images/Icon-1.svg" alt=""><a class="facturas_submenu_m" href="#">MIS FACTURAS</a>
+              <li><img src="/{{ directory }}/images/Icon-1.svg" alt=""><a class="facturas_submenu_m" href="/zona-usuario">MIS FACTURAS</a>
               </li>
               <li><img src="/{{ directory }}/images/Icon-2.svg" alt=""><a href="/subir-codigos">SUBIR FACTURA</a></li>
-              <li><img src="/{{ directory }}/images/Icon-3.svg" alt=""><a href="/editar-perfil">EDITAR PERFIL</a></li>
+              {#<li><img src="/{{ directory }}/images/Icon-3.svg" alt=""><a href="/editar-perfil">EDITAR PERFIL</a></li>#}
               <li><img src="/{{ directory }}/images/Icon-4.svg" alt=""><a href="/user/logout">CERRAR SESIÓN</a></li>
             </ul>
           </div>
