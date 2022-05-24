@@ -1,0 +1,87 @@
+.modalTrop {
+	@include flex;
+	width: 100vw;
+	height: 100vh;
+	background: rgba($black,.9);
+	position: fixed;
+	top: 0;
+	left: 0;
+	@include transition($time: .8);
+	transform: translateY(0%);
+	z-index: 40;
+
+	&_container {
+		@include flex(center,center,wrap);
+		width: 100%;
+		max-width: $maxWModal;
+		height: auto;
+		min-height: $minHModal;
+		text-align: center;
+		position: relative;
+
+		@include mq(mob) {
+			min-height: 80%;
+		}
+
+		@include mq(mobS) {
+			min-height: 75%;
+		}
+
+		@include mq(mobS2) {
+			min-height: 60%;
+		}
+
+		@include mq(mobS3) {
+			min-height: 50%;
+		}
+	}
+
+	&-close {
+		color: $white;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		position: absolute;
+        right: 15%;
+        top: 26%;
+		cursor: pointer;
+		z-index: 5;
+
+        @include mq(mob) {
+            right: 7%;
+            top: 22%;
+        }
+
+        @include mq(mobS2) {
+            right: 0%;
+            top: 20%;
+        }
+
+        @include mq(mobS3) {
+            top: 0;
+        }
+
+		&::after, &::before {
+			content: "";
+			width: 3px;
+			height: 30px;
+			position: absolute;
+			background: $white;
+			transform: rotate(45deg);
+			left: auto;
+			top: auto;
+            border-radius: 3px;
+		}
+
+		&::before {
+			transform: rotate(-45deg);
+		}
+	}
+
+	&.is-close {
+		transform: translateY(-200%);
+	}
+}

@@ -1,0 +1,807 @@
+.sabores {
+    position: relative;
+    background-color: $white;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        top: 0;
+        background: url('../assets/images/backgroundSlide1.png');
+        height: 8%;
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &__container {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 100px 0;
+        text-align: center;
+
+        @include mq(tabS) {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+
+        @include mq(mobS2) {
+            max-width: 100%;
+        }
+    }
+
+    &__hoja1, &__hoja2, &__hoja3, &__hoja4, &__limon1, &__limon2, &__limon3, &__limon4, &__limon5, &__limon6, &__limon7 {
+        position: absolute;
+        pointer-events: none;
+        z-index: 5;
+    }
+
+    &__hoja1 {
+        left: -30%;
+        top: 5%;
+
+        @include mq(lap) {
+            height: 500px;
+        }
+
+        @include mq(lapS2) {
+            height: 450px;
+        }
+
+        @include mq(tabS) {
+            height: 350px;
+        }
+
+        @include mq(mobS) {
+            height: 300px;
+            left: -40%;
+        }
+
+        @include mq(mobS2) {
+            left: -65%;
+            height: 350px;
+        }
+    }
+
+    &__hoja2 {
+        right: -12%;
+        bottom: 65%;
+
+        @include mq(lap) {
+            width: 400px;
+        }
+
+        @include mq(lapS2) {
+            width: 350px;
+        }
+
+        @include mq(tabS) {
+            width: 300px;
+        }
+
+        @include mq(mobS) {
+            width: 250px;
+            right: -18%;
+        }
+
+        @include mq(mobS2) {
+            width: 230px;
+        }
+    }
+
+    &__hoja3 {
+        left: -30%;
+        top: 55%;
+
+        @include mq(lap) {
+            height: 500px;
+        }
+
+        @include mq(lapS2) {
+            height: 450px;
+        }
+
+        @include mq(tabS) {
+            height: 350px;
+        }
+
+        @include mq(mobS) {
+            height: 300px;
+            left: -40%;
+        }
+
+        @include mq(mobS2) {
+            height: 270px;
+        }
+    }
+
+    &__hoja4 {
+        right: -13%;
+        bottom: 3%;
+
+        @include mq(lap) {
+            width: 400px;
+        }
+
+        @include mq(lapS2) {
+            width: 350px;
+        }
+
+        @include mq(tabS) {
+            width: 300px;
+        }
+
+        @include mq(mobS) {
+            width: 250px;
+            right: -18%;
+        }
+
+        @include mq(mobS2) {
+            width: 250px;
+        }
+    }
+
+    &__limon1 {
+        left: -12%;
+        top: 25%;
+
+        @include mq(1100) {
+            width: 250px;
+        }
+
+        @include mq(mob) {
+            width: 200px;
+            left: -15%;
+            z-index: 5;
+        }
+
+        @include mq(mobS) {
+            width: 180px;
+        }
+
+        @include mq(mobS2) {
+            width: 130px;
+        }
+    }
+
+    &__limon2 {
+        right: 8%;
+        top: -3%;
+        width: 200px;
+        transform: rotate(90deg);
+        filter: blur(2px);
+
+        @include mq(1100) {
+            right: 0%;
+            width: 150px;
+        }
+
+        @include mq(mobS) {
+            right: -5%;
+            width: 120px;
+            top: 4%;
+        }
+
+        @include mq(mobS2) {
+            width: 100px;
+        }
+    }
+
+    &__limon3 {
+        top: 18%;
+        width: 100px;
+        left: 50%;
+
+        @include mq(1100) {
+            width: 70px;
+        }
+
+        @include mq(tab) {
+            display: none;
+        }
+    }
+
+    &__limon4 {
+        top: 53%;
+        width: 100px;
+        left: 50%;
+
+        @include mq(1100) {
+            width: 70px;
+        }
+
+        @include mq(tab) {
+            left: auto;
+            right: 3%;
+        }
+
+        @include mq(mob) {
+            right: -2%;
+        }
+    }
+
+    &__limon5 {
+        left: -3%;
+        top: 40%;
+
+        @include mq(1100) {
+            left: -8%;
+        }
+
+        @include mq(mob) {
+            left: -15%;
+            z-index: 5;
+            filter: blur(2px);
+        }
+
+        @include mq(mobS2) {
+            width: 120px;
+        }
+    }
+
+    &__limon6 {
+        right: 8%;
+        top: 75%;
+        width: 200px;
+        transform: rotate(90deg);
+        filter: blur(2px);
+
+        @include mq(1100) {
+            right: 0%;
+            width: 150px;
+        }
+
+        @include mq(mobS) {
+            right: -5%;
+            width: 120px;
+        }
+
+        @include mq(mobS2) {
+            width: 100px;
+        }
+    }
+
+    &__limon7 {
+        top: 85%;
+        width: 100px;
+        left: 3%;
+        transform: rotate(-30deg);
+
+        @include mq(1100) {
+            width: 70px;
+        }
+
+        @include mq(mob) {
+            left: -3%;
+        }
+    }
+    
+    &__title {
+        &-h1 {
+            font-size: 3.4em;
+            
+            @include mq(mobS) {
+                font-size: 2.3em;
+            }
+        }
+    }
+    
+    &__category {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px 0;
+        font-size: 14px;
+
+        @include mq(tabS) {
+            flex-wrap: wrap;
+        }
+
+        @include mq(mobS2) {
+            font-size: 12px;
+        }
+
+        &-box {
+            width: 190px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: rgba($black, .4);
+            padding: 5px 12px;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 0.12em;
+            cursor: pointer;
+            margin: 0 7px;
+
+            @include mq(tabS) {
+                width: 45%;
+                margin: 5px;
+            }
+
+            @include mq(mobS2) {
+                padding: 5px;
+            }
+
+            &.yellow {
+                &.active, &:hover{
+                    background-color: $orange2;
+                }
+            }
+            
+
+            &.red {
+                &.active, &:hover {
+                    background-color: $red2;
+                }
+            }
+
+            &.pink {
+                &.active, &:hover {
+                    background-color: $pink;
+                }
+            }
+
+            &.green {
+                &.active, &:hover {
+                    background-color: $green;
+                }
+            }
+        }
+    }
+
+    .points {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 3%;
+        top: 10%;
+
+        @include mq(1100) {
+            left: 0;
+        }
+
+        @include mq(mobS2) {
+            left: 15px;
+            top: 25%;
+        }
+
+        &__text {
+            text-align: left;
+
+            &-h1 {
+                font-size: 4em;
+                letter-spacing: 3px;
+                line-height: 1em;
+
+                @include mq(lap) {
+                    font-size: 3em;
+                }
+
+                @include mq(1100) {
+                    font-size: 2.5em;
+                }
+
+                @include mq(mobS2) {
+                    font-size: 2.3em;
+                    line-height: 32px;
+                }
+            }
+
+            &-h4 {
+                font-size: 1.5em;
+                letter-spacing: 0.75px;
+                line-height: 1em;
+
+                @include mq(lap) {
+                    font-size: 1.1em;
+                }
+
+                @include mq(1100) {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        &__image {
+            margin-top: 95px;
+            width: 90px;
+
+            @include mq(lap) {
+                width: 85px;
+                margin-top: 80px;
+            }
+
+            @include mq(1100) {
+                width: 70px;
+            }
+
+            @include mq(mob) {
+                margin-top: 40px;
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        width: 100%;
+    }
+    
+    .saboresSwiper {
+        margin: 75px auto;
+        position: relative;
+        max-width: 1273px;
+
+        @include mq(1500) {
+            max-width: 1200px;
+        }
+
+        @include mq(lap) {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .slide2, .slide3, .slide4 {
+            opacity: 0;
+        }
+
+        .saboresSwiper__slide.opacity {
+            opacity: 0;
+        }
+
+        &-content {
+            width: 100%;
+        }
+        
+        &__slide {
+            flex-shrink: 0;
+            width: 100%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 130%;
+                height: 130%;
+                min-width: 100vw;
+                max-height: 780px;
+                left: 50%;
+                top: -60px;
+                transform: translateX(-50%);
+                background-size: 100% 100%;
+                background-position-y: bottom;
+                z-index: -2;
+
+                @include mq(deskS) {
+                    max-height: 700px;
+                }
+
+                @include mq(lap) {
+                    max-height: 650px;
+                }
+
+                @include mq(tab) {
+                    height: 120%;
+                    max-height: none;
+                    background-size: 100% 100%;
+                    background-position: center;
+                }
+
+                @include mq(mob) {
+                    max-height: 850px;
+                }
+            }
+
+            &.slide1 {
+                &::before {
+                    background-image: url('../assets/images/backgroundSlide1.png');
+                }
+            }
+
+            &.slide2 {
+                &::before {
+                    background-image: url('../assets/images/backgroundSlide2.png');
+                }
+            }
+
+            &.slide3 {
+                &::before {
+                    background-image: url('../assets/images/backgroundSlide3.png');
+                }
+            }
+
+            &.slide4 {
+                &::before {
+                    background-image: url('../assets/images/backgroundSlide4.png');
+                }
+            }
+        }
+        
+        .pin-spacer {
+            inset: 0px 0px 0px 0px !important;
+            width: 100%;
+
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    .saboresSwiper__slide {
+                        z-index: 5-$i;
+                    }
+                }
+            }
+            &:nth-child(1) {
+                .image__fondo {
+                    background-color: $orange2;
+                }
+            }
+    
+            &:nth-child(2) {
+                .image__fondo {
+                    background-color: $red2;
+                }
+            }
+    
+            &:nth-child(3) {
+                .image__fondo {
+                    background-color: $pink;
+                }
+            }
+    
+            &:nth-child(4) {
+                .image__fondo {
+                    background-color: $green;
+                }
+            }
+
+        }
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+
+        @include mq(tab) {
+            flex-direction: column;
+        }
+
+        .image {
+            width: 55%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            padding-left: 110px;
+
+            @include mq(lap) {
+                padding: 30px;
+                padding-left: 75px;
+            }
+
+            @include mq(tab) {
+                width: 80%;
+                justify-content: flex-end;
+                padding: 45px;
+                margin-right: 0;
+                margin-bottom: 35px;
+            }
+
+            @include mq(mob) {
+                width: 90%;
+            }
+
+            @include mq(mobS2) {
+                width: 100%;
+                padding: 10px 0;
+            }
+            
+            @include mq(380) {
+                padding: 35px 0;
+                margin-bottom: 20px;
+            }
+
+            &__fondo {
+                width: 400px;
+                height: 400px;
+                border-radius: 50%;
+                margin-top: 75px;
+                z-index: -2;
+
+                @include mq(lap) {
+                    width: 370px;
+                    height: 370px;
+                }
+
+                @include mq(1100) {
+                    width: 330px;
+                    height: 330px;
+                }
+
+                @include mq(tab) {
+                    margin-right: 20px;
+                    margin-top: 20px;
+                }
+
+                @include mq(530) {
+                    margin-right: -20px;
+                    width: 300px;
+                    height: 300px;
+                    margin-top: 50px;
+                }
+
+                @include mq(mobS2) {
+                    margin-right: 30px;
+                    margin-top: 85px;
+                    width: 250px;
+                    height: 250px;
+                }
+
+                @include mq(380) {
+                    width: 230px;
+                    height: 230px;
+                }
+            }
+
+            &__botella {
+                position: absolute;
+                top: 0;
+                height: 560px;
+                max-width: 200px;
+                width: 100%;
+                background-repeat: no-repeat;
+                background-position: 0 50%;
+                z-index: 2;
+
+                @include mq(lap) {
+                    height: 500px;
+                    max-width: 180px;
+                    background-size: cover;
+                }
+
+                @include mq(1100) {
+                    height: 465px;
+                    max-width: 170px;
+                }
+
+                @include mq(tab) {
+                    height: 410px;
+                    right: 24%;
+                    max-width: 150px;
+                    top: 7%;
+                }
+
+                @include mq(mobS) {
+                    right: 26%;
+                }
+
+                @include mq(530) {
+                    top: 35px;
+                    right: 21%;
+                }
+
+                @include mq(mobS2) {
+                    top: 10%;
+                    right: 85px;
+                    height: 340px;
+                    max-width: 125px;
+                }
+
+                @include mq(380) {
+                    top: 15%;
+                }
+            }
+
+            &__frutas {
+                position: absolute;
+                bottom: 5%;
+                right: 7%;
+                z-index: 1;
+
+                @include mq(1500) {
+                    right: 0;
+                }
+
+                @include mq(lap) {
+                    width: 200px;
+                }
+
+                @include mq(lapS2) {
+                    width: 180px;
+                }
+
+                @include mq(1100) {
+                    width: 170px;
+                }
+
+                @include mq(530) {
+                    width: 150px;
+                    right: -5%;
+                }
+
+                @include mq(mobS2) {
+                    right: -4%;
+                    width: 135px;
+                    bottom: -4%;
+                }
+            }
+        }
+
+        .text {
+            width: 45%;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+
+            @include mq(tab) {
+                width: 80%;
+            }
+
+            @include mq(mob) {
+                width: 90%;
+            }
+
+            &__title-h2 {
+                font-size: 2em;
+                letter-spacing: 0.05em;
+                line-height: 48px;
+                
+                @include mq(mob) {
+                    font-size: 1.7em;
+                    line-height: 35px;
+                }
+            }
+
+            &__parag {
+                display: flex;
+                flex-direction: column;
+                letter-spacing: 0.12em;
+                width: 90%;
+                margin: 0 0 25px;
+                line-height: 25px;
+                max-width: 440px;
+
+                @include mq(1600) {
+                    max-width: 100%;
+                }
+
+                @include mq(1400) {
+                    width: 100%;
+                }
+
+                @include mq(mob) {
+                    margin: 20px 0 25px;
+                }
+
+                @include mq(380) {
+                    margin: 10px 0;
+                }
+
+                &-1 {
+                    margin-bottom: 60px;
+
+                    @include mq(mob) {
+                        margin-bottom: 30px;
+                    }                
+                    
+                    @include mq(380) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+            .button {
+                width: 190px;
+                height: 50px;
+                background-color: $yellow;
+                color: $blueD;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

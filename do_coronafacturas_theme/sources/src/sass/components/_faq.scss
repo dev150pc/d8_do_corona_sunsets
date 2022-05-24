@@ -1,0 +1,157 @@
+.containerFaq {
+    max-width: 1275px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    font-family: $coronaHeadlineSB;
+    font-size: 18px;
+
+    @include mq(1430) {
+        width: 85%;
+    }
+
+    @include mq(mobS2) {
+        width: 95%;
+    }
+
+    &__title {
+        font-size: 3.4em;
+        text-align: center;
+        padding-bottom: 40px;
+
+        @include mq(mob) {
+            font-size: 2.3em;
+            line-height: 1.2em;
+        }
+    }
+
+    .questions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .block {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            &__question {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #FFA901;
+                color: $white;
+                padding: 10px 50px;
+                border-radius: 10px;
+                cursor: pointer;
+
+                @include mq(mob) {
+                    padding: 20px 15px;
+                }
+
+                &-text {
+                    display: flex;
+                    font-size: 22px;
+                    align-items: center;
+                    line-height: 31px;
+                    letter-spacing: 0.10em;
+                    margin-right: 20px;
+
+                    @include mq(mob) {
+                        font-size: 18px;
+                        line-height: 25px;
+                        letter-spacing: 0.12em;
+                    }
+
+                    @include mq(mobS2) {
+                        letter-spacing: 0.12em;
+                        margin-right: 10px;
+                    }
+
+                    &-nb {
+                        margin-right: 25px;
+
+                        @include mq(mobS2) {
+                            margin-right: 20px;
+                        }
+                    }
+                }
+
+                &-pin {
+                    width: 30px;
+                    height: 30px;
+                    background-color: $white;
+                    border-radius: 50%;
+                    position: relative;
+                    transition: ease all .3s;
+                    min-width: 30px;
+                    min-height: 30px;
+                    
+                    &::before, &::after {
+                        content: '';
+                        position: absolute;
+                        background: #FFA901;
+                        border-radius: 5px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        transition: ease all .3s;
+                    }
+
+                    &::before {
+                        height: 2px;
+                        width: 15px;
+                    }
+
+                    &::after {
+                        width: 2px;
+                        height: 15px;
+                    }
+                }
+            }
+
+            &__answer {
+                max-height: 0px;
+                overflow: hidden;
+                transition: all .5s ease;
+                width: 85%;
+                padding-left: 8%;
+                font-size: 18px;
+                letter-spacing: 0.12em;
+
+                @include mq(tab) {
+                    width: 89%;
+                }
+
+                @include mq(mob) {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                @include mq(mobS2) {
+                    padding-left: 7%;
+                }
+            }
+        }
+
+        .active.block {
+            .block__question {
+                .block__question-pin {
+                    &::after {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            .block__answer {
+                max-height: 200px;
+                margin: 20px 0;
+
+                @include mq(mobS2) {
+                    max-height: 400px;
+                }
+            }
+        }
+    }
+}

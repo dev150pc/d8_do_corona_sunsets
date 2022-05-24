@@ -1,0 +1,2 @@
+// FLOAT BOX
+export const SHOW_FLOATBOX = 'SHOW_FLOATBOX'

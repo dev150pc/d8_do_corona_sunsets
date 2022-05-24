@@ -1,0 +1,108 @@
+/** ANIMATIONS **/
+
+
+// ROTATE
+@keyframes rotate {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+// DASH LOADER
+@keyframes dashLoader {
+	0% {
+		stroke-dasharray: 1, 200;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 89, 200;
+		stroke-dashoffset: -35px;
+	}
+	100% {
+		stroke-dasharray: 89, 200;
+		stroke-dashoffset: -124px;
+	}
+}
+
+// SHOW
+@keyframes showing {
+	0% {
+	  	opacity: 0;
+	}
+	100% {
+	  	opacity: 1;
+	}
+}
+
+// SHOW COMPONENT
+@keyframes showComponent {
+	0% {
+		opacity: 0;
+		transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+// FLOAT CIRCLE
+@keyframes floatCircle {
+	from {
+		transform: rotate(0deg) translate3d(1.5%, 0, 0) rotate(0deg);
+	}
+  
+	to {
+		transform: rotate(360deg) translate3d(1.5%, 0, 0) rotate(-360deg);
+	}
+}
+
+
+// Animate scroll down infinite
+@keyframes scroll-down {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 90%
+    }
+}
+
+// Animate scroll down infinite Mobile
+@keyframes scroll-downMob {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 20%
+    }
+}
+
+// Arrow rebound
+@keyframes animatedArrow {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(10px, 0);
+    }
+}

@@ -1,0 +1,30 @@
+.split-text {
+    span {
+      display: inline-flex;
+      margin-right: .3em;
+      overflow: hidden;
+  
+      &.inner {
+        margin-right: 0;
+        transform: translateY(1.3em);
+      }
+    }
+  }
+
+
+  .cct-split-text {
+    &--hide {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: all 0.3s ease;
+    }
+    span {
+      display: inline-block;
+      overflow: hidden;
+  
+      &.inner {
+        margin-right: 0;
+        transform: translateY(1.3em);
+      }
+    }
+  }
