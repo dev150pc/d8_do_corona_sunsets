@@ -1,0 +1,45 @@
+<div class="bannerHome">
+	{% if node.field_soon.title %}
+			{% set dataBanner = node.field_banner.0.entity %}
+
+			{% set media = dataBanner.field_image_media.entity %}
+			{% set file = media.field_media_image.entity %}
+			{% set imgDeskUrl = file_url(file.fileuri) %}
+			{% set imgDeskAlt = media.field_media_image.alt %}
+			<img class="bannerHome__imgD" src='{{imgDeskUrl}}' alt='{{imgDeskAlt}}' title='{{imgDeskAlt}}'/>
+
+			{% set media = dataBanner.field_image_media_mobile.entity %}
+			{% set file = media.field_media_image.entity %}
+			{% set imgMobUrl = file_url(file.fileuri) %}
+			{% set imgMobAlt = media.field_media_image.alt %}
+			<img class="bannerHome__imgM" src='{{imgMobUrl}}' alt='{{imgMobAlt}}' title='{{imgMobAlt}}'/>
+
+			<div class="bannerHome__content">
+				{% set media = dataBanner.field_image_logo.entity %}
+				{% set file = media.field_media_image.entity %}
+				{% set logoUrl = file_url(file.fileuri) %}
+				{% set logoAlt = media.field_media_image.alt %}
+				<img class="bannerHome__logo" src='{{logoUrl}}' alt='{{logoAlt}}' title='{{logoAlt}}'/>
+				<div class="bannerHome__title">
+					{{dataBanner.field_description.value|raw}}
+				</div>
+				<img class="play modal-open" data-modal="video-home" src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources/dist/assets/images/play.png')}}" alt="">
+				<a class="button" href='{{node.field_soon.0.url}}'>
+					{{node.field_soon.title|raw}}
+				</a>
+			</div>
+		{% else %}
+			{% include directory ~ '/templates/node/corona-tropical.html.twig' %}
+		{% endif %}
+</div>
+<div class="modalTrop is-close" data-modal="video-home">
+	<div class="modalTrop_container">
+		<div class="modalTrop-close"></div>
+		<div class="iframe-desk">
+			<iframe width="auto" height="auto" src="{{dataBanner.field_url_background.value|raw}}" title="YouTube video player" frameborder="0"></iframe>
+		</div>
+		<div class="iframe-mob">
+			<iframe width="370px" height="220px" src="{{dataBanner.field_url_background.value|raw}}" title="YouTube video player" frameborder="0"></iframe>
+		</div>
+	</div>
+</div>
