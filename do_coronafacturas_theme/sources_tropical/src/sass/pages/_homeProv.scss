@@ -3,6 +3,17 @@
     position: relative;
     font-size: 18px;
     font-family: $coronaHeadlineSB;
+    overflow: hidden;
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    img {
+        display: inline-block;
+        max-width: 100%;
+    }
 
     &__imgD {
         width: 100%;

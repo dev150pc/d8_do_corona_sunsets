@@ -1097,6 +1097,7 @@
     }
 
     &__list {
+        list-style: none;
         @include flex($ai:flex-end);
 
         &-item {
