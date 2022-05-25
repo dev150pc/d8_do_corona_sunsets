@@ -2169,7 +2169,7 @@ html, body, body *, *, *::before, *::after {
         flex-direction: column;
         align-items: initial;
         position: absolute;
-        left: 15px;
+        right: 35px;
         top: 10%;
         margin-bottom: 0; } }
     .sabores .points__text {
@@ -2420,20 +2420,20 @@ html, body, body *, *, *::before, *::after {
         @media only screen and (max-width: 991px) {
           .sabores .content .image__botella {
             height: 410px;
-            right: 24%;
+            left: 24%;
             max-width: 150px;
             top: 7%; } }
         @media only screen and (max-width: 640px) {
           .sabores .content .image__botella {
-            right: 26%; } }
+            left: 26%; } }
         @media only screen and (max-width: 530px) {
           .sabores .content .image__botella {
             top: 35px;
-            right: 21%; } }
+            left: 21%; } }
         @media only screen and (max-width: 480px) {
           .sabores .content .image__botella {
             top: 10%;
-            right: 85px;
+            left: 85px;
             height: 340px;
             max-width: 125px; } }
         @media only screen and (max-width: 380px) {

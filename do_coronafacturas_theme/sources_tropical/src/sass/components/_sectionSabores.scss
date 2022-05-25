@@ -364,7 +364,7 @@
             flex-direction: column;
             align-items: initial;
             position: absolute;
-            left: 15px;
+            right: 35px;
             top: 10%;
             margin-bottom: 0;
         }
@@ -723,23 +723,23 @@
 
                 @include mq(tab) {
                     height: 410px;
-                    right: 24%;
+                    left: 24%;
                     max-width: 150px;
                     top: 7%;
                 }
 
                 @include mq(mobS) {
-                    right: 26%;
+                    left: 26%;
                 }
 
                 @include mq(530) {
                     top: 35px;
-                    right: 21%;
+                    left: 21%;
                 }
 
                 @include mq(mobS2) {
                     top: 10%;
-                    right: 85px;
+                    left: 85px;
                     height: 340px;
                     max-width: 125px;
                 }
