@@ -284,18 +284,18 @@
 									<img class="commerce-card__image" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}" width="240" height="100"/>
 								{% endif %}
 							{% endfor %}
-							{% for image in paragraph.entity.field_image_background %}
-								{% if image.entity %}
-									{% set media = image.entity %}
-									{% set file = media.field_media_image.entity %}
-									{% set alt = media.field_media_image.alt %}
-									{% set uri = file_url(file.fileuri) %}
-									<img class="commerce-card__image" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}" width="240" height="100"/>
-								{% endif %}
-							{% endfor %}
 							<span class="commerce-card__button">{{ paragraph.entity.field_link.title }}</span>
 						</a>
 					</li>
+          {% for image in paragraph.entity.field_image_background %}
+            {% if image.entity %}
+              {% set media = image.entity %}
+              {% set file = media.field_media_image.entity %}
+              {% set alt = media.field_media_image.alt %}
+              {% set uri = file_url(file.fileuri) %}
+              <img class="containerCommerce__bgImage" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}" width="240" height="100"/>
+            {% endif %}
+          {% endfor %}
 				{% endfor %}
 			</ul>
 		</div>
