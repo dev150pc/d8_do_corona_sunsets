@@ -1176,3 +1176,35 @@
     }
 
 }
+
+.containerExperience {
+  padding: 140px 25px;
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D77696;
+  position: relative;
+  background-image: url("../assets/images/bgContainerExperience.webp");
+  background-repeat: no-repeat;
+  background-size: auto 110%;
+
+  &__title {
+    font-family: $coronaHeadlineSB;
+    color: #fff;
+    line-height: .9em;
+    text-align: center;
+    font-size: 40px;
+  }
+  &__button {
+    color: #686868;
+    font-family: $coronaHeadlineSB !important;
+    font-size: 24px;
+    padding: 12px 40px;
+    background: #fff;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}

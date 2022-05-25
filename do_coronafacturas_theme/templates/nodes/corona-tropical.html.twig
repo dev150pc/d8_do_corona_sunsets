@@ -302,10 +302,10 @@
 		<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja2.png')}}" class="compra__hoja1" alt=""/>
 	</div>
 
-	<div>
+	<div class="containerExperience">
 		{% for paragraph in node.field_experience %}
-		<h2>{{ paragraph.entity.field_title.value }}</h2>
-		<a href="{{ paragraph.entity.field_link.0.url }}" target="blank" onclick="sendDataLayer('Corona Tropical','Ir ahora','{{ paragraph.entity.field_commtitle.value }}')">{{ paragraph.entity.field_link.title }}</a>
+		<h2 class="containerExperience__title">{{ paragraph.entity.field_title.value }}</h2>
+		<a class="containerExperience__button" href="{{ paragraph.entity.field_link.0.url }}" target="blank" onclick="sendDataLayer('Corona Tropical','Ir ahora','{{ paragraph.entity.field_commtitle.value }}')">{{ paragraph.entity.field_link.title }}</a>
 		{% endfor %}
 	</div>
 
