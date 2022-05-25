@@ -964,12 +964,34 @@
     }
     &__hoja3 {
         position: absolute;
-        top: -20%;
+        top: 0%;
         width: 300px;
         left: -130px;
 
         @include mq(tab) {
             width: 250px;
+        }
+    }
+    &__hoja4 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: auto;
+        width: 190px;
+
+        @include mq(tab) {
+            display: none !important;
+        }
+    }
+    &__hoja5 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: auto;
+        width: 280px;
+
+        @include mq(tab) {
+            display: none !important;
         }
     }
 }

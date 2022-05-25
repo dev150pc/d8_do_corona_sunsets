@@ -258,6 +258,35 @@ function parallaxSheets() {
         yPercent: -50,
         ease: 'none'
     })
+
+    gsap.to(".compra__hoja3", {
+        scrollTrigger: {
+            trigger: '.compra__hoja3',
+            scrub: 1,
+            id: 'hoja1',
+        },
+        yPercent: -80,
+        ease: 'none'
+    })
+
+    gsap.to(".compra__hoja4", {
+        scrollTrigger: {
+            trigger: '.compra__hoja4',
+            scrub: 1,
+            id: 'hoja1',
+        },
+        yPercent: -200,
+        ease: 'none'
+    })
+    gsap.to(".compra__hoja5", {
+        scrollTrigger: {
+            trigger: '.compra__hoja5',
+            scrub: 1,
+            id: 'hoja1',
+        },
+        yPercent: -50,
+        ease: 'none'
+    })
 }
 
 function animationBotleClass() {
