@@ -185,6 +185,15 @@
 												<span>FRUTA</span>
 											</p>
 										</div>
+										{% for image in paragraph.entity.field_image_calories %}
+											{%if image.entity %}
+												{% set media = image.entity %}
+												{% set file = media.field_media_image.entity %}
+												{% set alt = media.field_media_image.alt %}
+												{% set uri = file_url(file.fileuri) %}
+												<img class="image__frutas" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}"/>
+											{% endif %}
+										{% endfor %}
 									</div>
 									<a href="{{ paragraph.entity.field_link.0.url }}" class="button" id="btn-buy" onclick="dataLayerBuyBtn('{{ paragraph.entity.field_title.value | raw }}')">{{ paragraph.entity.field_link.title }}</a>
 								</div>
@@ -271,6 +280,15 @@
 									<img class="commerce-card__image" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}" width="240" height="100"/>
 								{% endif %}
 							{% endfor %}
+							{% for image in paragraph.entity.field_image_background %}
+								{% if image.entity %}
+									{% set media = image.entity %}
+									{% set file = media.field_media_image.entity %}
+									{% set alt = media.field_media_image.alt %}
+									{% set uri = file_url(file.fileuri) %}
+									<img class="commerce-card__image" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}" width="240" height="100"/>
+								{% endif %}
+							{% endfor %}
 							<span class="commerce-card__button">{{ paragraph.entity.field_link.title }}</span>
 						</a>
 					</li>
@@ -279,6 +297,37 @@
 		</div>
 		<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja2.png')}}" class="compra__hoja1" alt=""/>
 	</div>
+
+	<div>
+		{% for paragraph in node.field_experience %}
+		<h2>{{ paragraph.entity.field_title.value }}</h2>
+		<a href="{{ paragraph.entity.field_link.0.url }}" target="blank" onclick="sendDataLayer('Corona Tropical','Ir ahora','{{ paragraph.entity.field_commtitle.value }}')">{{ paragraph.entity.field_link.title }}</a>
+		{% endfor %}
+	</div>
+
+	<div class="containerFaq">
+			<h2 class="containerFaq__title">{{ node.field_title_four.value }}</h2>
+			<div class="questions" data-aos="fade-up" data-aos-duration="1500">
+					{% set key = 1 %}
+					{% for paragraph in node.field_question %}
+					<div class="block {% if key == 1 %}active{% endif %}">
+							<div class="block__question">
+									<h2 class="block__question-text">
+											<div class="block__question-text-nb">{% if key > 10 %}{{key}}{% else %}0{{ key }}{% endif %}</div>
+											<div class="block__question-text-qs">{{ paragraph.entity.field_title.value }}</div>
+									</h2>
+									<div class="block__question-pin">
+									</div>
+							</div>
+							<div class="block__answer">
+									<p>{{ paragraph.entity.field_description.value | raw }}</p>
+							</div>
+					</div>
+					{% set key = key + 1 %}
+					{% endfor %}
+			</div>
+	</div>
+
 
 </div>
 <script>
@@ -298,6 +347,17 @@
             'event': 'trackEvent',
             'eventCategory': 'Corona Tropical', // Categoría del evento (String). Requerido.
             'eventAction': 'Ir ahora', // Acción o subcategoría del evento (String). Requerido.
+            'eventLabel': title, // Etiqueta de descripción del evento (String). Requerido.
+        });
+        console.log(title);
+    }
+
+		function sendDataLayer(category,action,title) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'trackEvent',
+            'eventCategory': category, // Categoría del evento (String). Requerido.
+            'eventAction': action, // Acción o subcategoría del evento (String). Requerido.
             'eventLabel': title, // Etiqueta de descripción del evento (String). Requerido.
         });
         console.log(title);
