@@ -3299,12 +3299,10 @@ html, body, body *, *, *::before, *::after {
     position: absolute;
     top: -20%;
     width: 300px;
-    left: -10%; }
+    left: -130px; }
     @media only screen and (max-width: 991px) {
       .compra__hoja3 {
-        top: -15%;
-        width: 250px;
-        left: -26%; } }
+        width: 250px; } }
 
 .game__desk {
   width: 100%;
