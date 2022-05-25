@@ -185,19 +185,19 @@
 												<span>FRUTA</span>
 											</p>
 										</div>
-										{% for image in paragraph.entity.field_image_calories %}
-											{%if image.entity %}
-                        <div class="points__cal">
-                          <div class="points__cal-img">
-                            {% set media = image.entity %}
-                            {% set file = media.field_media_image.entity %}
-                            {% set alt = media.field_media_image.alt %}
-                            {% set uri = file_url(file.fileuri) %}
-												    <img class="image__frutas" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}"/>
-                          </div>
-                        </div>
-											{% endif %}
-										{% endfor %}
+										<div class="points__cal">
+                    	<div class="points__cal-img">
+												{% for image in paragraph.entity.field_image_calories %}
+													{%if image.entity %}
+																{% set media = image.entity %}
+																{% set file = media.field_media_image.entity %}
+																{% set alt = media.field_media_image.alt %}
+																{% set uri = file_url(file.fileuri) %}
+																<img src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}"/>
+													{% endif %}
+												{% endfor %}
+											</div>
+                    </div>
 									</div>
 									<a href="{{ paragraph.entity.field_link.0.url }}" class="button" id="btn-buy" onclick="dataLayerBuyBtn('{{ paragraph.entity.field_title.value | raw }}')">{{ paragraph.entity.field_link.title }}</a>
 								</div>
