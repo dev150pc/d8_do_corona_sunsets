@@ -366,6 +366,7 @@ function gsapScrollToSlide() {
         var pointText = section.querySelector('.points__text')
         var pointMl = section.querySelector('.points__ml')
         var pointMade = section.querySelector('.points__made')
+        var pointCal = section.querySelector('.points__cal')
         var pointImage = section.querySelectorAll('.points__image')
         let refBack = bgImage.children[i].querySelector('img')
 
@@ -448,6 +449,18 @@ function gsapScrollToSlide() {
                 },
             })
             gsap.from(pointMade, {
+                scale: 0,
+                x: 200,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top center',
+                    end: 'top top',
+                    scrub: true,
+                    toggleActions: "restart none none none"
+                },
+            })
+            gsap.from(pointCal, {
                 scale: 0,
                 x: 200,
                 ease: 'none',
