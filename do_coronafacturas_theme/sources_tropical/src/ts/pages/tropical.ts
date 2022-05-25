@@ -866,6 +866,7 @@ function setupSplits() {
     new SplitText('.discoverFlavors__top--subtitle-2')
     new SplitText('.discoverFlavors__bottom--boxCopy--copy')
     new SplitText('.containerFaq__title')
+    new SplitText('.containerExperience__title')
     new SplitText('.block__question-text-nb')
     new SplitText('.shop__texto-h2')
     new SplitText('.shop__texto-22')

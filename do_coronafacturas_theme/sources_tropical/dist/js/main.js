@@ -10331,6 +10331,7 @@ function setupSplits() {
     new _splitText__WEBPACK_IMPORTED_MODULE_7__["default"]('.discoverFlavors__top--subtitle-2');
     new _splitText__WEBPACK_IMPORTED_MODULE_7__["default"]('.discoverFlavors__bottom--boxCopy--copy');
     new _splitText__WEBPACK_IMPORTED_MODULE_7__["default"]('.containerFaq__title');
+    new _splitText__WEBPACK_IMPORTED_MODULE_7__["default"]('.containerExperience__title');
     new _splitText__WEBPACK_IMPORTED_MODULE_7__["default"]('.block__question-text-nb');
     new _splitText__WEBPACK_IMPORTED_MODULE_7__["default"]('.shop__texto-h2');
     new _splitText__WEBPACK_IMPORTED_MODULE_7__["default"]('.shop__texto-22');

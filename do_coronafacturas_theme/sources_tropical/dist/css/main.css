@@ -3295,6 +3295,16 @@ html, body, body *, *, *::before, *::after {
     @media only screen and (max-width: 767px) {
       .compra__hoja1 {
         display: none; } }
+  .compra__hoja3 {
+    position: absolute;
+    top: -20%;
+    width: 300px;
+    left: -10%; }
+    @media only screen and (max-width: 991px) {
+      .compra__hoja3 {
+        top: -15%;
+        width: 250px;
+        left: -26%; } }
 
 .game__desk {
   width: 100%;
@@ -3383,6 +3393,9 @@ html, body, body *, *, *::before, *::after {
     margin: auto;
     max-width: 1400px;
     padding: 200px 50px 100px; }
+    @media only screen and (max-width: 991px) {
+      .containerCommerce__body {
+        padding: 110px 25px 105px; } }
   .containerCommerce__title {
     font-size: 35px;
     line-height: 1em;
@@ -3458,6 +3471,9 @@ html, body, body *, *, *::before, *::after {
   background-image: url("../assets/images/bgContainerExperience.webp");
   background-repeat: no-repeat;
   background-size: auto 110%; }
+  @media only screen and (max-width: 991px) {
+    .containerExperience {
+      padding: 70px 25px; } }
   .containerExperience__title {
     font-family: "coronaHeadlineSB", arial, sans-serif;
     color: #fff;
