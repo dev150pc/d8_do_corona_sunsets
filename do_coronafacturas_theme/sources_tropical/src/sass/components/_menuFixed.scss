@@ -145,11 +145,11 @@
                 height: 11px;
             }
         }
-        
+
         &::after {
             transform: rotate(45deg);
         }
-        
+
         &::before {
             transform: rotate(-45deg);
         }
@@ -177,7 +177,7 @@
             font-size: 1.3em;
             line-height: 19px;
             letter-spacing: 0.03em;
-            color: $white;
+            color: $black;
             margin-bottom: 15px;
 
             @include mq(mobS2) {
@@ -189,7 +189,7 @@
             text-decoration: underline;
         }
     }
-    
+
     &.close {
         display: none;
     }
