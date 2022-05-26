@@ -258,6 +258,35 @@ function parallaxSheets() {
         yPercent: -50,
         ease: 'none'
     })
+
+    gsap.to(".compra__hoja3", {
+        scrollTrigger: {
+            trigger: '.compra__hoja3',
+            scrub: 1,
+            id: 'hoja1',
+        },
+        yPercent: -80,
+        ease: 'none'
+    })
+
+    gsap.to(".compra__hoja4", {
+        scrollTrigger: {
+            trigger: '.compra__hoja4',
+            scrub: 1,
+            id: 'hoja1',
+        },
+        yPercent: -200,
+        ease: 'none'
+    })
+    gsap.to(".compra__hoja5", {
+        scrollTrigger: {
+            trigger: '.compra__hoja5',
+            scrub: 1,
+            id: 'hoja1',
+        },
+        yPercent: -50,
+        ease: 'none'
+    })
 }
 
 function animationBotleClass() {
@@ -366,6 +395,7 @@ function gsapScrollToSlide() {
         var pointText = section.querySelector('.points__text')
         var pointMl = section.querySelector('.points__ml')
         var pointMade = section.querySelector('.points__made')
+        var pointCal = section.querySelector('.points__cal')
         var pointImage = section.querySelectorAll('.points__image')
         let refBack = bgImage.children[i].querySelector('img')
 
@@ -448,6 +478,18 @@ function gsapScrollToSlide() {
                 },
             })
             gsap.from(pointMade, {
+                scale: 0,
+                x: 200,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top center',
+                    end: 'top top',
+                    scrub: true,
+                    toggleActions: "restart none none none"
+                },
+            })
+            gsap.from(pointCal, {
                 scale: 0,
                 x: 200,
                 ease: 'none',
@@ -853,6 +895,7 @@ function setupSplits() {
     new SplitText('.discoverFlavors__top--subtitle-2')
     new SplitText('.discoverFlavors__bottom--boxCopy--copy')
     new SplitText('.containerFaq__title')
+    new SplitText('.containerExperience__title')
     new SplitText('.block__question-text-nb')
     new SplitText('.shop__texto-h2')
     new SplitText('.shop__texto-22')

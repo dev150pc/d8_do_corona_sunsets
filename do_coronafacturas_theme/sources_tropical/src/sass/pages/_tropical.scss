@@ -80,12 +80,12 @@
             font-size: 3.4em;
             margin: 35px 0;
             line-height: 1.3em;
-            
+
             @media (max-height: 700px) {
                 font-size: 2.3em;
                 margin: 25px 0;
             }
-            
+
             @include mq(mobS) {
                 font-size: 2.3em;
             }
@@ -176,7 +176,7 @@
         transform: translateX(-50%);
         cursor: pointer;
         z-index: 2;
-        
+
         @include mq(tab) {
             display: flex;
             align-items: center;
@@ -185,7 +185,7 @@
         &-box {
             position: relative;
         }
-        
+
         &-down {
             position: absolute;
             width: 5px;
@@ -234,7 +234,7 @@
         &__icon {
             margin-right: 10px;
             position: relative;
-            
+
             &::before {
                 content: "";
                 position: absolute;
@@ -274,7 +274,7 @@
         bottom: 0;
         left: 0;
         transform: translate(-20%, 10%);
-        
+
         @include mq(mobS) {
             bottom: auto;
             left: auto;
@@ -447,7 +447,7 @@
     position: relative;
     z-index: 1;
     cursor: grab;
-    
+
     @include mq(tab) {
         height: 550px;
     }
@@ -621,7 +621,7 @@
                         margin-top: 20px;
                     }
                 }
-            }            
+            }
             @include mq(mob) {
                 width: 100%;
                 order: 1;
@@ -648,31 +648,31 @@
                 left: 0;
                 z-index: -1;
             }
-            
+
             &:nth-child(1) {
                 &::before {
                     background-color: $orange2;
                 }
             }
-            
+
             &:nth-child(2) {
                 &::before {
                     background-color: $green;
                 }
             }
-            
+
             &:nth-child(3) {
                 &::before {
                     background-color: $pink;
                 }
             }
-            
+
             &:nth-child(4) {
                 &::before {
                     background-color: $orange2;
                 }
             }
-            
+
             &:nth-child(5) {
                 &::before {
                     background-color: $red2;
@@ -744,7 +744,7 @@
                 content: none;
             }
         }
-        
+
         .swiper-button-next {
             transform: rotate(180deg);
             background-image: url("../assets/images/arrow.svg") !important;
@@ -762,7 +762,7 @@
 .discoverFlavors{
     width: 100%;
     height: auto;
-    position: relative;    
+    position: relative;
     &--leaf{
         position: absolute;
         right: -15%;
@@ -807,7 +807,7 @@
                 margin-bottom: 45px;
             }
         }
-        &--btn{            
+        &--btn{
             width: 190px;
             height: 50px;
             background-color: #FFCA33;
@@ -832,7 +832,7 @@
         &--bottle {
             margin: 0 13px;
             transition: ease all .5s;
-            
+
             @include mq(mob) {
                 width: 15%;
             }
@@ -884,7 +884,7 @@
         }
     }
     &__bottom{
-        width: 100%; 
+        width: 100%;
         height: 600px;
         position: relative;
         margin-top: -40px;
@@ -935,7 +935,7 @@
             }
         }
         @include mq(mob) {
-           height: 500px; 
+           height: 500px;
            margin-top: -30px;
            object-fit: cover;
         }
@@ -960,6 +960,38 @@
 
         @include mq(mob) {
             display: none;
+        }
+    }
+    &__hoja3 {
+        position: absolute;
+        top: 0%;
+        width: 300px;
+        left: -130px;
+
+        @include mq(tab) {
+            width: 250px;
+        }
+    }
+    &__hoja4 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: auto;
+        width: 190px;
+
+        @include mq(tab) {
+            display: none !important;
+        }
+    }
+    &__hoja5 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: auto;
+        width: 280px;
+
+        @include mq(tab) {
+            display: none !important;
         }
     }
 }
@@ -990,7 +1022,7 @@
 .containerRequestDrink {
     position: relative;
     z-index: 0;
-    
+
     &__body {
         padding: 50px;
         @include flex($jc: space-around, $fw: nowrap);
@@ -1083,10 +1115,25 @@
 }
 
 .containerCommerce {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
     &__body {
         margin: auto;
         max-width: 1400px;
-        padding: 50px 50px 0;
+        padding: 200px 50px 100px;
+
+        @include mq(tab) {
+          padding: 110px 25px 105px;
+        }
+
     }
 
     &__title {
@@ -1097,6 +1144,7 @@
     }
 
     &__list {
+        list-style: none;
         @include flex($ai:flex-end);
 
         &-item {
@@ -1120,6 +1168,17 @@
             }
         }
     }
+
+    &__bgImage {
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: -1;
+      height: 100%;
+      object-fit: cover;
+    }
 }
 
 .commerce-card {
@@ -1138,7 +1197,12 @@
         color: #686868;
         font-family: $coronaHeadlineSB !important;
         font-size: 24px;
-        padding: 5px 30px;
+        padding: 12px 90px;
+        background: #fff;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: max-content;
     }
 
     @include mq {
@@ -1148,4 +1212,42 @@
             padding-right: 20px;
         }
     }
+
+}
+
+.containerExperience {
+  padding: 140px 25px;
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D77696;
+  position: relative;
+  background-image: url("../assets/images/bgContainerExperience.webp");
+  background-repeat: no-repeat;
+  background-size: auto 110%;
+
+  @include mq(tab) {
+    padding: 70px 25px;
+  }
+
+  &__title {
+    font-family: $coronaHeadlineSB;
+    color: #fff;
+    line-height: .9em;
+    text-align: center;
+    font-size: 40px;
+  }
+  &__button {
+    color: #686868;
+    font-family: $coronaHeadlineSB !important;
+    font-size: 24px;
+    padding: 12px 40px;
+    background: #fff;
+    border-radius: 8px;
+    width: max-content;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 }

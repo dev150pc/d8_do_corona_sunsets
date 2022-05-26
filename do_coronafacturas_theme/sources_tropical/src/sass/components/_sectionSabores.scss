@@ -279,17 +279,17 @@
             left: -3%;
         }
     }
-    
+
     &__title {
         &-h1 {
             font-size: 3.4em;
-            
+
             @include mq(mobS) {
                 font-size: 2.3em;
             }
         }
     }
-    
+
     &__category {
         display: flex;
         align-items: center;
@@ -333,7 +333,7 @@
                     background-color: $yellow2;
                 }
             }
-            
+
 
             &.red {
                 &.active, &:hover {
@@ -364,8 +364,8 @@
             flex-direction: column;
             align-items: initial;
             position: absolute;
-            left: 15px;
-            top: 18%;
+            right: 35px;
+            top: 10%;
             margin-bottom: 0;
         }
 
@@ -413,20 +413,20 @@
                 font-size: 4em;
                 letter-spacing: 3px;
                 line-height: .5em;
-    
+
                 @include mq(lap) {
                     font-size: 3em;
                 }
-    
+
                 @include mq(1100) {
                     font-size: 2.5em;
                 }
-    
+
                 @include mq(mobS2) {
                     font-size: 2.3em;
                     line-height: 32px;
                 }
-    
+
                 small {
                     font-size: 0.4em;
                     letter-spacing: 0.75px;
@@ -444,16 +444,32 @@
                     &:nth-child(1) {
                         font-size: 15px;
                     }
-    
+
                     &:nth-child(2) {
                         font-size: 21px;
                     }
-    
+
                     &:nth-child(3) {
                         font-size: 27px;
                     }
                 }
             }
+        }
+
+        &__cal {
+          &-img {
+            img {
+              width: 100%;
+              height: auto;
+              transform: translateX(15px);
+              max-width: 85px;
+              @include mq(mobS2) {
+                transform: translateX(5px);
+                max-width: 80px;
+                margin-top: 8px;
+              }
+            }
+          }
         }
 
         &__image {
@@ -511,7 +527,7 @@
             }
         }
     }
-    
+
     .saboresSwiper {
         margin: 75px auto;
         position: relative;
@@ -537,7 +553,7 @@
         &-content {
             width: 100%;
         }
-        
+
         &__slide {
             flex-shrink: 0;
             width: 100%;
@@ -545,7 +561,7 @@
             display: flex;
             padding-top: 70px;
         }
-        
+
         .pin-spacer {
             inset: 0px 0px 0px 0px !important;
             width: 100%;
@@ -636,7 +652,7 @@
                 width: 100%;
                 padding: 10px 0;
             }
-            
+
             @include mq(380) {
                 padding: 35px 0;
                 margin-bottom: 20px;
@@ -707,23 +723,23 @@
 
                 @include mq(tab) {
                     height: 410px;
-                    right: 24%;
+                    left: 24%;
                     max-width: 150px;
                     top: 7%;
                 }
 
                 @include mq(mobS) {
-                    right: 26%;
+                    left: 26%;
                 }
 
                 @include mq(530) {
                     top: 35px;
-                    right: 21%;
+                    left: 21%;
                 }
 
                 @include mq(mobS2) {
                     top: 10%;
-                    right: 85px;
+                    left: 85px;
                     height: 340px;
                     max-width: 125px;
                 }
@@ -788,7 +804,7 @@
                 letter-spacing: 0.05em;
                 line-height: 1em;
                 margin-bottom: .2em;
-                
+
                 @include mq(tab) {
                     font-size: 2.2em;
                     line-height: 1em;
@@ -825,8 +841,8 @@
 
                     @include mq(mob) {
                         margin-bottom: 30px;
-                    }                
-                    
+                    }
+
                     @include mq(380) {
                         margin-bottom: 10px;
                     }
@@ -841,6 +857,12 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+                }
             }
         }
     }

@@ -119,21 +119,21 @@
 
 			<h2 class="sabores__title-h1">{{ node.field_title.value | raw }}</h2>
 
-			<div class="sabores__category" data-aos="fade-up" data-aos-duration="2000">
+			<nav class="sabores__category" data-aos="fade-up" data-aos-duration="2000">
 				{% set key = 1 %}
 				{% for paragraph in node.field_product %}
-					<div class="sabores__category-box {% if key == 1 %}green active {% endif %}{% if key == 2 %} pink {% endif %}{% if key == 3 %} yellow {% endif %}{% if key == 4 %} red {% endif %}" data-category="{{key}}">
+					<div onclick="sendDataLayer('Corona Tropical','Descubre sus 4 sabores','{{ paragraph.entity.field_title.value }}')" class="sabores__category-box {% if key == 1 %}green active {% endif %}{% if key == 2 %} pink {% endif %}{% if key == 3 %} yellow {% endif %}{% if key == 4 %} red {% endif %}" data-category="{{key}}">
 						<p>{{ paragraph.entity.field_title.value | raw }}</p>
 					</div>
 					{% set key = key + 1 %}
 				{% endfor %}
-			</div>
+			</nav>
 
 			<div class="saboresSwiper">
 				<div class="saboresSwiper-content">
 					{% set key_value = 1 %}
 					{% for paragraph in node.field_product %}
-						<div id="slide{{key_value}}" class="saboresSwiper__slide slide{{key_value}} {% if key_value == 1 %}active{% endif %}" data-category="{{key_value}}">
+						<div id="{% if key_value == 1 %}sabor-lima-limon{% endif %}{% if key_value == 2 %}sabor-limon-toronja{% endif %}{% if key_value == 3 %}sabor-limon-frutos-amarillos{% endif %}{% if key_value == 4 %}sabor-limon-frutos-rojos{% endif %}" class="saboresSwiper__slide slide{{key_value}} {% if key_value == 1 %}active{% endif %}" data-category="{{key_value}}">
 							<div class="content">
 								<div class="image">
 									<div class="image__fondo"></div>
@@ -185,8 +185,21 @@
 												<span>FRUTA</span>
 											</p>
 										</div>
+										<div class="points__cal">
+                    	<div class="points__cal-img">
+												{% for image in paragraph.entity.field_image_calories %}
+													{%if image.entity %}
+																{% set media = image.entity %}
+																{% set file = media.field_media_image.entity %}
+																{% set alt = media.field_media_image.alt %}
+																{% set uri = file_url(file.fileuri) %}
+																<img src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}"/>
+													{% endif %}
+												{% endfor %}
+											</div>
+                    </div>
 									</div>
-									<a href="{{ paragraph.entity.field_link.0.url }}" class="button" id="btn-buy" onclick="dataLayerBuyBtn('{{ paragraph.entity.field_title.value | raw }}')">{{ paragraph.entity.field_link.title }}</a>
+									<a href="{{ paragraph.entity.field_link.0.url }}" class="button" id="btn-buy" onclick="sendDataLayer('Corona Tropical','Comprar ahora','{{ paragraph.entity.field_title.value }}')">{{ paragraph.entity.field_link.title }}</a>
 								</div>
 							</div>
 						</div>
@@ -203,7 +216,7 @@
 	<div class="ritual" id="ritual">
 		<div class="introduction">
 			<div class="introduction__h2">{{ node.field_description.value | raw }}</div>
-			<h2 class="introduction__h1">{{ node.field_title_two.value | raw }}</h2>
+			<div class="introduction__h1">{{ node.field_title_two.value | raw }}</div>
 		</div>
 
 		<div class="boxAnimation">
@@ -242,26 +255,26 @@
 	</div>
 
 
-	<div class="containerRequestDrink">
+	<div class="containerRequestDrink" id="compra">
 		<div class="containerRequestDrink__body">
 			<div class="containerRequestDrink__title">
 				<div class="containerRequestDrink__bg"></div>
-				<h2 class="containerRequestDrink__title-text">¡PÍDELAS<br>TODAS<br><span class="containerRequestDrink__title-sec">Y ELIGE<br>TU SABOR!</span>
+				<h2 class="containerRequestDrink__title-text">¡PÍDELAS<br> TODAS<br> <span class="containerRequestDrink__title-sec">Y ELIGE<br> TU SABOR!</span>
 				</h2>
 			</div>
 			<section class="containerRequestDrink__image">
-				<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/latas.png')}}">
+				<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/latas.png')}}" alt="corona tropical dominicana" title="corona tropical dominicana">
 			</section>
 		</div>
 	</div>
 
 	<div class="containerCommerce">
 		<div class="containerCommerce__body">
-			<h2 class="containerCommerce__title">Encuéntralas en :</h2>
+			<p class="containerCommerce__title">{{ node.field_commerce.entity.field_commtitle.value | raw }}</p>
 			<ul class="containerCommerce__list">
 				{% for paragraph in node.field_commerce %}
 					<li class="containerCommerce__list-item">
-						<a href="{{ paragraph.entity.field_link.0.url }}" target="blank" class="commerce-card" onclick="dataLayerComercio('{{ paragraph.entity.field_commtitle.value }}')">
+						<a href="{{ paragraph.entity.field_link.0.url }}" target="blank" class="commerce-card" onclick="sendDataLayer('Corona Tropical','Ir ahora - Ta Da','Clic')">
 							{% for image in paragraph.entity.field_image_media %}
 								{% if image.entity %}
 									{% set media = image.entity %}
@@ -274,32 +287,63 @@
 							<span class="commerce-card__button">{{ paragraph.entity.field_link.title }}</span>
 						</a>
 					</li>
+          {% for image in paragraph.entity.field_image_background %}
+            {% if image.entity %}
+              {% set media = image.entity %}
+              {% set file = media.field_media_image.entity %}
+              {% set alt = media.field_media_image.alt %}
+              {% set uri = file_url(file.fileuri) %}
+              <img class="containerCommerce__bgImage" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}" width="240" height="100"/>
+            {% endif %}
+          {% endfor %}
 				{% endfor %}
 			</ul>
 		</div>
-		<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja2.png')}}" class="compra__hoja1" alt=""/>
+		<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja3.png')}}" class="compra__hoja3" alt="compra__hoja3"/>
+		<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja4.png')}}" class="compra__hoja4" alt="compra__hoja4"/>
 	</div>
+
+	<div class="containerExperience">
+		{% for paragraph in node.field_experience %}
+		<h2 class="containerExperience__title">{{ paragraph.entity.field_title.value }}</h2>
+		<a class="containerExperience__button" href="{{ paragraph.entity.field_link.0.url }}" target="blank" onclick="sendDataLayer('Corona Tropical','Contestar encuesta','Clic')">{{ paragraph.entity.field_link.title }}</a>
+		{% endfor %}
+		<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja5.png')}}" class="compra__hoja5" alt="compra__hoja5"/>
+	</div>
+
+	<div class="containerFaq">
+			<h2 class="containerFaq__title">{{ node.field_title_four.value }}</h2>
+			<div class="questions" data-aos="fade-up" data-aos-duration="1500">
+					{% set key = 1 %}
+					{% for paragraph in node.field_question %}
+					<div class="block {% if key == 1 %}active{% endif %}">
+							<div class="block__question">
+									<h3 class="block__question-text">
+											<div class="block__question-text-nb">{% if key > 10 %}{{key}}{% else %}0{{ key }}{% endif %}</div>
+											<div class="block__question-text-qs">{{ paragraph.entity.field_title.value }}</div>
+									</h3>
+									<div class="block__question-pin">
+									</div>
+							</div>
+							<div class="block__answer">
+									<div>{{ paragraph.entity.field_description.value | raw }}</div>
+							</div>
+					</div>
+					{% set key = key + 1 %}
+					{% endfor %}
+			</div>
+	</div>
+
 
 </div>
 <script>
-    function dataLayerBuyBtn(title) {
+		function sendDataLayer(category,action,title) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             'event': 'trackEvent',
-            'eventCategory': 'Corona Tropical', // Categoría del evento (String). Requerido.
-            'eventAction': 'Comprar ahora', // Acción o subcategoría del evento (String). Requerido.
+            'eventCategory': category, // Categoría del evento (String). Requerido.
+            'eventAction': action, // Acción o subcategoría del evento (String). Requerido.
             'eventLabel': title, // Etiqueta de descripción del evento (String). Requerido.
         });
-        console.log(title);
-    }
-    function dataLayerComercio(title) {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'trackEvent',
-            'eventCategory': 'Corona Tropical', // Categoría del evento (String). Requerido.
-            'eventAction': 'Ir ahora', // Acción o subcategoría del evento (String). Requerido.
-            'eventLabel': title, // Etiqueta de descripción del evento (String). Requerido.
-        });
-        console.log(title);
     }
 </script>
