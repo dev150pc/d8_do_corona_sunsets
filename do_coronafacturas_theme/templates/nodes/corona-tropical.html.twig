@@ -216,7 +216,7 @@
 	<div class="ritual" id="ritual">
 		<div class="introduction">
 			<div class="introduction__h2">{{ node.field_description.value | raw }}</div>
-			<h2 class="introduction__h1">{{ node.field_title_two.value | raw }}</h2>
+			<div class="introduction__h1">{{ node.field_title_two.value | raw }}</div>
 		</div>
 
 		<div class="boxAnimation">
@@ -259,7 +259,7 @@
 		<div class="containerRequestDrink__body">
 			<div class="containerRequestDrink__title">
 				<div class="containerRequestDrink__bg"></div>
-				<h2 class="containerRequestDrink__title-text">¡PÍDELAS<br>TODAS<br><span class="containerRequestDrink__title-sec">Y ELIGE<br>TU SABOR!</span>
+				<h2 class="containerRequestDrink__title-text">¡PÍDELAS<br> TODAS<br> <span class="containerRequestDrink__title-sec">Y ELIGE<br> TU SABOR!</span>
 				</h2>
 			</div>
 			<section class="containerRequestDrink__image">
@@ -270,7 +270,7 @@
 
 	<div class="containerCommerce">
 		<div class="containerCommerce__body">
-			<p class="containerCommerce__title">Encuéntralas en :</p>
+			<p class="containerCommerce__title">{{ node.field_commerce.entity.field_commtitle.value | raw }}</p>
 			<ul class="containerCommerce__list">
 				{% for paragraph in node.field_commerce %}
 					<li class="containerCommerce__list-item">

@@ -11,6 +11,18 @@
 
 /***/ }),
 
+/***/ "./node_modules/formbouncerjs/dist/bouncer.polyfills.min.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/formbouncerjs/dist/bouncer.polyfills.min.js ***!
+  \******************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! formbouncerjs v1.4.6 | (c) 2019 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/bouncer */
+"document"in self&&("classList"in document.createElement("_")&&(!document.createElementNS||"classList"in document.createElementNS("http://www.w3.org/2000/svg","g"))||(function(e){"use strict";if("Element"in e){var t="classList",r="prototype",n=e.Element[r],a=Object,i=String[r].trim||function(){return this.replace(/^\s+|\s+$/g,"")},o=Array[r].indexOf||function(e){for(var t=0,r=this.length;t<r;t++)if(t in this&&this[t]===e)return t;return-1},l=function(e,t){this.name=e,this.code=DOMException[e],this.message=t},u=function(e,t){if(""===t)throw new l("SYNTAX_ERR","An invalid or illegal string was specified");if(/\s/.test(t))throw new l("INVALID_CHARACTER_ERR","String contains an invalid character");return o.call(e,t)},s=function(e){for(var t=i.call(e.getAttribute("class")||""),r=t?t.split(/\s+/):[],n=0,a=r.length;n<a;n++)this.push(r[n]);this._updateClassName=function(){e.setAttribute("class",this.toString())}},c=s[r]=[],f=function(){return new s(this)};if(l[r]=Error[r],c.item=function(e){return this[e]||null},c.contains=function(e){return-1!==u(this,e+="")},c.add=function(){for(var e,t=arguments,r=0,n=t.length,a=!1;e=t[r]+"",-1===u(this,e)&&(this.push(e),a=!0),++r<n;);a&&this._updateClassName()},c.remove=function(){var e,t,r=arguments,n=0,a=r.length,i=!1;do{for(e=r[n]+"",t=u(this,e);-1!==t;)this.splice(t,1),i=!0,t=u(this,e)}while(++n<a);i&&this._updateClassName()},c.toggle=function(e,t){e+="";var r=this.contains(e),n=r?!0!==t&&"remove":!1!==t&&"add";return n&&this[n](e),!0===t||!1===t?t:!r},c.toString=function(){return this.join(" ")},a.defineProperty){var d={get:f,enumerable:!0,configurable:!0};try{a.defineProperty(n,t,d)}catch(e){void 0!==e.number&&-2146823252!==e.number||(d.enumerable=!1,a.defineProperty(n,t,d))}}else a[r].__defineGetter__&&n.__defineGetter__(t,f)}})(self),(function(){"use strict";var e=document.createElement("_");if(e.classList.add("c1","c2"),!e.classList.contains("c2")){var t=function(e){var n=DOMTokenList.prototype[e];DOMTokenList.prototype[e]=function(e){var t,r=arguments.length;for(t=0;t<r;t++)e=arguments[t],n.call(this,e)}};t("add"),t("remove")}if(e.classList.toggle("c3",!1),e.classList.contains("c3")){var r=DOMTokenList.prototype.toggle;DOMTokenList.prototype.toggle=function(e,t){return 1 in arguments&&!this.contains(e)==!t?t:r.call(this,e)}}e=null})()),Element.prototype.closest||(Element.prototype.matches||(Element.prototype.matches=Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector),Element.prototype.closest=function(e){var t=this;if(!document.documentElement.contains(this))return null;do{if(t.matches(e))return t;t=t.parentElement}while(null!==t);return null}),(function(){if("function"==typeof window.CustomEvent)return;function e(e,t){t=t||{bubbles:!1,cancelable:!1,detail:void 0};var r=document.createEvent("CustomEvent");return r.initCustomEvent(e,t.bubbles,t.cancelable,t.detail),r}e.prototype=window.Event.prototype,window.CustomEvent=e})(),Element.prototype.matches||(Element.prototype.matches=Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector),(function(e,t){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function(){return t(e)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})("undefined"!=typeof __webpack_require__.g?__webpack_require__.g:"undefined"!=typeof window?window:this,(function(a){"use strict";var u={fieldClass:"error",errorClass:"error-message",fieldPrefix:"bouncer-field_",errorPrefix:"bouncer-error_",patterns:{email:/^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$/,url:/^(?:(?:https?|HTTPS?|ftp|FTP):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-zA-Z\u00a1-\uffff0-9]-*)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]-*)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/,number:/^(?:[-+]?[0-9]*[.,]?[0-9]+)$/,color:/^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/,date:/(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))/,time:/^(?:(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]))$/,month:/^(?:(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])))$/},customValidations:{},messageAfterField:!0,messageCustom:"data-bouncer-message",messageTarget:"data-bouncer-target",messages:{missingValue:{checkbox:"This field is required.",radio:"Please select a value.",select:"Please select a value.","select-multiple":"Please select at least one value.",default:"Please fill out this field."},patternMismatch:{email:"Please enter a valid email address.",url:"Please enter a URL.",number:"Please enter a number",color:"Please match the following format: #rrggbb",date:"Please use the YYYY-MM-DD format",time:"Please use the 24-hour time format. Ex. 23:00",month:"Please use the YYYY-MM format",default:"Please match the requested format."},outOfRange:{over:"Please select a value that is no more than {max}.",under:"Please select a value that is no less than {min}."},wrongLength:{over:"Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters.",under:"Please lengthen this text to {minLength} characters or more. You are currently using {length} characters."},fallback:"There was an error with this field."},disableSubmit:!1,emitEvents:!0},s=function(e,t){Array.prototype.forEach.call(e,t)},c=function(){var r={};return s(arguments,(function(e){for(var t in e){if(!e.hasOwnProperty(t))return;"[object Object]"===Object.prototype.toString.call(e[t])?r[t]=c(r[t],e[t]):r[t]=e[t]}})),r},f=function(e,t,r){if("function"==typeof a.CustomEvent){var n=new CustomEvent(t,{bubbles:!0,detail:r||{}});e.dispatchEvent(n)}},d=function(e,t){return{missingValue:(function(e){if(!e.hasAttribute("required"))return!1;if("checkbox"===e.type)return!e.checked;var t=e.value.length;return"radio"===e.type&&(t=Array.prototype.filter.call(e.form.querySelectorAll('[name="'+m(e.name)+'"]'),(function(e){return e.checked})).length),t<1})(e),patternMismatch:(r=e,n=t,a=r.getAttribute("pattern"),!(!(a=a?new RegExp("^(?:"+a+")$"):n.patterns[r.type])||!r.value||r.value.length<1||r.value.match(a))),outOfRange:(function(e){if(!e.value||e.value.length<1)return!1;var t=e.getAttribute("max"),r=e.getAttribute("min"),n=parseFloat(e.value);return t&&t<n?"over":!!(r&&n<r)&&"under"})(e),wrongLength:(function(e){if(!e.value||e.value.length<1)return!1;var t=e.getAttribute("maxlength"),r=e.getAttribute("minlength"),n=e.value.length;return t&&t<n?"over":!!(r&&n<r)&&"under"})(e)};var r,n,a},m=function(e){for(var t,r=String(e),n=r.length,a=-1,i="",o=r.charCodeAt(0);++a<n;){if(0===(t=r.charCodeAt(a)))throw new InvalidCharacterError("Invalid character: the input contains U+0000.");1<=t&&t<=31||127==t||0===a&&48<=t&&t<=57||1===a&&48<=t&&t<=57&&45===o?i+="\\"+t.toString(16)+" ":i+=128<=t||45===t||95===t||48<=t&&t<=57||65<=t&&t<=90||97<=t&&t<=122?r.charAt(a):"\\"+r.charAt(a)}return i},h=function(e,t,r){var n=e.name?e.name:e.id;return!n&&r&&(n=t.fieldPrefix+Math.floor(999*Math.random()),e.id=n),"checkbox"===e.type&&(n+="_"+(e.value||e.id)),n},x=function(e,t){var r=document.createElement("div");r.className=t.errorClass,r.id=t.errorPrefix+h(e,t,!0);var n=(function(e,t,r){var n=e.getAttribute(r.messageTarget);if(n){var a=e.form.querySelector(n);if(a)return a.firstChild||a.appendChild(document.createTextNode(""))}return r.messageAfterField?(t.nextSibling||t.parentNode.appendChild(document.createTextNode("")),t.nextSibling):t})(e,(function(e){if("radio"===e.type&&e.name){var t=e.form.querySelectorAll('[name="'+m(e.name)+'"]');e=t[t.length-1]}"radio"!==e.type&&"checkbox"!==e.type||(e=e.closest("label")||e.form.querySelector('[for="'+e.id+'"]')||e);return e})(e),t);return n.parentNode.insertBefore(r,n),r},v=function(e,t,r){e.classList.add(r.fieldClass),e.setAttribute("aria-describedby",t.id),e.setAttribute("aria-invalid",!0)},g=function(e,t,r){var n,a,i,o=e.form.querySelector("#"+m(r.errorPrefix+h(e,r)))||x(e,r),l=(function(e,t,r){var n=r.messages;if(t.missingValue)return n.missingValue[e.type]||n.missingValue.default;if(t.outOfRange)return n.outOfRange[t.outOfRange].replace("{max}",e.getAttribute("max")).replace("{min}",e.getAttribute("min")).replace("{length}",e.value.length);if(t.wrongLength)return n.wrongLength[t.wrongLength].replace("{maxLength}",e.getAttribute("maxlength")).replace("{minLength}",e.getAttribute("minlength")).replace("{length}",e.value.length);if(t.patternMismatch){var a=e.getAttribute(r.messageCustom);return a||n.patternMismatch[e.type]||n.patternMismatch.default}for(var i in r.customValidations)if(r.customValidations.hasOwnProperty(i)&&t[i]&&n[i])return n[i];return n.fallback})(e,t,r);o.textContent="function"==typeof l?l(e,r):l,a=o,i=r,"radio"===(n=e).type&&n.name&&Array.prototype.forEach.call(document.querySelectorAll('[name="'+n.name+'"]'),(function(e){v(e,a,i)})),v(n,a,i),r.emitEvents&&f(e,"bouncerShowError",{errors:t})},i=function(e,t){e.classList.remove(t.fieldClass),e.removeAttribute("aria-describedby"),e.removeAttribute("aria-invalid")},p=function(e,t){var r,n,a=e.form.querySelector("#"+m(t.errorPrefix+h(e,t)));a&&(a.parentNode.removeChild(a),n=t,"radio"===(r=e).type&&r.name?Array.prototype.forEach.call(document.querySelectorAll('[name="'+r.name+'"]'),(function(e){i(e,n)})):i(r,n),t.emitEvents&&f(e,"bouncerRemoveError"))};return function(n,e){var l,r={};r.validate=function(e,t){if(!e.disabled&&!e.readOnly&&"reset"!==e.type&&"submit"!==e.type&&"button"!==e.type){var r,n,a,i=c(l,t||{}),o=(a=d(r=e,n=i),{valid:!(function(e){for(var t in e)if(e[t])return!0;return!1})(a=(function(e,t,r,n){for(var a in r)r.hasOwnProperty(a)&&(t[a]=r[a](e,n));return t})(r,a,n.customValidations,n)),errors:a});if(!o.valid)return g(e,o.errors,i),o;p(e,i)}},r.validateAll=function(e){return Array.prototype.filter.call(e.querySelectorAll("input, select, textarea"),(function(e){var t=r.validate(e);return t&&!t.valid}))};var a=function(e){e.target.form&&e.target.form.matches(n)&&r.validate(e.target)},i=function(e){e.target.form&&e.target.form.matches(n)&&e.target.classList.contains(l.fieldClass)&&r.validate(e.target)},o=function(e){if(e.target.matches(n)){e.preventDefault();var t=r.validateAll(e.target);if(0<t.length)return t[0].focus(),void f(e.target,"bouncerFormInvalid",{errors:t});l.disableSubmit||e.target.submit(),l.emitEvents&&f(e.target,"bouncerFormValid")}};r.destroy=function(){var e,t,r;document.removeEventListener("blur",a,!0),document.removeEventListener("input",i,!1),document.removeEventListener("click",i,!1),document.removeEventListener("submit",o,!1),e=n,t=l,s(document.querySelectorAll(e),(function(e){s(e.querySelectorAll("input, select, textarea"),(function(e){p(e,t)}))})),r=n,s(document.querySelectorAll(r),(function(e){e.removeAttribute("novalidate")})),l.emitEvents&&f(document,"bouncerDestroyed",{settings:l}),l=null};var t;return l=c(u,e||{}),t=n,s(document.querySelectorAll(t),(function(e){e.setAttribute("novalidate",!0)})),document.addEventListener("blur",a,!0),document.addEventListener("input",i,!1),document.addEventListener("click",i,!1),document.addEventListener("submit",o,!1),l.emitEvents&&f(document,"bouncerInitialized",{settings:l}),r}}));
+
+/***/ }),
+
 /***/ "./node_modules/gsap/CSSPlugin.js":
 /*!****************************************!*\
   !*** ./node_modules/gsap/CSSPlugin.js ***!
@@ -10368,6 +10380,293 @@ function setupSplits() {
 
 /***/ }),
 
+/***/ "./src/ts/services/emails.ts":
+/*!***********************************!*\
+  !*** ./src/ts/services/emails.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "emails": () => (/* binding */ emails)
+/* harmony export */ });
+var emails = [
+    "temp-mail.org",
+    "correotemporal.org",
+    "mohmal.com",
+    "yopmail.com",
+    "tempail.com",
+    "emailondeck.com",
+    "emailtemporalgratis.com",
+    "crazymailing.com",
+    "tempr.email",
+    "bupmail.com",
+    "guerrillamail.com",
+    "temp-mail.io",
+    "es.emailfake.com",
+    "nowmymail.com",
+    "10minutemail.net",
+    "es.getairmail.com",
+    "mailf5.com",
+    "flashmail.it",
+    "10minemail.com",
+    "mailcatch.com",
+    "temp-mails.com",
+    "spambox.us",
+    "mailnull.com",
+    "incognitomail.com",
+    "ssl.trashmail.net",
+    "trashmail.net",
+    "mailinator.com",
+    "tempinbox.com",
+    "filzmail.com",
+    "dropmail.me",
+    "spam4.me",
+    "cs.email",
+    "one-off.email",
+    "throwawaymail.com",
+    "emailtemporal.org",
+    "maildrop.cc",
+    "mailforspam.com",
+    "trashmail.com",
+    "teleworm.us",
+    "superrito.com",
+    "rhyta.com",
+    "jourrapide.com",
+    "gustr.com",
+    "fleckens.hu",
+    "einrot.com",
+    "cuvox.de",
+    "dayrep.com",
+    "muyoc.com",
+    "buxod.com",
+    "pidox.org",
+    "mecip.net",
+    "pudxe.com",
+    "xedmi.com",
+    "ludxc.com",
+    "juzab.com",
+    "klepf.com",
+    "matra.site",
+    "bombamail.icu",
+    "yermail.net",
+    "totallynotfake.net",
+    "techblast.ch",
+    "spamthis.network",
+    "spammy.host",
+    "spammer.fail",
+    "shadap.org",
+    "pewpewpewpew.pw",
+    "netcom.ws",
+    "itcompu.com",
+    "disposable.site",
+    "deinbox.com",
+    "sharklasers.com",
+    "guerrillamailblock.com",
+    "guerrillamail.org",
+    "guerrillamail.net",
+    "guerrillamail.de",
+    "guerrillamail.biz",
+    "grr.la",
+    "netmail.tk",
+    "laste.ml",
+    "firste.ml",
+    "zeroe.ml",
+    "supere.ml",
+    "emlhub.com",
+    "emlpro.com",
+    "emltmp.com",
+    "yomail.info",
+    "10mail.org",
+    "wegwerfmail.org",
+    "wegwerfmail.net",
+    "wegwerfmail.de",
+    "trashmail.me",
+    "trashmail.io",
+    "trashmail.at",
+    "trash-mail.at",
+    "rcpt.at",
+    "proxymail.eu",
+    "objectmail.com",
+    "kurzepost.de",
+    "damnthespam.com",
+    "contbay.com",
+    "0box.eu",
+    "marmaryta.space",
+    "5y5u.com",
+    "58as.com",
+    "firemailbox.club",
+    "mozej.com",
+    "mailna.co",
+    "mailna.in",
+    "mailna.me",
+    "mohmal.im",
+    "mohmal.in",
+    "yopmail.fr",
+    "yopmail.net",
+    "cool.fr.nf",
+    "jetable.fr.nf",
+    "nospam.ze.tc",
+    "nomail.xl.cx",
+    "mega.zik.dj",
+    "speed.1s.fr",
+    "courriel.fr.nf",
+    "moncourrier.fr.nf",
+    "monemail.fr.nf",
+    "monmail.fr.nf",
+    "nedoz.com",
+    "nmagazinec.com",
+    "armyspy.com",
+    "vmani.com",
+    "discard.email",
+    "discardmail.com",
+    "discardmail.de",
+    "spambog.com",
+    "spambog.de",
+    "spambog.ru",
+    "0btcmail.pw",
+    "815.ru",
+    "knol-power.nl",
+    "hartbot.de",
+    "freundin.ru",
+    "smashmail.de",
+    "s0ny.net",
+    "pecinan.net",
+    "budaya-tionghoa.com",
+    "lajoska.pe.hu",
+    "1mail.x24hr.com",
+    "from.onmypc.info",
+    "now.mefound.com",
+    "mowgli.jungleheart.com",
+    "yourspamgoesto.space",
+    "pecinan.org",
+    "budayationghoa.com",
+    "CR.cloudns.asia",
+    "TLS.cloudns.asia",
+    "MSFT.cloudns.asia",
+    "B.cr.cloUdnS.asia",
+    "ssl.tls.cloudns.ASIA",
+    "sweetxxx.de",
+    "DVD.dns-cloud.net",
+    "DVD.dnsabr.com",
+    "BD.dns-cloud.net",
+    "YX.dns-cloud.net",
+    "SHIT.dns-cloud.net",
+    "SHIT.dnsabr.com",
+    "eu.dns-cloud.net",
+    "eu.dnsabr.com",
+    "asia.dnsabr.com",
+    "8.dnsabr.com",
+    "pw.8.dnsabr.com",
+    "mm.8.dnsabr.com",
+    "23.8.dnsabr.com",
+    "pecinan.com",
+    "disposable-email.ml",
+    "pw.epac.to",
+    "postheo.de",
+    "sexy.camdvr.org",
+    "Disposable.ml",
+    "888.dnS-clouD.NET",
+    "adult-work.info",
+    "casinokun.hu",
+    "bangsat.in",
+    "wallus.casinokun.hu",
+    "trap-mail.de",
+    "umailz.com",
+    "panchoalts.com",
+    "gmaile.design",
+    "ersatzauto.ch",
+    "tempes.gq",
+    "cpmail.life",
+    "tempemail.info",
+    "coolmailcool.com",
+    "kittenemail.com",
+    "99email.xyz",
+    "notmyemail.tech",
+    "m.cloudns.cl",
+    "twitter-sign-in.cf",
+    "anonymized.org",
+    "you.has.dating",
+    "ketoblazepro.com",
+    "kost.party",
+    "0hio0ak.com",
+    "4dentalsolutions.com",
+    "t.woeishyang.com",
+    "ondemandemail.top",
+    "kittenemail.xyz",
+    "blackturtle.xyz",
+    "y.x.ssl.cloudns.asia",
+    "geneseeit.com",
+    "mailg.ml",
+    "media.motornation.buzz",
+    "sage.speedfocus.biz",
+    "badlion.co.uk",
+    "safeemail.xyz",
+    "virtual-generations.com",
+    "new-york.host",
+    "mrdeeps.ml",
+    "kitela.work",
+    "fouadps.cf",
+    "megacorp.work",
+    "fake-wegwerf.email",
+    "tigytech.com",
+    "historictheology.com",
+    "ma.567map.xyz",
+    "hotmailproduct.com",
+    "maxsize.online",
+    "happyfreshdrink.com",
+    "denomla.com",
+    "pansamantala.poistaa.com",
+    "sahaltastari.sytes.net",
+    "cecep.ddnsking.com",
+    "fadilmalik.ddnsking.com",
+    "csingi.sytes.net",
+    "richmail.ga",
+    "tikmail.gq",
+    "bupkiss.ml",
+    "guerrillamail.info",
+    "pokemail.net",
+    "myinbox.icu",
+    "just4fun.me",
+    "inscriptio.in",
+    "cloud-mail.top",
+    "safemail.icu",
+    "montokop.pw",
+    "tempamailbox.info",
+    "blogtron.com",
+    "atanetorg.org",
+    "aristockphoto.com",
+    "jomcs.com",
+    "kukuka.org",
+    "gothill.com",
+    "mixely.com",
+    "marsoasis.org",
+    "walmarteshop.com",
+    "outlandlabs.com",
+    "comectrix.com",
+    "buymondo.com",
+    "eventao.com",
+    "louieliu.com",
+    "mymailnow.xyz",
+    "cuoly.com",
+    "getnada.com",
+    "abyssmail.com",
+    "boximail.com",
+    "clrmail.com",
+    "dropjar.com",
+    "getairmail.com",
+    "givmail.com",
+    "inboxbear.com",
+    "robot-mail.com",
+    "tafmail.com",
+    "vomoto.com",
+    "zetmail.com",
+];
+
+
+/***/ }),
+
 /***/ "./src/ts/services/general.ts":
 /*!************************************!*\
   !*** ./src/ts/services/general.ts ***!
@@ -10379,9 +10678,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "page": () => (/* binding */ page)
 /* harmony export */ });
-// import dama from "/modules/dama.js";
-// import apiDrupal from "./api.js";
-// const dm = new dama();
+/* harmony import */ var _emails__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./emails */ "./src/ts/services/emails.ts");
+/* harmony import */ var formbouncerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formbouncerjs */ "./node_modules/formbouncerjs/dist/bouncer.polyfills.min.js");
+/* harmony import */ var formbouncerjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(formbouncerjs__WEBPACK_IMPORTED_MODULE_1__);
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -10418,6 +10717,11 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+// import dama from "/modules/dama.js";
+// import apiDrupal from "./api.js";
+// const dm = new dama();
+
+
 // const api = new apiDrupal();
 var page = function () { return __awaiter(void 0, void 0, void 0, function () {
     var cardSticky, closeCard;
@@ -10434,6 +10738,74 @@ var page = function () { return __awaiter(void 0, void 0, void 0, function () {
         return [2 /*return*/];
     });
 }); };
+var validateForm = function () {
+    var bouncer = formbouncerjs__WEBPACK_IMPORTED_MODULE_1___default()("form", {
+        patterns: {
+            email: /^[a-z0-9!#$%&'*/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+        },
+        customValidations: {
+            name: function (field) {
+                if (field.name == "name") {
+                    var value = field.value;
+                    if (!value.match(/^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/g)) {
+                        return true;
+                    }
+                }
+            },
+            lastname: function (field) {
+                if (field.name == "lastname") {
+                    var value = field.value;
+                    if (!value.match(/^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/g)) {
+                        return true;
+                    }
+                }
+            },
+            phone: function (field) {
+                if (field.name == "phone") {
+                    var value = field.value;
+                    if (value.length !== 10) {
+                        return true;
+                    }
+                }
+            },
+            dni: function (field) {
+                if (field.name == "document") {
+                    var value = field.value;
+                    if (!value.match(/^[0-9]+$/)) {
+                        return true;
+                    }
+                    if (value.length < 7 || value.length > 10) {
+                        return true;
+                    }
+                }
+            },
+            emailVerified: function (field) {
+                var array_email = field.value.split("@");
+                var res = _emails__WEBPACK_IMPORTED_MODULE_0__.emails.find(function (m) { return m === array_email[1]; });
+                return res === undefined ? false : true;
+            },
+        },
+        messages: {
+            missingValue: {
+                checkbox: "Debe aceptar Términos y condiciones y Políticas de privacidad.",
+                default: "Este campo es obligatorio",
+            },
+            // agegate:"Debes ser mayor de edad",
+            privacy: "Debe aceptar políticas de privacidad.",
+            terms: "Debe aceptar términos y condiciones.",
+            emailVerified: "Por favor ingrese un email válido",
+            name: "No se permiten números o caracteres especiales",
+            lastname: "No se permiten números o caracteres especiales",
+            nameYlastname: "No se permiten números",
+            phone: "Teléfono debe tener entre 10  dígitos, ni más ni menos",
+            dni: "El documento debe tener entre 7 a 10 dígitos",
+            zip: "Debe tener 5 dígitos ",
+            patternMismatch: {
+                email: "Por favor ingrese un email válido",
+            },
+        },
+    });
+};
 
 
 /***/ }),
@@ -23482,6 +23854,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
