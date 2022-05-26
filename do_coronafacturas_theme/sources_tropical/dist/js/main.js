@@ -10735,7 +10735,7 @@ var page = function () { return __awaiter(void 0, void 0, void 0, function () {
                 cardSticky.classList.add('close');
             });
         }
-        // validateForm()
+        validateForm();
         scrollTo();
         return [2 /*return*/];
     });

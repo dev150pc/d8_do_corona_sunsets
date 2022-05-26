@@ -18,7 +18,7 @@ export const page = async () => {
         })
     }
 
-    // validateForm()
+    validateForm()
     scrollTo()
 }
 
