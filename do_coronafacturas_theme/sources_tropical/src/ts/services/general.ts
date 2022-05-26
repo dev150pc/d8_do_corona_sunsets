@@ -33,16 +33,17 @@ const scrollTo = () => {
 }
 
 const validateForm = () => {
-  if (!document.querySelector('#form-login-corona')) return
+  if (!document.querySelector('form')) return
+  console.log('Dama: Validando formularios')
 
-  const bouncer = Bouncer("#form-login-corona", {
+  const bouncer = Bouncer("form", {
     patterns: {
       email:
         /^[a-z0-9!#$%&'*/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
     },
     customValidations: {
       name: function (field: any) {
-        if (field.name == "name") {
+        if (field.name == "nombre") {
           const value = field.value;
           if (!value.match(/^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/g)) {
             return true;
@@ -50,7 +51,7 @@ const validateForm = () => {
         }
       },
       lastname: function (field: any) {
-        if (field.name == "lastname") {
+        if (field.name == "apellido") {
           const value = field.value;
           if (!value.match(/^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/g)) {
             return true;
@@ -66,7 +67,7 @@ const validateForm = () => {
         }
       },
       dni: function (field: any) {
-        if (field.name == "document") {
+        if (field.name == "cedula") {
           const value = field.value;
           if (!value.match(/^[0-9]+$/)) {
             return true;

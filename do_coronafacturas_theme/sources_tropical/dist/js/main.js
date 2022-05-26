@@ -10750,15 +10750,16 @@ var scrollTo = function () {
     anchor.click();
 };
 var validateForm = function () {
-    if (!document.querySelector('#form-login-corona'))
+    if (!document.querySelector('form'))
         return;
-    var bouncer = formbouncerjs__WEBPACK_IMPORTED_MODULE_0___default()("#form-login-corona", {
+    console.log('Dama: Validando formularios');
+    var bouncer = formbouncerjs__WEBPACK_IMPORTED_MODULE_0___default()("form", {
         patterns: {
             email: /^[a-z0-9!#$%&'*/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
         },
         customValidations: {
             name: function (field) {
-                if (field.name == "name") {
+                if (field.name == "nombre") {
                     var value = field.value;
                     if (!value.match(/^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/g)) {
                         return true;
@@ -10766,7 +10767,7 @@ var validateForm = function () {
                 }
             },
             lastname: function (field) {
-                if (field.name == "lastname") {
+                if (field.name == "apellido") {
                     var value = field.value;
                     if (!value.match(/^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]*$/g)) {
                         return true;
@@ -10782,7 +10783,7 @@ var validateForm = function () {
                 }
             },
             dni: function (field) {
-                if (field.name == "document") {
+                if (field.name == "cedula") {
                     var value = field.value;
                     if (!value.match(/^[0-9]+$/)) {
                         return true;
