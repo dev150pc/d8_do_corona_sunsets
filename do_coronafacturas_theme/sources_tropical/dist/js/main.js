@@ -10735,10 +10735,20 @@ var page = function () { return __awaiter(void 0, void 0, void 0, function () {
                 cardSticky.classList.add('close');
             });
         }
-        validateForm();
+        // validateForm()
+        scrollTo();
         return [2 /*return*/];
     });
 }); };
+var scrollTo = function () {
+    window.location.hash;
+    if (!window.location.hash)
+        return;
+    var anchor = document.createElement("a");
+    anchor.setAttribute("href", window.location.hash);
+    anchor.setAttribute("class", "hidden");
+    anchor.click();
+};
 var validateForm = function () {
     if (!document.querySelector('#form-login-corona'))
         return;

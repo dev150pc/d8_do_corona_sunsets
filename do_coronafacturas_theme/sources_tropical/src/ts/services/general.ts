@@ -18,7 +18,18 @@ export const page = async () => {
         })
     }
 
-    validateForm()
+    // validateForm()
+    scrollTo()
+}
+
+const scrollTo = () => {
+  window.location.hash
+  if(!window.location.hash) return
+
+  const anchor = document.createElement("a");
+  anchor.setAttribute("href", window.location.hash);
+  anchor.setAttribute("class", "hidden");
+  anchor.click();
 }
 
 const validateForm = () => {
