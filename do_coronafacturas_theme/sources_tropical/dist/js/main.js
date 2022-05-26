@@ -9455,7 +9455,7 @@ var routes = [
     {
         name: 'tropical',
         // path: ['/index.html','/natural'],
-        path: ['/corona-tropical'],
+        path: ['/', '/corona-tropical'],
         page: 'tropical'
     },
 ];
