@@ -263,14 +263,14 @@
 				</h2>
 			</div>
 			<section class="containerRequestDrink__image">
-				<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/latas.png')}}">
+				<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/latas.png')}}" alt="corona tropical dominicana" title="corona tropical dominicana">
 			</section>
 		</div>
 	</div>
 
 	<div class="containerCommerce">
 		<div class="containerCommerce__body">
-			<h2 class="containerCommerce__title">Encuéntralas en :</h2>
+			<p class="containerCommerce__title">Encuéntralas en :</p>
 			<ul class="containerCommerce__list">
 				{% for paragraph in node.field_commerce %}
 					<li class="containerCommerce__list-item">
@@ -318,15 +318,15 @@
 					{% for paragraph in node.field_question %}
 					<div class="block {% if key == 1 %}active{% endif %}">
 							<div class="block__question">
-									<h2 class="block__question-text">
+									<h3 class="block__question-text">
 											<div class="block__question-text-nb">{% if key > 10 %}{{key}}{% else %}0{{ key }}{% endif %}</div>
 											<div class="block__question-text-qs">{{ paragraph.entity.field_title.value }}</div>
-									</h2>
+									</h3>
 									<div class="block__question-pin">
 									</div>
 							</div>
 							<div class="block__answer">
-									<p>{{ paragraph.entity.field_description.value | raw }}</p>
+									<div>{{ paragraph.entity.field_description.value | raw }}</div>
 							</div>
 					</div>
 					{% set key = key + 1 %}
