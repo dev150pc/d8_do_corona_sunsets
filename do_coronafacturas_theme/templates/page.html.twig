@@ -48,11 +48,11 @@
 
 
 {# Header component #}
-{% block header %}	
+{% block header %}
 	{%  if logged_in %}
 		{% include directory ~ '/templates/navigation/header-logged.html.twig' %}
 	{%  else  %}
-		{% include directory ~ '/templates/navigation/header.html.twig' %}		
+		{% include directory ~ '/templates/navigation/header.html.twig' %}
 	{% endif %}
 
 {% endblock %}
@@ -65,3 +65,41 @@
 {% block footer %}
 	{% include directory ~ '/templates/navigation/footer.html.twig' %}
 {% endblock %}
+
+<script>
+const formsubmit = document.querySelector('.p_formulario_ input[type="submit"]');
+if(formsubmit) {
+	formsubmit.addEventListener('click', e => {
+		window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
+		Krux('ns:abimaz','admEvent', 'OGdByARj', {event_type:'registration'});
+
+		window.dotq = window.dotq || [];
+		window.dotq.push(
+		{
+		'projectId': '10000',
+		'properties': {
+		'pixelId': '10151796',
+		'qstrings': {
+		'et': 'custom',
+		'ea':'{INSERT_MACRO_HERE}'
+		}
+		}});
+	});
+}
+</script>
+<script>
+  window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
+  Krux('ns:abimaz','admEvent', 'O2urt2eG', {event_type:'registration'});
+</script>
+<script type="application/javascript">
+window.dotq = window.dotq || [];
+window.dotq.push(
+{
+'projectId': '10000',
+'properties': {
+'pixelId': '10151796',
+'qstrings': {
+'et': 'custom',
+'ea':'registro'
+}
+} } ); </script>
