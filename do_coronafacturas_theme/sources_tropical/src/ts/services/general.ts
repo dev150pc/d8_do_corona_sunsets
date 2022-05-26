@@ -1,8 +1,8 @@
 // import dama from "/modules/dama.js";
 // import apiDrupal from "./api.js";
 // const dm = new dama();
-import { emails } from "./emails";
 import Bouncer from "formbouncerjs";
+import { emails } from "./emails";
 
 
 // const api = new apiDrupal();
@@ -17,10 +17,14 @@ export const page = async () => {
             cardSticky.classList.add('close')
         })
     }
+
+    validateForm()
 }
 
 const validateForm = () => {
-  const bouncer = Bouncer("form", {
+  if (!document.querySelector('#form-login-corona')) return
+
+  const bouncer = Bouncer("#form-login-corona", {
     patterns: {
       email:
         /^[a-z0-9!#$%&'*/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,

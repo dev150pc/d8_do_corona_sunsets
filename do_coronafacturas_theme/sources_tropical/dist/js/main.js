@@ -10678,9 +10678,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "page": () => (/* binding */ page)
 /* harmony export */ });
-/* harmony import */ var _emails__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./emails */ "./src/ts/services/emails.ts");
-/* harmony import */ var formbouncerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formbouncerjs */ "./node_modules/formbouncerjs/dist/bouncer.polyfills.min.js");
-/* harmony import */ var formbouncerjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(formbouncerjs__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var formbouncerjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! formbouncerjs */ "./node_modules/formbouncerjs/dist/bouncer.polyfills.min.js");
+/* harmony import */ var formbouncerjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(formbouncerjs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emails__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./emails */ "./src/ts/services/emails.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -10735,11 +10735,14 @@ var page = function () { return __awaiter(void 0, void 0, void 0, function () {
                 cardSticky.classList.add('close');
             });
         }
+        validateForm();
         return [2 /*return*/];
     });
 }); };
 var validateForm = function () {
-    var bouncer = formbouncerjs__WEBPACK_IMPORTED_MODULE_1___default()("form", {
+    if (!document.querySelector('#form-login-corona'))
+        return;
+    var bouncer = formbouncerjs__WEBPACK_IMPORTED_MODULE_0___default()("#form-login-corona", {
         patterns: {
             email: /^[a-z0-9!#$%&'*/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
         },
@@ -10781,7 +10784,7 @@ var validateForm = function () {
             },
             emailVerified: function (field) {
                 var array_email = field.value.split("@");
-                var res = _emails__WEBPACK_IMPORTED_MODULE_0__.emails.find(function (m) { return m === array_email[1]; });
+                var res = _emails__WEBPACK_IMPORTED_MODULE_1__.emails.find(function (m) { return m === array_email[1]; });
                 return res === undefined ? false : true;
             },
         },
