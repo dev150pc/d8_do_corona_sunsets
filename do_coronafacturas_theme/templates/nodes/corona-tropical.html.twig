@@ -122,7 +122,7 @@
 			<div class="sabores__category" data-aos="fade-up" data-aos-duration="2000">
 				{% set key = 1 %}
 				{% for paragraph in node.field_product %}
-					<div class="sabores__category-box {% if key == 1 %}green active {% endif %}{% if key == 2 %} pink {% endif %}{% if key == 3 %} yellow {% endif %}{% if key == 4 %} red {% endif %}" data-category="{{key}}">
+					<div onclick="sendDataLayer('Corona Tropical','Descubre sus 4 sabores','{{ paragraph.entity.field_title.value }}')" class="sabores__category-box {% if key == 1 %}green active {% endif %}{% if key == 2 %} pink {% endif %}{% if key == 3 %} yellow {% endif %}{% if key == 4 %} red {% endif %}" data-category="{{key}}">
 						<p>{{ paragraph.entity.field_title.value | raw }}</p>
 					</div>
 					{% set key = key + 1 %}
@@ -199,7 +199,7 @@
 											</div>
                     </div>
 									</div>
-									<a href="{{ paragraph.entity.field_link.0.url }}" class="button" id="btn-buy" onclick="dataLayerBuyBtn('{{ paragraph.entity.field_title.value | raw }}')">{{ paragraph.entity.field_link.title }}</a>
+									<a href="{{ paragraph.entity.field_link.0.url }}" class="button" id="btn-buy" onclick="sendDataLayer('Corona Tropical','Comprar ahora','{{ paragraph.entity.field_title.value }}')">{{ paragraph.entity.field_link.title }}</a>
 								</div>
 							</div>
 						</div>
@@ -274,7 +274,7 @@
 			<ul class="containerCommerce__list">
 				{% for paragraph in node.field_commerce %}
 					<li class="containerCommerce__list-item">
-						<a href="{{ paragraph.entity.field_link.0.url }}" target="blank" class="commerce-card" onclick="dataLayerComercio('{{ paragraph.entity.field_commtitle.value }}')">
+						<a href="{{ paragraph.entity.field_link.0.url }}" target="blank" class="commerce-card" onclick="sendDataLayer('Corona Tropical','Ir ahora - Ta Da','Clic')">
 							{% for image in paragraph.entity.field_image_media %}
 								{% if image.entity %}
 									{% set media = image.entity %}
@@ -306,7 +306,7 @@
 	<div class="containerExperience">
 		{% for paragraph in node.field_experience %}
 		<h2 class="containerExperience__title">{{ paragraph.entity.field_title.value }}</h2>
-		<a class="containerExperience__button" href="{{ paragraph.entity.field_link.0.url }}" target="blank" onclick="sendDataLayer('Corona Tropical','Ir ahora','{{ paragraph.entity.field_commtitle.value }}')">{{ paragraph.entity.field_link.title }}</a>
+		<a class="containerExperience__button" href="{{ paragraph.entity.field_link.0.url }}" target="blank" onclick="sendDataLayer('Corona Tropical','Contestar encuesta','Clic')">{{ paragraph.entity.field_link.title }}</a>
 		{% endfor %}
 		<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja5.png')}}" class="compra__hoja5" alt="compra__hoja5"/>
 	</div>
@@ -337,27 +337,6 @@
 
 </div>
 <script>
-    function dataLayerBuyBtn(title) {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'trackEvent',
-            'eventCategory': 'Corona Tropical', // Categoría del evento (String). Requerido.
-            'eventAction': 'Comprar ahora', // Acción o subcategoría del evento (String). Requerido.
-            'eventLabel': title, // Etiqueta de descripción del evento (String). Requerido.
-        });
-        console.log(title);
-    }
-    function dataLayerComercio(title) {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'trackEvent',
-            'eventCategory': 'Corona Tropical', // Categoría del evento (String). Requerido.
-            'eventAction': 'Ir ahora', // Acción o subcategoría del evento (String). Requerido.
-            'eventLabel': title, // Etiqueta de descripción del evento (String). Requerido.
-        });
-        console.log(title);
-    }
-
 		function sendDataLayer(category,action,title) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
@@ -366,6 +345,5 @@
             'eventAction': action, // Acción o subcategoría del evento (String). Requerido.
             'eventLabel': title, // Etiqueta de descripción del evento (String). Requerido.
         });
-        console.log(title);
     }
 </script>
