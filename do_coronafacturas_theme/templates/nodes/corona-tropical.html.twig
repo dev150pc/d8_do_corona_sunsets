@@ -119,7 +119,7 @@
 
 			<h2 class="sabores__title-h1">{{ node.field_title.value | raw }}</h2>
 
-			<div class="sabores__category" data-aos="fade-up" data-aos-duration="2000">
+			<nav class="sabores__category" data-aos="fade-up" data-aos-duration="2000">
 				{% set key = 1 %}
 				{% for paragraph in node.field_product %}
 					<div onclick="sendDataLayer('Corona Tropical','Descubre sus 4 sabores','{{ paragraph.entity.field_title.value }}')" class="sabores__category-box {% if key == 1 %}green active {% endif %}{% if key == 2 %} pink {% endif %}{% if key == 3 %} yellow {% endif %}{% if key == 4 %} red {% endif %}" data-category="{{key}}">
@@ -127,7 +127,7 @@
 					</div>
 					{% set key = key + 1 %}
 				{% endfor %}
-			</div>
+			</nav>
 
 			<div class="saboresSwiper">
 				<div class="saboresSwiper-content">
