@@ -2521,7 +2521,11 @@ html, body, body *, *, *::before, *::after {
         border-radius: 8px;
         display: flex;
         align-items: center;
-        justify-content: center; }
+        justify-content: center;
+        transition: all 0.3s ease-in-out; }
+        .sabores .content .text .button:hover {
+          transform: translateY(-5px);
+          box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); }
 
 /* LAYOUT */
 #tropical-page {
