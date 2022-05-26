@@ -133,7 +133,7 @@
 				<div class="saboresSwiper-content">
 					{% set key_value = 1 %}
 					{% for paragraph in node.field_product %}
-						<div id="{% if key_value == 1 %}sabor-lima-limon{% endif %}{% if key_value == 2 %}sabor-limon-toronja{% endif %}{% if key_value == 3 %}sabor-limon-frutos-amarillos{% endif %}{% if key_value == 4 %}sabor-limon-frutos-rojos{% endif %}" class="saboresSwiper__slide slide{{key_value}} {% if key_value == 1 %}active{% endif %}" data-category="{{key_value}}">
+						<div id="slide{{key_value}}" class="saboresSwiper__slide slide{{key_value}} {% if key_value == 1 %}active{% endif %}" data-category="{{key_value}}">
 							<div class="content">
 								<div class="image">
 									<div class="image__fondo"></div>
@@ -215,7 +215,7 @@
 
 	<div class="ritual" id="ritual">
 		<div class="introduction">
-			<p class="introduction__h2">{{ node.field_description.value | raw }}</p>
+			<div class="introduction__h2">{{ node.field_description.value | raw }}</div>
 			<div class="introduction__h1">{{ node.field_title_two.value | raw }}</div>
 		</div>
 

@@ -581,6 +581,9 @@
                 .text .button {
                     background-color: $green2
                 }
+                .image__fondo {
+                  background-color: #D3D12E;
+                }
             }
 
             &:nth-child(2) {
@@ -589,6 +592,9 @@
                 }
                 .text .button {
                     background-color: $pink2
+                }
+                .image__fondo {
+                  background-color: #D77696 ;
                 }
             }
 
@@ -599,6 +605,9 @@
                 .text .button {
                     background-color: $yellow2
                 }
+                .image__fondo {
+                  background-color: #EB8750;
+                }
             }
 
             &:nth-child(4) {
@@ -607,6 +616,9 @@
                 }
                 .text .button {
                     background-color: $toronja
+                }
+                .image__fondo {
+                  background-color: #F2B8B8;
                 }
             }
         }
@@ -664,6 +676,7 @@
                 border-radius: 50%;
                 margin-top: 75px;
                 z-index: -2;
+                transition: all 100ms ease;
 
                 @include mq(lap) {
                     width: 370px;
