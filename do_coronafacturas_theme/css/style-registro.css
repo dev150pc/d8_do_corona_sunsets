@@ -53,6 +53,7 @@ font-family: 'Corona Headline', sans-serif;
 	align-items: center;
 	margin-left: -15rem;
 	order: 3;
+  display: none;
 }
 
 .p_g_navegacion_2{
@@ -926,7 +927,7 @@ font-family: 'Corona Headline', sans-serif;
 }
 
 #edit-archivo input {
-	
+
 
 	display: none;
 }
