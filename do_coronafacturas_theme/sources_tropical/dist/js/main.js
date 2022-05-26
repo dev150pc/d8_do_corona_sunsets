@@ -10775,7 +10775,7 @@ var validateForm = function () {
                 }
             },
             phone: function (field) {
-                if (field.name == "phone") {
+                if (field.name == "celular") {
                     var value = field.value;
                     if (value.length !== 10) {
                         return true;
@@ -10788,7 +10788,7 @@ var validateForm = function () {
                     if (!value.match(/^[0-9]+$/)) {
                         return true;
                     }
-                    if (value.length < 7 || value.length > 10) {
+                    if (value.length < 7 || value.length > 11) {
                         return true;
                     }
                 }
@@ -10812,7 +10812,7 @@ var validateForm = function () {
             lastname: "No se permiten números o caracteres especiales",
             nameYlastname: "No se permiten números",
             phone: "Teléfono debe tener entre 10  dígitos, ni más ni menos",
-            dni: "El documento debe tener entre 7 a 10 dígitos",
+            dni: "El documento debe tener entre 7 a 11 dígitos",
             zip: "Debe tener 5 dígitos ",
             patternMismatch: {
                 email: "Por favor ingrese un email válido",
