@@ -3,6 +3,11 @@
     font-size: 18px;
     background-size: contain;
     overflow: hidden;
+
+    & > .pin-spacer {
+        height: 93vh;
+        width: 100vw;
+    }
 }
 
 .banner {

@@ -2542,6 +2542,9 @@ html, body, body *, *, *::before, *::after {
   font-size: 18px;
   background-size: contain;
   overflow: hidden; }
+  #tropical-page > .pin-spacer {
+    height: 93vh;
+    width: 100vw; }
 
 .banner {
   width: 100%;
