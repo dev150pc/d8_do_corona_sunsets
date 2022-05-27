@@ -5,13 +5,13 @@
     overflow: hidden;
 
     & > .pin-spacer {
-        height: 93vh;
-        width: 100vw;
+        height: 93vh !important;
+        width: 100vw !important;
     }
 }
 
 .banner {
-    width: 100%;
+    width: 100% !important;
     height: 93vh !important;
     color: $white;
     position: relative;
