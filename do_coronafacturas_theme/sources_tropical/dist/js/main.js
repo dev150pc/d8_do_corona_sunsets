@@ -9578,19 +9578,10 @@ __webpack_require__.r(__webpack_exports__);
 var page = function () {
     window.onload = function () {
         initialize();
-        validateFirstLoad();
         window.scrollTo(0, 0);
     };
 };
 var tweens = [];
-var validateFirstLoad = function () {
-    var pageLoad = localStorage.getItem('pageLoad');
-    if (!pageLoad) {
-        console.log("reset");
-        localStorage.setItem('pageLoad', '1');
-        location.reload();
-    }
-};
 function initialize() {
     var bannerInitial = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.banner', {
         modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],

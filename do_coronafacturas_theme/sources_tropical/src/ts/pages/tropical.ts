@@ -21,21 +21,11 @@ import SplitTextV2 from '../components/splitTextV2';
 export const page = function () {
     window.onload = function () {
       initialize()
-      validateFirstLoad()
       window.scrollTo(0, 0)
     }
 }
 
 let tweens = []
-
-const validateFirstLoad = () => {
-  const pageLoad = localStorage.getItem('pageLoad');
-  if (!pageLoad) {
-    console.log("reset");
-    localStorage.setItem('pageLoad', '1');
-    location.reload()
-  }
-}
 
 function initialize() {
     const bannerInitial = new Swiper('.banner', {

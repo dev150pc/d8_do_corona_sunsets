@@ -19,7 +19,7 @@
 
 
 				<div class="form-age__content">
-					<button class="age_gate_yes" data-qadp="age_gate_yes">{{"SÍ"|t}}</button>
+					<button class="age_gate_yes" data-qadp="age_gate_yes" onclick="validateFirstLoad()">{{"SÍ"|t}}</button>
 					<button class="age_gate_no" data-qadp="age_gate_no">{{"NO"|t}}</button></div>
 					{# load legal #}
 					<div class="legal__load">
@@ -97,4 +97,12 @@
 				}
 			);
 		}
+
+    window.validateFirstLoad = () => {
+      const pageLoad = localStorage.getItem('pageLoad');
+      if (!pageLoad) {
+        localStorage.setItem('pageLoad', '1');
+        location.reload()
+      }
+  }
 	</script>
