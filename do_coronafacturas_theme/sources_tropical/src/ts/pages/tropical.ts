@@ -26,7 +26,6 @@ export const page = function () {
     }
     window.addEventListener('resize', function () {
       initialize()
-      console.log('resize')
     })
 }
 
@@ -66,6 +65,8 @@ function initialize() {
     });
 
     modalToggle()
+    ScrollTrigger.config({autoRefreshEvents: "DOMContentLoaded,load,visibilitychange"});
+
 
     bannerFixed()
     gsapScrollToSlide()

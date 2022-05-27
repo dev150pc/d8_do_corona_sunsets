@@ -9552,8 +9552,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
 /* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
 /* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination/pagination.min.css");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 /* harmony import */ var swiper_css_effect_fade__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/css/effect-fade */ "./node_modules/swiper/modules/effect-fade/effect-fade.min.css");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_5__);
@@ -9583,7 +9583,6 @@ var page = function () {
     };
     window.addEventListener('resize', function () {
         initialize();
-        console.log('resize');
     });
 };
 var tweens = [];
@@ -9619,6 +9618,7 @@ function initialize() {
         },
     });
     modalToggle();
+    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__.ScrollTrigger.config({ autoRefreshEvents: "DOMContentLoaded,load,visibilitychange" });
     bannerFixed();
     gsapScrollToSlide();
     lemonsParallax();
@@ -9638,7 +9638,7 @@ function initialize() {
     aos__WEBPACK_IMPORTED_MODULE_5___default().init();
 }
 function lemonsParallax() {
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__limon1', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__limon1', {
         scrollTrigger: {
             trigger: '.sabores__limon1',
             scrub: 2,
@@ -9647,7 +9647,7 @@ function lemonsParallax() {
         yPercent: 100,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__limon2', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__limon2', {
         scrollTrigger: {
             trigger: '.sabores__limon2',
             scrub: 5,
@@ -9655,7 +9655,7 @@ function lemonsParallax() {
         yPercent: 200,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__limon3', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__limon3', {
         scrollTrigger: {
             trigger: '.sabores__limon3',
             scrub: 2,
@@ -9663,7 +9663,7 @@ function lemonsParallax() {
         yPercent: 200,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__limon4', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__limon4', {
         scrollTrigger: {
             trigger: '.sabores__limon4',
             scrub: 4,
@@ -9671,7 +9671,7 @@ function lemonsParallax() {
         yPercent: 200,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__limon5', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__limon5', {
         scrollTrigger: {
             trigger: '.sabores__limon5',
             scrub: 3,
@@ -9679,7 +9679,7 @@ function lemonsParallax() {
         yPercent: 200,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__limon6', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__limon6', {
         scrollTrigger: {
             trigger: '.sabores__limon6',
             scrub: 5,
@@ -9687,7 +9687,7 @@ function lemonsParallax() {
         yPercent: 200,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__limon7', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__limon7', {
         scrollTrigger: {
             trigger: '.sabores__limon7',
             scrub: 3,
@@ -9722,7 +9722,7 @@ function modalToggle() {
     }
 }
 function bannerFixed() {
-    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_10__.ScrollTrigger.create({
+    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__.ScrollTrigger.create({
         trigger: '.swiper-container.banner',
         start: "top top",
         pin: true,
@@ -9731,7 +9731,7 @@ function bannerFixed() {
     });
 }
 function parallaxSheets() {
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__hoja1', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__hoja1', {
         scrollTrigger: {
             trigger: '.sabores__hoja1',
             scrub: 3,
@@ -9740,7 +9740,7 @@ function parallaxSheets() {
         yPercent: 70,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__hoja2', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__hoja2', {
         scrollTrigger: {
             trigger: '.sabores__hoja2',
             scrub: 4,
@@ -9749,7 +9749,7 @@ function parallaxSheets() {
         yPercent: 70,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__hoja3', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__hoja3', {
         scrollTrigger: {
             trigger: '.sabores__hoja3',
             scrub: 3,
@@ -9758,7 +9758,7 @@ function parallaxSheets() {
         yPercent: 70,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.sabores__hoja4', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.sabores__hoja4', {
         scrollTrigger: {
             trigger: '.sabores__hoja4',
             scrub: 4,
@@ -9767,7 +9767,7 @@ function parallaxSheets() {
         yPercent: 70,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from(".discoverFlavors--leaf", {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from(".discoverFlavors--leaf", {
         scrollTrigger: {
             trigger: '.discoverFlavors--leaf',
             scrub: 3,
@@ -9776,7 +9776,7 @@ function parallaxSheets() {
         yPercent: 50,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(".compra__hoja1", {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(".compra__hoja1", {
         scrollTrigger: {
             trigger: '.compra__hoja1',
             scrub: 1,
@@ -9785,7 +9785,7 @@ function parallaxSheets() {
         yPercent: -50,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(".tips__hoja1", {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(".tips__hoja1", {
         scrollTrigger: {
             trigger: '.tips__hoja1',
             scrub: 1,
@@ -9794,7 +9794,7 @@ function parallaxSheets() {
         yPercent: -50,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(".compra__hoja3", {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(".compra__hoja3", {
         scrollTrigger: {
             trigger: '.compra__hoja3',
             scrub: 1,
@@ -9803,7 +9803,7 @@ function parallaxSheets() {
         yPercent: -80,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(".compra__hoja4", {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(".compra__hoja4", {
         scrollTrigger: {
             trigger: '.compra__hoja4',
             scrub: 1,
@@ -9812,7 +9812,7 @@ function parallaxSheets() {
         yPercent: -200,
         ease: 'none'
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(".compra__hoja5", {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(".compra__hoja5", {
         scrollTrigger: {
             trigger: '.compra__hoja5',
             scrub: 1,
@@ -9823,8 +9823,8 @@ function parallaxSheets() {
     });
 }
 function animationBotleClass() {
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_10__.ScrollTrigger);
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from(".discoverFlavors__body--bottle", {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__.ScrollTrigger);
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from(".discoverFlavors__body--bottle", {
         scrollTrigger: {
             trigger: '.discoverFlavors__body',
             start: 'top 60%',
@@ -9838,7 +9838,7 @@ function animationBotleClass() {
     });
 }
 function animacionBotella(section, index) {
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_10__.ScrollTrigger);
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__.ScrollTrigger);
     function setBackgrounP() {
         var body = document.body.clientWidth;
         var position;
@@ -9867,7 +9867,7 @@ function animacionBotella(section, index) {
         var bottle = section.querySelector('.image__botella');
         var frame_count = 9, offset_value = 50;
         if (index == 0) {
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(bottle, {
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(bottle, {
                 backgroundPosition: (-setBackgrounP() * frame_count * 2) + "px 50%",
                 ease: "steps(" + frame_count + ")",
                 scrollTrigger: {
@@ -9879,7 +9879,7 @@ function animacionBotella(section, index) {
             });
         }
         else {
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(bottle, {
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(bottle, {
                 backgroundPosition: (-setBackgrounP() * frame_count * 2) + "px 50%",
                 ease: "steps(".concat(frame_count, ")"),
                 scrollTrigger: {
@@ -9898,15 +9898,15 @@ function gsapScrollToSlide() {
     var firstBg = document.querySelector('.swiper-background__first');
     var bgImage = document.querySelector('.swiper-background');
     var contentFromTopPosition = (window.innerHeight - document.querySelector('.saboresSwiper__slide').offsetHeight) / 2;
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_10__.ScrollTrigger);
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to('.swiper-background', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__.ScrollTrigger);
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to('.swiper-background', {
         scrollTrigger: {
             trigger: '.sabores',
             pin: '.swiper-background',
             scrub: true
         }
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.utils.toArray(".saboresSwiper__slide").forEach(function (section, i) {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.utils.toArray(".saboresSwiper__slide").forEach(function (section, i) {
         var parts = 3;
         var fruta = section.querySelector('.image__frutas');
         var fondo = section.querySelector('.image__fondo');
@@ -9920,7 +9920,7 @@ function gsapScrollToSlide() {
         new _splitText__WEBPACK_IMPORTED_MODULE_7__["default"](".slide".concat(i + 1, " .text__parag-1"));
         new _splitText__WEBPACK_IMPORTED_MODULE_7__["default"](".slide".concat(i + 1, " .text__parag-2"));
         if (i == 0) {
-            tweens.push(gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(section, {
+            tweens.push(gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(section, {
                 ease: "steps(".concat(parts, ")"),
                 scrollTrigger: {
                     trigger: section,
@@ -9941,7 +9941,7 @@ function gsapScrollToSlide() {
                     }
                 },
             }));
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from(fruta, {
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from(fruta, {
                 scale: 0,
                 y: -200,
                 x: -100,
@@ -9955,7 +9955,7 @@ function gsapScrollToSlide() {
                     toggleActions: "restart none none none"
                 },
             });
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from(fondo, {
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from(fondo, {
                 scale: 0,
                 ease: 'none',
                 scrollTrigger: {
@@ -9966,19 +9966,7 @@ function gsapScrollToSlide() {
                     toggleActions: "restart none none none"
                 },
             });
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from(pointText, {
-                scale: 0,
-                x: 200,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top center',
-                    end: 'top top',
-                    scrub: true,
-                    toggleActions: "restart none none none"
-                },
-            });
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from(pointMl, {
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from(pointText, {
                 scale: 0,
                 x: 200,
                 ease: 'none',
@@ -9990,7 +9978,7 @@ function gsapScrollToSlide() {
                     toggleActions: "restart none none none"
                 },
             });
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from(pointMade, {
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from(pointMl, {
                 scale: 0,
                 x: 200,
                 ease: 'none',
@@ -10002,7 +9990,7 @@ function gsapScrollToSlide() {
                     toggleActions: "restart none none none"
                 },
             });
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from(pointCal, {
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from(pointMade, {
                 scale: 0,
                 x: 200,
                 ease: 'none',
@@ -10014,7 +10002,19 @@ function gsapScrollToSlide() {
                     toggleActions: "restart none none none"
                 },
             });
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from(pointImage, {
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from(pointCal, {
+                scale: 0,
+                x: 200,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top center',
+                    end: 'top top',
+                    scrub: true,
+                    toggleActions: "restart none none none"
+                },
+            });
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from(pointImage, {
                 scale: 0,
                 x: 200,
                 ease: 'none',
@@ -10029,7 +10029,7 @@ function gsapScrollToSlide() {
             animacionBotella(section, i);
         }
         else if (i == 3) {
-            tweens.push(gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(section, {
+            tweens.push(gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(section, {
                 ease: "steps(".concat(parts, ")"),
                 scrollTrigger: {
                     trigger: section,
@@ -10054,7 +10054,7 @@ function gsapScrollToSlide() {
                     }
                 },
             }));
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from(fruta, {
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from(fruta, {
                 scale: 0.5,
                 x: -150,
                 ease: 'none',
@@ -10070,7 +10070,7 @@ function gsapScrollToSlide() {
             animacionBotella(section, i);
         }
         else {
-            tweens.push(gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(section, {
+            tweens.push(gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(section, {
                 ease: "steps(".concat(parts, ")"),
                 scrollTrigger: {
                     trigger: section,
@@ -10099,7 +10099,7 @@ function gsapScrollToSlide() {
                     }
                 },
             }));
-            gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.fromTo(fruta, {
+            gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.fromTo(fruta, {
                 scale: 0.5,
                 x: -150,
                 ease: 'none',
@@ -10131,9 +10131,9 @@ function gsapScrollToSlide() {
     });
 }
 function animateTitle() {
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_10__.ScrollTrigger);
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__.ScrollTrigger);
     var windowWindth = document.body.clientWidth;
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.fromTo(".textoBig__h1", {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.fromTo(".textoBig__h1", {
         scrollTrigger: {
             trigger: '.textoBig__h1',
             start: 'center 100%',
@@ -10233,8 +10233,8 @@ function animationFallingFruits() {
     if (boxAnimate) {
         boxAnimateWidth = boxAnimate.clientWidth;
     }
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_10__.ScrollTrigger);
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(".boxAnimation__img", {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__.ScrollTrigger);
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(".boxAnimation__img", {
         scrollTrigger: {
             trigger: ".boxAnimation__img",
             start: "top 70%",
@@ -10247,7 +10247,7 @@ function animationFallingFruits() {
         duration: 3,
         // scale: setScale()
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.bebida1', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.bebida1', {
         y: 435,
         x: -100,
         rotate: -150,
@@ -10259,7 +10259,7 @@ function animationFallingFruits() {
             id: 'bebida1'
         },
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.bebida2', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.bebida2', {
         y: 415,
         x: -115,
         rotate: -150,
@@ -10272,7 +10272,7 @@ function animationFallingFruits() {
             id: 'bebida2'
         },
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.bebida3', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.bebida3', {
         y: 280,
         x: 70,
         rotate: 0,
@@ -10285,7 +10285,7 @@ function animationFallingFruits() {
             id: 'bebida3'
         },
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.gota1', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.gota1', {
         y: 200,
         x: 20,
         ease: 'none',
@@ -10297,7 +10297,7 @@ function animationFallingFruits() {
             id: 'gota1'
         },
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.gota2', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.gota2', {
         y: 100,
         x: -70,
         ease: 'none',
@@ -10309,7 +10309,7 @@ function animationFallingFruits() {
             id: 'gota2'
         },
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.boxAnimation__vaso-fondo', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.boxAnimation__vaso-fondo', {
         scaleY: 0,
         bottom: -60,
         ease: 'none',
@@ -10323,7 +10323,7 @@ function animationFallingFruits() {
     });
 }
 function animateThirdSection() {
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.from('.containerRequestDrink__bg', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.from('.containerRequestDrink__bg', {
         scaleY: 0,
         transformOrigin: 'bottom',
         ease: 'none',
@@ -10334,7 +10334,7 @@ function animateThirdSection() {
             scrub: 1
         },
     });
-    gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to('.containerRequestDrink__image', {
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to('.containerRequestDrink__image', {
         duration: .8,
         opacity: 1,
         scrollTrigger: {
@@ -10346,9 +10346,9 @@ function animateThirdSection() {
     });
 }
 function animateCommerceSection() {
-    var commerceCards = gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.utils.toArray('.containerCommerce__list-item');
+    var commerceCards = gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.utils.toArray('.containerCommerce__list-item');
     commerceCards.forEach(function (commerce) {
-        gsap__WEBPACK_IMPORTED_MODULE_9__.gsap.to(commerce, {
+        gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(commerce, {
             duration: 1,
             opacity: 1,
             translateY: 0,
