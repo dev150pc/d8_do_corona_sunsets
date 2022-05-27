@@ -9614,12 +9614,12 @@ function initialize() {
         },
     });
     modalToggle();
+    bannerFixed();
     gsapScrollToSlide();
     lemonsParallax();
     parallaxSheets();
     animationBotleClass();
     setupSplits();
-    // bannerFixed()
     disabledControls();
     animacionBotella();
     animateTitle();
