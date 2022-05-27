@@ -1,0 +1,148 @@
+.shop {
+    max-width: 1390px;
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    align-items: flex-start;
+    padding: 80px 0;
+    font-family: $coronaHeadlineSB;
+    font-size: 18px;
+
+    @include mq(tab) {
+        flex-direction: column;
+        padding: 0 0 40px;
+    }
+
+    &__texto {
+        width: 65%;
+        margin-right: 40px;
+
+        @include mq(tab) {
+            width: 90%;
+            margin-right: 0;
+        }
+
+        @include mq(mobS2) {
+            width: 100%;
+        }
+
+        &-h2 {
+            font-size: 36px;
+            margin: 40px 0;
+            letter-spacing: 0.05em;
+
+            @include mq(tab) {
+                font-size: 40px;
+                line-height: 1.2em;
+            }
+        }
+
+        &-22 {
+            width: 85%;
+            max-width: 420px;
+            font-size: 20px;
+            font-family: $myriadRegular;
+            color: #686868;
+
+            @include mq(tab) {
+                font-size: 18px;
+                width: 100%;
+                letter-spacing: 0.12em;
+                margin-bottom: 40px;
+            }
+
+            @include mq(mob) {
+                font-family: $coronaHeadlineSB;
+                color: $blueD;
+            }
+        }
+    }
+
+    &__boxes {
+        width: 100%;
+
+        @include mq(tab) {
+            flex-direction: column;
+        }
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $black;
+        padding: 15px 0;
+
+        &-logo {
+            max-width: 150px;
+            width: auto;
+            max-height: 55px;
+            object-fit: cover;
+            margin: auto;
+
+            &-container {
+                width: 150px;
+            }
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            justify-content: center;
+        }
+
+        &:hover {
+            .shop__box-arrow {
+                animation: animatedArrow .6s ease-in-out infinite;
+            }
+        }
+
+        &-h3 {
+            font-size: 30px;
+            margin-right: 60px;
+
+            @include mq(530) {
+                font-size: 15px;
+                margin-right: 30px;
+            }
+
+            @include mq(380) {
+                margin-right: 60px;
+            }
+        }
+
+        &-arrow {
+            position: relative;
+            width: 60px;
+            height: 4px;
+            border-radius: 4px;
+            background-color: $black;
+
+            @include mq(530) {
+                width: 40px;
+                height: 3px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0px;
+                top: -6px;
+                width: 15px;
+                height: 15px;
+                border: 3px solid $black;
+                transform: rotate(-45deg);
+                border-left-color: transparent;
+                border-top-color: transparent;
+                border-radius: 4px;
+                
+                @include mq(530) {
+                    border: 2px solid $black;
+                    border-radius: 3px;
+                    border-left-color: transparent;
+                    border-top-color: transparent;
+                }
+            }
+        }
+    }
+}

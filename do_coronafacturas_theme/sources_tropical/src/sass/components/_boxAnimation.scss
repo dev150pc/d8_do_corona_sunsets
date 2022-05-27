@@ -1,0 +1,256 @@
+.boxAnimation{
+    min-height: 1080px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    padding: 80px 0;
+
+    @include mq(lapS) {
+        min-height: 995px;
+    }
+
+    @include mq(1100) {
+        min-height: 850px;
+    }
+
+    @include mq(tab) {
+        justify-content: flex-end;
+        min-height: 880px;
+    }
+
+    @include mq(530) {
+        min-height: 700px;
+        padding: 20px 0;
+    }
+
+    @include mq(mobS2) {
+        min-height: 670px;
+        padding: 0;
+    }
+
+    &__img{
+        .bottle{
+            margin: 0 auto;
+            height: auto;
+
+            @include mq(lap) {
+                height: 500px;
+            }
+        }
+
+        @include mq(1100) {
+            transform: scale(.8);
+        }
+
+        @include mq(tabS) {
+            margin-right: 7%;
+        }
+
+        @include mq(mob) {
+            margin-right: 10%;
+        }
+
+        @include mq(mobS) {
+            margin-right: 15%;
+        }
+
+        @include mq(530) {
+            transform: scale(.6);
+            margin-right: 27%;
+        }
+
+        @include mq(mobS2) {
+            margin-right: 22%;
+        }
+    }
+
+    &__table {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        @include mq(530) {
+            height: 65px;
+            object-fit: cover;
+        }
+    }
+
+    &__vaso {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        right: 20%;
+
+        @include mq(lapS) {
+            width: 200px;
+        }
+
+        @include mq(mobS) {
+            width: 42%;
+            right: 25%;
+        }
+
+        &-fondo {
+            height: 280px;
+            position: absolute;
+            bottom: 13%;
+            width: 64%;
+            left: 18%;
+            background: #e9e9e9;
+            z-index: -1;
+            border-radius: 0 0 25% 25%;
+
+            @include mq(530) {
+                height: 52%;
+            }
+
+            @include mq(380) {
+                height: 50%;
+            }
+        }
+    }
+
+    .liquido {
+        position: absolute;
+        z-index: -1;
+
+        &.bebida1 {
+            top: -75%;
+            left: 55%;
+            transform: rotate(237deg);
+            height: 500px;
+
+            @include mq(tab) {
+                height: 430px;
+            }
+        }
+
+        &.bebida2 {
+            top: -71%;
+            left: 50%;
+            transform: rotate(237deg);
+            height: 460px;
+
+            @include mq(tab) {
+                height: 430px;
+            }
+        }
+
+        &.bebida3 {
+            top: -52%;
+            left: -32%;
+            transform: rotate(-50deg);
+        }
+
+        &.gota1 {
+            top: -30%;
+            left: 50%;
+        }
+
+        &.gota2 {
+            top: -13%;
+            left: 100%;
+        }
+    }
+
+    .step-container {
+        position: absolute;
+        bottom: 15%;
+        left: 9%;
+
+        @include mq(desk) {
+            left: 6%;
+        }
+
+        @include mq(lapS2) {
+            max-width: 40%;
+        }
+        
+        @include mq(mob) {
+            left: 0;
+            max-width: 40%;
+            text-align: center;
+        }
+    }
+
+    .steps {
+        &__step1, &__step2, &__step3 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 580px;
+            margin-bottom: 20px;
+
+            @include mq(mob) {
+                flex-direction: column;
+                max-width: none;
+            }
+
+            &-img {
+                width: 160px;
+                height: 160px;
+                margin-right: 40px;
+
+                @include mq(lapS) {
+                    width: 110px;
+                    height: auto;
+                }
+
+                @include mq(530) {
+                    width: 65px;
+                }
+
+                @include mq(mob) {
+                    margin-right: 15px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            &-text {
+                color: $blueD;
+                font-size: 2em;
+                line-height: 48px;
+                letter-spacing: 0.05em;
+                
+                @include mq(lapS) {
+                    font-size: 1.5em;
+                    line-height: 30px;
+                }
+                
+                @include mq(mob) {
+                    font-size: 16px;
+                    letter-spacing: 0.12em;
+                    width: 80%;
+                    line-height: 1.2em;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        &__step2 {
+            left: 15%;
+
+            @include mq(lap) {
+                left: 5%;
+            }
+
+            @include mq(tab) {
+                left: 0;
+            }
+        }
+        &__step3 {
+            left: 30%;
+
+            @include mq(lap) {
+                left: 10%;
+
+            }
+
+            @include mq(tab) {
+                left: 0;
+            }
+        }
+    }
+  }

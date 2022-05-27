@@ -1,0 +1,31 @@
+/** FONTS **/
+
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+@font-face {
+    font-family: 'coronaHeadlineSB';
+    src : url('#{$assetsUrl}/fonts/corona/CoronaHeadline-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('#{$assetsUrl}/fonts/corona/CoronaHeadline-SemiBold.otf') format('opentype'),
+    url('#{$assetsUrl}/fonts/corona/CoronaHeadline-SemiBold.woff') format('woff'),
+    url('#{$assetsUrl}/fonts/corona/CoronaHeadline-SemiBold.ttf') format('truetype'),
+    url('#{$assetsUrl}/fonts/corona/CoronaHeadline-SemiBold.svg#CoronaHeadline-SemiBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helveticaBl';
+    src : url('#{$assetsUrl}/fonts/helvetica/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+    url('#{$assetsUrl}/fonts/helvetica/Helvetica-Bold.otf') format('opentype'),
+    url('#{$assetsUrl}/fonts/helvetica/Helvetica-Bold.woff') format('woff'),
+    url('#{$assetsUrl}/fonts/helvetica/Helvetica-Bold.ttf') format('truetype'),
+    url('#{$assetsUrl}/fonts/helvetica/Helvetica-Bold.svg#Helvetica-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MyriadProRegular';
+    src : url('../fonts/MyriadPro-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}

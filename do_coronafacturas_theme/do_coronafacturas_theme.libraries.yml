@@ -15,3 +15,10 @@ global-styling:
     - core/drupal
     - core/drupal.ajax
     - core/drupalSettings
+
+corona-tropical-150:
+  css:
+    component:
+      sources_tropical/dist/css/main.css: { attributes: { preload: true }, preprocess: false, minified: true }
+  js:
+    sources_tropical/dist/js/main.js: { attributes: { preload: true }, preprocess: false, minified: true }

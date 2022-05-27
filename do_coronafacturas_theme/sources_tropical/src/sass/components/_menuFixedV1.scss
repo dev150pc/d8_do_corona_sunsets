@@ -1,0 +1,188 @@
+.parts {
+    position: fixed;
+    bottom: 90px;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    z-index: 10;
+
+    @include mq(tab) {
+        display: none;
+    }
+
+    .section {
+        width: 110px;
+        height: 34px;
+        border: 2px solid $white;
+        border-radius: 50px;
+        background-color: rgba($black, .3);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: $white;
+        transition: all .5s ease;
+        margin-bottom: 10px;
+
+        &__indicator {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 12px;
+                height: 2px;
+                background-color: $white;
+                left: 50%;
+                border-radius: 2px;
+                transform: translateX(-50%);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 35%;
+                top: 37%;
+                width: 10px;
+                height: 10px;
+                transform: rotate(45deg);
+                border: 2px solid $white;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+                border-radius: 2px;
+            }
+
+            &-ylw {
+                background-color: $yellow2;
+            }
+
+            &-grn {
+                background-color: $green;
+            }
+
+            &-pnk {
+                background-color: $pink;
+            }
+
+            &-rd {
+                background-color: $red2;
+            }
+        }
+
+        &__text {
+            margin: 0 7px;
+        }
+
+        &.active {
+            flex-direction: row-reverse;
+            transition: all .5s ease;
+        }
+    }
+}
+
+.ca-sticky {
+    position: fixed;
+    background-image: url(../assets/images/fondo-sticky.png);
+    background-size: cover;
+    z-index: 7;
+    width: 400px;
+    height: 210px;
+    bottom: 15px;
+    right: 0;
+    font-family: $coronaHeadlineSB;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+
+    @include mq(mobS2) {
+        width: 300px;
+        height: 160px;
+        font-size: 10px;
+    }
+
+    &__close {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 10%;
+        right: 13%;
+        width: 30px;
+        height: 30px;
+        background-color: $yellow;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 0px rgba($black, .5);
+        cursor: pointer;
+
+        @include mq(mobS2) {
+            width: 25px;
+            height: 25px;
+        }
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            background-color: #0D2240;
+            width: 2px;
+            height: 13px;
+            border-radius: 10px;
+
+            @include mq(mobS2) {
+                height: 11px;
+            }
+        }
+        
+        &::after {
+            transform: rotate(45deg);
+        }
+        
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__image {
+        width: 113px;
+        position: absolute;
+        left: 16%;
+        top: 3%;
+
+        @include mq(mobS2) {
+            width: 85px;
+        }
+    }
+
+    &__desc {
+        position: absolute;
+        right: 20%;
+        width: 35%;
+        margin-top: 10px;
+        top: 30%;
+
+        &-title {
+            font-size: 1.3em;
+            line-height: 19px;
+            letter-spacing: 0.03em;
+            color: $white;
+            margin-bottom: 15px;
+
+            @include mq(mobS2) {
+                line-height: 1.3em;
+            }
+        }
+
+        &-link {
+            text-decoration: underline;
+        }
+    }
+    
+    &.close {
+        display: none;
+    }
+}

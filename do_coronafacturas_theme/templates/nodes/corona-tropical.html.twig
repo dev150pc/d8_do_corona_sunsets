@@ -1,0 +1,349 @@
+<div id="tropical-page">
+	<div class="parts" data-aos="fade-up" data-aos-duration="3000">
+		<a href="#sabores" class="section">
+			<div class="section__indicator section__indicator-ylw"></div>
+			<p class="section__text">Sabores</p>
+		</a>
+		<a href="#ritual" class="section">
+			<div class="section__indicator section__indicator-grn"></div>
+			<p class="section__text">Ritual</p>
+		</a>
+		<a href="#compra" class="section">
+			<div class="section__indicator section__indicator-rd"></div>
+			<p class="section__text">Compra</p>
+		</a>
+	</div>
+	<div class="swiper-container banner">
+		<div class="swiper-wrapper">
+			{% for paragraph in node.field_banner %}
+				<div class="swiper-slide">
+					{% if paragraph.entity.field_url_background is not empty %}
+						<div style="padding:56.25% 0 0 0;position:relative;">
+							{% if paragraph.entity.field_url_background_mobile is not empty %}
+								<iframe class="video-mobile" src="{{ paragraph.entity.field_url_background_mobile.value }}" style="width: 100vw;height: 56.25vw;min-height: 100vh;min-width: 177.77vh;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);pointer-events:none;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+							{% endif %}
+							<iframe class="video-desktop" src="{{ paragraph.entity.field_url_background.value }}" style="width: 100vw;height: 56.25vw;min-height: 100vh;min-width: 177.77vh;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);pointer-events:none;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					{% else %}
+						<picture class="banner__image">
+							{% for image in paragraph.entity.field_image_media_mobile %}
+								{%if image.entity %}
+									{% set media = image.entity %}
+									{% set file = media.field_media_image.entity %}
+									{% set alt = media.field_media_image.alt %}
+									{% set uri = file_url(file.fileuri) %}
+									<source media="(max-width: 991px)" srcset="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}">
+								{% endif %}
+							{% endfor %}
+							{% for image in paragraph.entity.field_image_media %}
+								{%if image.entity %}
+									{% set media = image.entity %}
+									{% set file = media.field_media_image.entity %}
+									{% set alt = media.field_media_image.alt %}
+									{% set uri = file_url(file.fileuri) %}
+									<img src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}"/>
+								{% endif %}
+							{% endfor %}
+						</picture>
+					{% endif %}
+					<div class="background-text"></div>
+					<div class="banner__text">
+						{% for image in paragraph.entity.field_image_logo %}
+							{%if image.entity %}
+								{% set media = image.entity %}
+								{% set file = media.field_media_image.entity %}
+								{% set alt = media.field_media_image.alt %}
+								{% set uri = file_url(file.fileuri) %}
+								<img src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}" class="banner__text-logo"/>
+							{% endif %}
+						{% endfor %}
+						<h1 class="banner__text-h1">{{ paragraph.entity.field_title.value }}</h1>
+						<div class="banner__text-h3">{{ paragraph.entity.field_description.value | raw }}</div>
+						<!-- <section class="soundMessage">
+						                        <span class="soundMessage__icon">
+						                            <img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/volume-2.svg')}}" alt="Icono de sonido" title="Icono de sonido" class="soundMessage__icon__img" />
+						                        </span>
+						                        <p class="soundMessage__text">Sube el volumen de tu dispositivo y dale clic a empezar</p>
+						                        <audio id="clicAudio" loop="loop" src="/{{directory}}/sources_tropical/dist/assets/audio/Hito2_sound.mp3"></audio>
+						                    </section> -->
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+		<a href="#sabores" class="banner__scroll">
+			<p class="banner__scroll-text">BAJA PARA CONOCER MÅS</p>
+			<div class="banner__scroll-mouse"></div>
+			<div class="banner__scroll-down"></div>
+		</a>
+		<a href="#sabores" class="banner__scrollMob">
+			<div class="banner__scrollMob-box">
+				<img class="banner__scrollMob-hand" src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/Hand-Scroll-Down.png')}}"/>
+				<div class="banner__scrollMob-down"></div>
+			</div>
+			<p class="banner__scrollMob-text">BAJA PARA CONOCER MÅS</p>
+		</a>
+	</div>
+	<div id="sabores" class="sabores">
+		<div class="sabores__container">
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja1.png')}}" class="sabores__hoja1" alt="">
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja2.png')}}" class="sabores__hoja2" alt="">
+
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/limonTajada.png')}}" class="sabores__limon1" alt="">
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/medioLimon.png')}}" class="sabores__limon2" alt="">
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/limonCuarto.png')}}" class="sabores__limon3" alt="">
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/limonCompleto.png')}}" class="sabores__limon4" alt="">
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/medioLimon.png')}}" class="sabores__limon5" alt="">
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/limonCuarto.png')}}" class="sabores__limon6" alt="">
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/limonTajada.png')}}" class="sabores__limon7" alt="">
+
+			<div class="swiper-background">
+				<picture>
+					<source srcset="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/backgroundSlide1-mob.png')}}" media="(max-width:640px)">
+					<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/backgroundSlide1.jpg')}}" class="swiper-background__first swiper-background--active"/>
+				</picture>
+				<picture>
+					<source srcset="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/backgroundSlide2-mob.png')}}" media="(max-width:640px)">
+					<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/backgroundSlide2.jpg')}}" class="swiper-background__second"/>
+				</picture>
+				<picture>
+					<source srcset="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/backgroundSlide3-mob.png')}}" media="(max-width:640px)">
+					<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/backgroundSlide3.jpg')}}" class="swiper-background__third"/>
+				</picture>
+				<picture>
+					<source srcset="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/backgroundSlide4-mob.png')}}" media="(max-width:640px)">
+					<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/backgroundSlide4.jpg')}}" class="swiper-background__fourth"/>
+				</picture>
+			</div>
+
+			<h2 class="sabores__title-h1">{{ node.field_title.value | raw }}</h2>
+
+			<nav class="sabores__category" data-aos="fade-up" data-aos-duration="2000">
+				{% set key = 1 %}
+				{% for paragraph in node.field_product %}
+					<div onclick="sendDataLayer('Corona Tropical','Descubre sus 4 sabores','{{ paragraph.entity.field_title.value }}')" class="sabores__category-box {% if key == 1 %}green active {% endif %}{% if key == 2 %} pink {% endif %}{% if key == 3 %} yellow {% endif %}{% if key == 4 %} red {% endif %}" data-category="{{key}}">
+						<p>{{ paragraph.entity.field_title.value | raw }}</p>
+					</div>
+					{% set key = key + 1 %}
+				{% endfor %}
+			</nav>
+
+			<div class="saboresSwiper">
+				<div class="saboresSwiper-content">
+					{% set key_value = 1 %}
+					{% for paragraph in node.field_product %}
+						<div id="slide{{key_value}}" class="saboresSwiper__slide slide{{key_value}} {% if key_value == 1 %}active{% endif %}" data-category="{{key_value}}">
+							<div class="content">
+								<div class="image">
+									<div class="image__fondo"></div>
+									{% for image in paragraph.entity.field_image_media %}
+										{%if image.entity %}
+											{% set media = image.entity %}
+											{% set file = media.field_media_image.entity %}
+											{% set alt = media.field_media_image.alt %}
+											{% set uri = file_url(file.fileuri) %}
+											<div class="image__botella" style="background-image: url('{{ co_150_core_image_to_webp(uri) }}');" alt="{{ alt }}" title="{{ alt }}"></div>
+										{% endif %}
+									{% endfor %}
+									{% for image in paragraph.entity.field_image_fruit %}
+										{%if image.entity %}
+											{% set media = image.entity %}
+											{% set file = media.field_media_image.entity %}
+											{% set alt = media.field_media_image.alt %}
+											{% set uri = file_url(file.fileuri) %}
+											<img class="image__frutas" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}"/>
+										{% endif %}
+									{% endfor %}
+								</div>
+								<div class="text">
+									<h3 class="text__title-h2" data-name="{{ paragraph.entity.field_title.value | raw }}">{{ paragraph.entity.field_title.value | raw }}</h3>
+									<div class="text__parag">
+										<div class="text__parag-1">
+											{{ paragraph.entity.field_description.value | raw }}
+										</div>
+										{% if paragraph.entity.field_description_one is not empty %}
+											<div class="text__parag-2">
+												{{ paragraph.entity.field_description_one.value | raw }}
+											</div>
+										{% endif %}
+									</div>
+									<div class="points points--desk">
+										<div class="points__text">
+											<p class="points__text-h1">{{ paragraph.entity.field_grade_alc.value | raw }}%</p>
+											<p class="points__text-h4">ALC. VOL.</p>
+										</div>
+										<div class="points__ml">
+											<p class="points__ml-text">355<small>
+													ML</small>
+											</p>
+										</div>
+										<div class="points__made">
+											<p class="points__made-text">
+												<span>HECHO CON</span>
+												<span>JUGO DE</span>
+												<span>FRUTA</span>
+											</p>
+										</div>
+										<div class="points__cal">
+                    	<div class="points__cal-img">
+												{% for image in paragraph.entity.field_image_calories %}
+													{%if image.entity %}
+																{% set media = image.entity %}
+																{% set file = media.field_media_image.entity %}
+																{% set alt = media.field_media_image.alt %}
+																{% set uri = file_url(file.fileuri) %}
+																<img src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}"/>
+													{% endif %}
+												{% endfor %}
+											</div>
+                    </div>
+									</div>
+									<a href="{{ paragraph.entity.field_link.0.url }}" class="button" id="btn-buy" onclick="sendDataLayer('Corona Tropical','Comprar ahora','{{ paragraph.entity.field_title.value }}')">{{ paragraph.entity.field_link.title }}</a>
+								</div>
+							</div>
+						</div>
+						{% set key_value = key_value + 1 %}
+					{% endfor %}
+				</div>
+			</div>
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja1.png')}}" class="sabores__hoja3" alt="">
+
+			<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja2.png')}}" class="sabores__hoja4" alt="">
+		</div>
+	</div>
+
+	<div class="ritual" id="ritual">
+		<div class="introduction">
+			<p class="introduction__h2">{{ node.field_description.value | raw }}</p>
+			<div class="introduction__h1">{{ node.field_title_two.value | raw }}</div>
+		</div>
+
+		<div class="boxAnimation">
+			<div class="boxAnimation__img">
+				<img class="bottle" alt="Corona tropical dominicana" title="Corona tropical dominicana" src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/lataRitual.png')}}">
+				<img class="liquido bebida3" alt="Corona tropical dominicana" title="Corona tropical dominicana" src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/liquido.png')}}" alt="">
+				<img class="liquido gota1" alt="Corona tropical dominicana" title="Corona tropical dominicana" src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/gota.png')}}" alt="">
+				<img class="liquido gota2" alt="Corona tropical dominicana" title="Corona tropical dominicana" src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/gota.png')}}" alt="">
+			</div>
+			<h2 class="introduction__h1--float">{{ node.field_title_two.value | raw }}</h2>
+			<div class="step-container">
+				{% set key = 1 %}
+				{% for paragraph in node.field_steps %}
+					<div class="steps__step{{ key }}">
+						{% for image in paragraph.entity.field_image_media %}
+							{%if image.entity %}
+								{% set media = image.entity %}
+								{% set file = media.field_media_image.entity %}
+								{% set alt = media.field_media_image.alt %}
+								{% set uri = file_url(file.fileuri) %}
+								<img class="steps__step{{ key }}-img" src="{{ co_150_core_image_to_webp(uri) }}"/>
+							{% endif %}
+						{% endfor %}
+						<h3 class="steps__step{{ key }}-text">{{ paragraph.entity.field_description.value | raw }}</h3>
+					</div>
+					{% set key = key + 1 %}
+				{% endfor %}
+			</div>
+
+			<div class="boxAnimation__vaso">
+				<img class="" src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/Vaso.png')}}" alt="">
+				<div class="boxAnimation__vaso-fondo"></div>
+			</div>
+			<img class="boxAnimation__table" src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/table-made.png')}}" alt="">
+		</div>
+	</div>
+
+
+	<div class="containerRequestDrink" id="compra">
+		<div class="containerRequestDrink__body">
+			<div class="containerRequestDrink__title">
+				<div class="containerRequestDrink__bg"></div>
+				<h2 class="containerRequestDrink__title-text">¡PÍDELAS<br> TODAS<br> <span class="containerRequestDrink__title-sec">Y ELIGE<br> TU SABOR!</span>
+				</h2>
+			</div>
+			<section class="containerRequestDrink__image">
+				<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/latas.png')}}" alt="corona tropical dominicana" title="corona tropical dominicana">
+			</section>
+		</div>
+	</div>
+
+	<div class="containerCommerce">
+		<div class="containerCommerce__body">
+			<p class="containerCommerce__title">{{ node.field_commerce.entity.field_commtitle.value | raw }}</p>
+			<ul class="containerCommerce__list">
+				{% for paragraph in node.field_commerce %}
+					<li class="containerCommerce__list-item">
+						<a href="{{ paragraph.entity.field_link.0.url }}" target="blank" class="commerce-card" onclick="sendDataLayer('Corona Tropical','Ir ahora - Ta Da','Clic')">
+							{% for image in paragraph.entity.field_image_media %}
+								{% if image.entity %}
+									{% set media = image.entity %}
+									{% set file = media.field_media_image.entity %}
+									{% set alt = media.field_media_image.alt %}
+									{% set uri = file_url(file.fileuri) %}
+									<img class="commerce-card__image" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}" width="240" height="100"/>
+								{% endif %}
+							{% endfor %}
+							<span class="commerce-card__button">{{ paragraph.entity.field_link.title }}</span>
+						</a>
+					</li>
+          {% for image in paragraph.entity.field_image_background %}
+            {% if image.entity %}
+              {% set media = image.entity %}
+              {% set file = media.field_media_image.entity %}
+              {% set alt = media.field_media_image.alt %}
+              {% set uri = file_url(file.fileuri) %}
+              <img class="containerCommerce__bgImage" src="{{ co_150_core_image_to_webp(uri) }}" alt="{{ alt }}" title="{{ alt }}" width="240" height="100"/>
+            {% endif %}
+          {% endfor %}
+				{% endfor %}
+			</ul>
+		</div>
+		<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja3.png')}}" class="compra__hoja3" alt="compra__hoja3"/>
+		<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja4.png')}}" class="compra__hoja4" alt="compra__hoja4"/>
+	</div>
+
+	<div class="containerExperience">
+		{% for paragraph in node.field_experience %}
+		<h2 class="containerExperience__title">{{ paragraph.entity.field_title.value }}</h2>
+		<a class="containerExperience__button" href="{{ paragraph.entity.field_link.0.url }}" target="blank" onclick="sendDataLayer('Corona Tropical','Contestar encuesta','Clic')">{{ paragraph.entity.field_link.title }}</a>
+		{% endfor %}
+		<img src="{{co_150_core_image_to_webp('/' ~ directory ~ '/sources_tropical/dist/assets/images/hoja5.png')}}" class="compra__hoja5" alt="compra__hoja5"/>
+	</div>
+
+	<div class="containerFaq">
+			<h2 class="containerFaq__title">{{ node.field_title_four.value }}</h2>
+			<div class="questions" data-aos="fade-up" data-aos-duration="1500">
+					{% set key = 1 %}
+					{% for paragraph in node.field_question %}
+					<div class="block {% if key == 1 %}active{% endif %}">
+							<div class="block__question">
+									<h3 class="block__question-text">
+											<div class="block__question-text-nb">{% if key > 10 %}{{key}}{% else %}0{{ key }}{% endif %}</div>
+											<div class="block__question-text-qs">{{ paragraph.entity.field_title.value }}</div>
+									</h3>
+									<div class="block__question-pin">
+									</div>
+							</div>
+							<div class="block__answer">
+									<div>{{ paragraph.entity.field_description.value | raw }}</div>
+							</div>
+					</div>
+					{% set key = key + 1 %}
+					{% endfor %}
+			</div>
+	</div>
+
+
+</div>
+<script>
+		function sendDataLayer(category,action,title) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'trackEvent',
+            'eventCategory': category, // Categoría del evento (String). Requerido.
+            'eventAction': action, // Acción o subcategoría del evento (String). Requerido.
+            'eventLabel': title, // Etiqueta de descripción del evento (String). Requerido.
+        });
+    }
+</script>

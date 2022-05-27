@@ -1,0 +1,34 @@
+/***************/
+/* MADE BY MC  */
+/***************/
+
+
+/* BASE */
+@import 'base/config';
+@import 'base/fonts';
+@import 'base/general';
+@import 'base/mixins';
+@import 'base/functions';
+@import 'base/placeholders';
+@import 'base/animations';
+
+
+/* COMPONENTS */
+@import 'components/loader';
+@import 'components/menuFixed';
+@import 'components/faq';
+@import 'components/shopBox';
+@import 'components/boxAnimation';
+@import 'components/splitText';
+@import 'components/loopBottle';
+@import 'components/modal';
+@import 'components/sectionSabores';
+
+
+/* LAYOUT */
+
+// PAGES
+@import 'pages/tropical';
+@import 'pages/homeProv';
+
+/* UTILITIES */

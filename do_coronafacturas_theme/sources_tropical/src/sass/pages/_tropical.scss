@@ -1,0 +1,1266 @@
+#tropical-page {
+    font-family: $coronaHeadlineSB;
+    font-size: 18px;
+    background-size: contain;
+    overflow: hidden;
+
+    & > .pin-spacer {
+        height: 93vh !important;
+        width: 100vw !important;
+    }
+}
+
+.banner {
+    width: 100% !important;
+    height: 93vh !important;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 0;
+
+    .video-mobile {
+        display: none;
+
+        @include mq(mob) {
+            display: block;
+        }
+    }
+
+    .video-desktop {
+        display: block;
+
+        @include mq(mob) {
+            display: none;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+        img, source {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .background-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($black, .2);
+    }
+
+    &__text {
+        width: 85%;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items: flex-start;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include mq(tab) {
+            align-items: center;
+            text-align: center;
+        }
+
+        @include mq(mob) {
+            top: 50px;
+        }
+
+        &-logo {
+            @include mq(mob) {
+                width: 90px;
+            }
+        }
+
+        &-h1 {
+            font-size: 3.4em;
+            margin: 35px 0;
+            line-height: 1.3em;
+
+            @media (max-height: 700px) {
+                font-size: 2.3em;
+                margin: 25px 0;
+            }
+
+            @include mq(mobS) {
+                font-size: 2.3em;
+            }
+        }
+
+        &-h3 {
+            font-size: 1.2em;
+            max-width: 506px;
+            letter-spacing: 0.10em;
+        }
+    }
+
+    &__scroll {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include mq(tab) {
+            display: none;
+        }
+
+        &-mouse {
+            width: 25px;
+            height: 37px;
+            border: 2px solid $white;
+            border-radius: 50px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 3px;
+                height: 7px;
+                background-color: $white;
+                border-radius: 2px;
+                top: 5px;
+                left: 50%;
+                transform: translatex(-50%);
+            }
+        }
+
+        &-down {
+            position: relative;
+            width: 25px;
+            height: 25px;
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                left: 28%;
+                top: 0;
+                width: 11px;
+                height: 11px;
+                border: 2px solid $white;
+                transform: rotate(45deg);
+                border-top-color: transparent;
+                border-left-color: transparent;
+                border-radius: 2px;
+                animation: scroll-down 1s ease-in-out infinite;
+            }
+
+            &::after {
+                animation-delay: .3s;
+            }
+        }
+    }
+
+    &__scroll-text, &__scrollMob-text {
+        max-width: 137px;
+        font-size: 14px;
+        margin: 12px 0;
+        line-height: 20px;
+        letter-spacing: 0.10em;
+        text-align: center;
+    }
+
+    &__scrollMob {
+        display: none;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        z-index: 2;
+
+        @include mq(tab) {
+            display: flex;
+            align-items: center;
+        }
+
+        &-box {
+            position: relative;
+        }
+
+        &-down {
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            top: -4px;
+            right: -4px;
+            animation: scroll-downMob 1s ease-in-out infinite;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 9px;
+                background-color: $white;
+                border-radius: 1px;
+                top: 0;
+                left: 50%;
+                transform: translateX(-100%);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 5px;
+                width: 5px;
+                border: 2px solid $white;
+                transform: rotate(45deg) translateX(-100%);
+                border-left-color: transparent;
+                border-top-color: transparent;
+                bottom: -3px;
+                left: 50%;
+            }
+        }
+
+        &-text {
+            margin-left: 15px;
+        }
+    }
+
+    .soundMessage {
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+        cursor: pointer;
+
+        &__icon {
+            margin-right: 10px;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 0;
+                width: 2px;
+                background: $white;
+                transform: translate(-50%, -50%) rotate(45deg);
+                transition: height .2s ease;
+                top: 50%;
+                left: 50%;
+            }
+
+            &.playing {
+                &::before {
+                    height: 25px;
+                    transition: height .2s ease;
+                }
+            }
+        }
+
+        &__text {
+            font-size: 12px;
+            letter-spacing: 0.10em;
+        }
+    }
+}
+
+.ritual {
+    position: relative;
+    &::before, &::after {
+        content: "";
+        background: url("../assets/images/ritual-bg.png") center center no-repeat;
+        background-size: contain;
+        width: 35vw;
+        height: 35vw;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translate(-20%, 10%);
+
+        @include mq(mobS) {
+            bottom: auto;
+            left: auto;
+            right: 0;
+            top: 0;
+            transform: translate(40%, -10%);
+            width: 500px;
+            height: 500px;
+        }
+    }
+
+    .textoBig {
+        width: 100%;
+        overflow: hidden;
+
+        &__h1 {
+            font-size: 200px;
+            white-space: nowrap;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 3px $blueD;
+            padding-left: 45px;
+
+            @include mq(1720) {
+                font-size: 10em;
+            }
+
+            @include mq(1500) {
+                font-size: 9em;
+            }
+
+            @include mq(lap) {
+                font-size: 8.5em;
+            }
+
+            @include mq(lapS) {
+                font-size: 8.3em;
+            }
+
+            @include mq(lapS2) {
+                font-size: 7.8em;
+            }
+
+            @include mq(lapS3) {
+                font-size: 7.2em;
+            }
+
+            @include mq(tab) {
+                font-size: 6.8em;
+            }
+
+            @include mq(tabs) {
+                font-size: 6.2em;
+            }
+
+            @include mq(mob) {
+                font-size: 5.8em;
+            }
+
+            @include mq(mobS) {
+                font-size: 5.2em;
+            }
+
+            @include mq(510) {
+                font-size: 4.8em;
+            }
+
+            @include mq(mobS2) {
+                font-size: 4.2em;
+            }
+        }
+    }
+
+    .introduction {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+
+        @include mq(mob) {
+            width: 90%;
+        }
+
+        &__h2 {
+            font-size: 2em;
+            letter-spacing: 0.05em;
+            margin: 80px auto 100px;
+            max-width: 1220px;
+
+            @include mq(lapS) {
+                font-size: 2em;
+            }
+
+            @include mq(tab) {
+                font-size: 1.7em;
+            }
+
+            @include mq(mob) {
+                font-size: 1.3em;
+                letter-spacing: 0.1em;
+            }
+
+            @include mq(mobS2) {
+                font-size: 1.2em;
+                letter-spacing: 0.10em;
+                line-height: 31px;
+                margin: 40px auto 50px;
+            }
+        }
+
+        &__h1 {
+            font-size: 4em;
+            line-height: 1em;
+            display:none;
+
+            @include mq(lapS) {
+                font-size: 3em;
+            }
+
+            @include mq(tab) {
+                font-size: 2.6em;
+            }
+
+            @include mq(mob) {
+                font-size: 2.3em;
+            }
+
+            @include mq(mobS2) {
+                font-size: 2.2em;
+                line-height: 1.2em;
+            }
+
+            @include mq(mobS) {
+                display: block;
+            }
+
+            &--float {
+                @extend .introduction__h1;
+                display:block;
+                position: absolute;
+                left: 9%;
+                max-width: 700px;
+                top: 0;
+
+                @include mq(mobS) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.tips {
+    position: relative;
+
+    &__hoja1 {
+        position: absolute;
+        bottom: -10%;
+        z-index: 2;
+        width: 500px;
+        left: -20%;
+
+        @include mq(tab) {
+            display: none;
+        }
+    }
+}
+
+.conbinationDrinks{
+    width: 100%;
+    height: 650px;
+    position: relative;
+    z-index: 1;
+    cursor: grab;
+
+    @include mq(tab) {
+        height: 550px;
+    }
+    @include mq(mob) {
+        height: auto;
+    }
+
+    .mouseBox {
+        position: absolute;
+        display: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 115px;
+        width: 115px;
+        background-color: $white;
+        border-radius: 50%;
+        z-index: 5;
+        pointer-events: none;
+        transition: display 2s ease;
+
+        @include mq(tab) {
+            display: none;
+        }
+
+        &__left {
+            position: absolute;
+            left: 15%;
+            top: 50%;
+            height: 3px;
+            width: 28px;
+            background-color: $blueD;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 18px;
+                width: 18px;
+                border: 3px solid $blueD;
+                border-right-color: transparent;
+                border-top-color: transparent;
+                border-radius: 3px;
+                transform: rotate(45deg);
+                left: 0;
+                top: auto;
+            }
+        }
+
+        &__right {
+            position: absolute;
+            right: 15%;
+            top: 50%;
+            height: 3px;
+            width: 28px;
+            background-color: $blueD;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 18px;
+                width: 18px;
+                border: 3px solid $blueD;
+                border-left-color: transparent;
+                border-bottom-color: transparent;
+                border-radius: 3px;
+                transform: rotate(45deg);
+                right: 0;
+                top: auto;
+            }
+        }
+    }
+
+    &__content{
+        width: 85%;
+        height: 100%;
+        margin: 0 auto;
+        @include flex(flex, space-around, center, center);
+        &--left{
+            width: 40%;
+            height: 100%;
+            @include flex;
+            margin-top: 10px;
+            .imgConbination{
+                width: 100%;
+                height: 80%;
+                margin-left: auto;
+                object-fit: cover;
+            }
+            @include mq(mob) {
+                width: 100%;
+                order: 2;
+                margin-top: 30px;
+            }
+        }
+        &--right{
+            width: 50%;
+            height: 80%;
+            .descConbination{
+                width: 100%;
+                height: 100%;
+
+                @include mq(mob) {
+                    min-height: 250px;
+                }
+
+                @include mq(mobS2) {
+                    min-height: 340px;
+                }
+
+                @include mq(380) {
+                    min-height: 350px;
+                }
+                &--title{
+                    font-size: 36px;
+                    line-height: 48px;
+                    letter-spacing: 0.05em;
+                    color: $white;
+                    width: 70%;
+
+                    @include mq(lapS2) {
+                        width: 85%;
+                    }
+
+                    @include mq(1090) {
+                        width: 100%;
+                    }
+
+                    @include mq(mob) {
+                        font-size: 33px;
+                        line-height: 37px;
+                    }
+                }
+                &--subtitle{
+                    font-size: 18px;
+                    line-height: 25px;
+                    letter-spacing: 0.12em;
+                    color: $white;
+                    width: 75%;
+                    margin-top: 40px;
+
+                    @include mq(lapS3) {
+                        width: 85%;
+                    }
+
+                    @include mq(tab) {
+                        width: 100%;
+                        margin-top: 20px;
+                    }
+                }
+                &--subtitle-2{
+                    font-size: 18px;
+                    line-height: 25px;
+                    letter-spacing: 0.12em;
+                    color: $white;
+                    width: 75%;
+                    margin-top: 80px;
+
+                    @include mq(lapS2) {
+                        width: 85%;
+                        margin-top: 60px;
+                    }
+
+                    @include mq(tab) {
+                        width: 100%;
+                        margin-top: 20px;
+                    }
+                }
+            }
+            @include mq(mob) {
+                width: 100%;
+                order: 1;
+            }
+        }
+    }
+    .swiperconbinationDrinks {
+        height: 100%;
+
+        @include mq(mob) {
+            margin-bottom: 50px;
+        }
+
+        .swiper-slide {
+            @include mq(mob) {
+                padding: 50px 0;
+            }
+            &::before{
+                content: '';
+                width: 100%;
+                height: 70%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            &:nth-child(1) {
+                &::before {
+                    background-color: $orange2;
+                }
+            }
+
+            &:nth-child(2) {
+                &::before {
+                    background-color: $green;
+                }
+            }
+
+            &:nth-child(3) {
+                &::before {
+                    background-color: $pink;
+                }
+            }
+
+            &:nth-child(4) {
+                &::before {
+                    background-color: $orange2;
+                }
+            }
+
+            &:nth-child(5) {
+                &::before {
+                    background-color: $red2;
+                }
+            }
+        }
+        .swiper-pagination{
+            width: 40%;
+            text-align: left;
+            left: 47%;
+            bottom: 15%;
+            .swiper-pagination-bullet{
+                width: 20px;
+                height: 20px;
+                background-color: $blueD;
+                margin-left: 20px;
+                position: relative;
+                opacity: .6;
+                &-active{
+                    opacity: 1;
+                    &:after{
+                        content: '';
+                        width: 35px;
+                        height: 35px;
+                        position: absolute;
+                        left: -7.4px;
+                        border: 2px solid $blueD;
+                        border-radius: 50%;
+                        top: -7px;
+                        @include mq(mob) {
+                            width: 32px;
+                            height: 32px;
+                        }
+                    }
+                }
+                @include mq(mob) {
+                    width: 17px;
+                    height: 17px;
+                }
+            }
+            @include mq(mob) {
+                width: 100%;
+                left: 0;
+                bottom: 5px;
+                text-align: center;
+            }
+        }
+        .boxNavigation{
+            position: absolute;
+            background: #FF8595;
+            width: 118px;
+            height: 118px;
+            border-radius: 50%;
+            top: 20%;
+            right: 7%;
+            z-index: +99;
+            @include mq(tab) {
+                display: none;
+            }
+        }
+        .swiper-button-prev {
+            background-image: url("../assets/images/arrow.svg") !important;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 35px;
+            left:15px;
+            &::after{
+                content: none;
+            }
+        }
+
+        .swiper-button-next {
+            transform: rotate(180deg);
+            background-image: url("../assets/images/arrow.svg") !important;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 35px;
+            right:15px;
+            &::after{
+                content: none;
+            }
+        }
+    }
+}
+.discoverFlavors{
+    width: 100%;
+    height: auto;
+    position: relative;
+    &--leaf{
+        position: absolute;
+        right: -15%;
+        top: -25%;
+        z-index: 2;
+        pointer-events: none;
+        @include mq(tab) {
+            display: none;
+        }
+    }
+    &__top{
+        width: 100%;
+        text-align: center;
+        @include flex;
+        flex-direction: column;
+        &--title{
+            font-size: 60px;
+            line-height: 70px;
+            font-family: $coronaHeadlineSB;
+            @include mq(mob) {
+                font-size: 40px;
+                line-height: 45px;
+            }
+
+            @include mq(mobS2) {
+                margin: 40px 0 20px;
+            }
+        }
+        &--subtitle{
+            font-size: 22px;
+            line-height: 31px;
+            letter-spacing: 0.1em;
+            font-family: $coronaHeadlineSB;
+            margin-top: 10px;
+            margin-bottom: 34px;
+            @include mq(mob) {
+                font-size: 18px;
+                line-height: 25px;
+            }
+
+            @include mq(mobS2) {
+                margin-bottom: 45px;
+            }
+        }
+        &--btn{
+            width: 190px;
+            height: 50px;
+            background-color: #FFCA33;
+            color: $blueD;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__body{
+        width: 100%;
+        @include flex;
+        margin-top: 55px;
+        position: relative;
+
+        @include mq(mob) {
+            // height: 200px;
+            // margin-top: 45px;
+        }
+
+        &--bottle {
+            margin: 0 13px;
+            transition: ease all .5s;
+
+            @include mq(mob) {
+                width: 15%;
+            }
+
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    transition-delay: .2s * $i;
+                }
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3))
+            }
+        }
+        &--backTop{
+            width: 102px;
+            height: 107px;
+            position: absolute;
+            right: 50px;
+            bottom: 30%;
+            text-align: center;
+
+            @include mq(tab) {
+                display: none;
+            }
+
+            &--box{
+                width: 78px;
+                height: 76px;
+                background-color: #FFCA33;
+                @include flex;
+                margin: 0 auto;
+                border-radius: 8px;
+                img{
+                    width: 32px;
+                }
+            }
+            &--text{
+                font-size: 15px;
+                font-family: $coronaHeadlineSB;
+                line-height: 19px;
+                color: #0D2240;
+                text-transform: uppercase;
+                margin-top: 12px;
+            }
+        }
+    }
+    &__bottom{
+        width: 100%;
+        height: 600px;
+        position: relative;
+        margin-top: -40px;
+        z-index: 1;
+        &-img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        &--boxCopy{
+            z-index: 2;
+            margin: 0 100px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            @include mq(mob) {
+                align-items: center;
+                margin: 0;
+            }
+            &--img{
+                height: auto;
+                object-fit: contain;
+                @include mq(mob) {
+                    width: 190px;
+                }
+            }
+            &--copy{
+                width: 400px;
+                font-size: 60px;
+                line-height: 70px;
+                font-family: $coronaHeadlineSB;
+                text-transform: uppercase;
+                color: $white;
+                margin-top: 45px;
+                @include mq(mob) {
+                    font-size: 40px;
+                    line-height: 45px;
+                    text-align: center;
+                    margin-top: 50px;
+                }
+            }
+        }
+        @include mq(mob) {
+           height: 500px;
+           margin-top: -30px;
+           object-fit: cover;
+        }
+    }
+}
+
+.compra {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &__hoja1 {
+        position: absolute;
+        bottom: -5%;
+        width: 300px;
+        right: -10%;
+
+        @include mq(tab) {
+            width: 250px;
+            right: -10%;
+        }
+
+        @include mq(mob) {
+            display: none;
+        }
+    }
+    &__hoja3 {
+        position: absolute;
+        top: 0%;
+        width: 300px;
+        left: -130px;
+
+        @include mq(tab) {
+            width: 250px;
+        }
+    }
+    &__hoja4 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: auto;
+        width: 190px;
+
+        @include mq(tab) {
+            display: none !important;
+        }
+    }
+    &__hoja5 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: auto;
+        width: 280px;
+
+        @include mq(tab) {
+            display: none !important;
+        }
+    }
+}
+
+.game {
+    &__desk {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+
+        @include mq(mob) {
+            display: none;
+        }
+    }
+
+    &__mob {
+        display: none;
+        width: 100%;
+        max-width: 375px;
+        margin: 0 auto;
+
+        @include mq(mob) {
+            display: block;
+        }
+    }
+}
+
+.containerRequestDrink {
+    position: relative;
+    z-index: 0;
+
+    &__body {
+        padding: 50px;
+        @include flex($jc: space-around, $fw: nowrap);
+    }
+
+    &__bg {
+        background-color: #FFCA33;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    &__image {
+        opacity: 0
+    }
+
+    &__title {
+        &-text {
+            font-family: $coronaHeadlineSB;
+            font-size: 120px;
+            color: $yellow;
+            line-height: .9em;
+        }
+        &-sec {
+            color: $white;
+        }
+    }
+
+    @include mq(desk) {
+        &__image {
+            img {
+                width: 450px;
+            }
+        }
+    }
+
+    @include mq(lapS2) {
+        &__title {
+            &-text {
+                font-size: 80px;
+            }
+        }
+    }
+
+    @include mq(tabS) {
+        &__body {
+            flex-direction: column-reverse;
+            padding-bottom: 0;
+        }
+
+        &__bg {
+            background: $yellow;
+            height: 100%;
+            transform: scaleX(2.5) translateY(-50%);
+        }
+
+        &__title {
+            position: relative;
+
+            &-text {
+                color: $white;
+                padding: 30px 0;
+            }
+
+            &-sec {
+                color: $yellow;
+            }
+        }
+    }
+
+    @include mq(mobS) {
+        &__title {
+            &-text {
+                font-size: 60px;
+            }
+        }
+    }
+
+    @include mq(400) {
+        &__title {
+            &-text {
+                font-size: 50px;
+            }
+        }
+    }
+}
+
+.containerCommerce {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    &__body {
+        margin: auto;
+        max-width: 1400px;
+        padding: 200px 50px 100px;
+
+        @include mq(tab) {
+          padding: 110px 25px 105px;
+        }
+
+    }
+
+    &__title {
+        font-size: 35px;
+        line-height: 1em;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    &__list {
+        list-style: none;
+        @include flex($ai:flex-end);
+
+        &-item {
+            flex: 0 0 33.3%;
+            margin-bottom: 45px;
+            padding: 15px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    }
+
+    @include mq(mobS) {
+        &__body {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        &__list {
+            &-item {
+                flex: 0 0 50%;
+            }
+        }
+    }
+
+    &__bgImage {
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: -1;
+      height: 100%;
+      object-fit: cover;
+    }
+}
+
+.commerce-card {
+    text-align: center;
+    @include flex($d: inline-flex, $fw: nowrap, $fd: column);
+
+    &__image {
+        height: auto;
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    &__button {
+        border: 1px solid #C4C4C4;
+        border-radius: 3px;
+        color: #686868;
+        font-family: $coronaHeadlineSB !important;
+        font-size: 24px;
+        padding: 12px 90px;
+        background: #fff;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: max-content;
+    }
+
+    @include mq {
+        &__button {
+            font-size: 16px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+}
+
+.containerExperience {
+  padding: 140px 25px;
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D77696;
+  position: relative;
+  background-image: url("../assets/images/bgContainerExperience.webp");
+  background-repeat: no-repeat;
+  background-size: auto 110%;
+
+  @include mq(tab) {
+    padding: 70px 25px;
+  }
+
+  &__title {
+    font-family: $coronaHeadlineSB;
+    color: #fff;
+    line-height: .9em;
+    text-align: center;
+    font-size: 40px;
+  }
+  &__button {
+    color: #686868;
+    font-family: $coronaHeadlineSB !important;
+    font-size: 24px;
+    padding: 12px 40px;
+    background: #fff;
+    border-radius: 8px;
+    width: max-content;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+
+.error-message {
+  color: #FF8595 !important;
+  font-size: 14px   !important;
+  font-family: $coronaHeadlineSB !important;
+  width: auto !important;
+}

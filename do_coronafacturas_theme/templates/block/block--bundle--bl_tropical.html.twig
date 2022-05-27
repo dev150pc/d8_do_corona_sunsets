@@ -1,0 +1,20 @@
+<div class="ca-sticky">
+    <div class="ca-sticky__close"></div>
+    {% if content['#block_content'].field_link.0.url != NULL %}
+        <a class="ca-sticky__content" id="btn-trivia" href="{{ content['#block_content'].field_link.0.url }}">
+            {% for image in content['#block_content'].field_stiky_image %}
+                {%if image.entity %}
+                    {% set media = image.entity %}
+                    {% set file = media.field_media_image.entity %}
+                    {% set uri = file_url(file.fileuri) %}
+                    {% set alt = media.field_media_image.alt %}
+                    <img class="ca-sticky__image" src="{{ uri }}" alt="{{ alt }}" title="{{ alt }}">
+                {% endif %}
+            {% endfor %}
+            <article class="ca-sticky__desc">
+                <div class="ca-sticky__desc-title">{{ content['#block_content'].field_title_stiky.value }}</div>
+                    <div class="ca-sticky__desc-link">{{ content['#block_content'].field_link.title }}</div>
+            </article>
+        </a>
+    {% endif %}
+</div>
