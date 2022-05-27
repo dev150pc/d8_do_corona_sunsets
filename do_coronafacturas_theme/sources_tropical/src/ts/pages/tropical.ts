@@ -67,7 +67,7 @@ function initialize() {
     parallaxSheets()
     animationBotleClass()
     setupSplits()
-    bannerFixed()
+    // bannerFixed()
     disabledControls()
     animacionBotella()
     animateTitle()
@@ -412,7 +412,7 @@ function gsapScrollToSlide() {
                     start: 'center center',
                     end: `bottom ${contentFromTopPosition}`,
                     id: `slide${i + 1}`,
-                    // markers: true,
+                    markers: true,
                     pin: true,
                     pinSpacing: false,
                     scrub: true,
@@ -527,7 +527,7 @@ function gsapScrollToSlide() {
                     start: `top ${contentFromTopPosition}`,
                     end: `bottom ${contentFromTopPosition}`,
                     id: `slide${i}`,
-                    // markers: true,
+                    markers: true,
                     pin: true,
                     pinSpacing: true,
                     scrub: true,
@@ -571,7 +571,7 @@ function gsapScrollToSlide() {
                     start: `top ${contentFromTopPosition}`,
                     end: `bottom ${contentFromTopPosition}`,
                     id: `slide${i + 1}`,
-                    // markers: true,
+                    markers: true,
                     pin: true,
                     pinSpacing: false,
                     scrub: true,
