@@ -21,9 +21,13 @@ import SplitTextV2 from '../components/splitTextV2';
 export const page = function () {
     window.onload = function () {
         initialize()
+        window.dispatchEvent(new Event('resize'));
         window.scrollTo(0, 0)
-        ScrollTrigger.refresh();
     }
+    window.addEventListener('resize', function () {
+      initialize()
+      console.log('resize')
+    })
 }
 
 let tweens = []
