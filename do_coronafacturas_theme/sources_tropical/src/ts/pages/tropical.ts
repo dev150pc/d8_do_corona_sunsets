@@ -378,6 +378,7 @@ function gsapScrollToSlide() {
     let firstBg = document.querySelector('.swiper-background__first')
     let bgImage = document.querySelector('.swiper-background')
     let contentFromTopPosition = (window.innerHeight - document.querySelector('.saboresSwiper__slide').offsetHeight) / 2
+
     gsap.registerPlugin(ScrollTrigger)
 
     gsap.to('.swiper-background', {

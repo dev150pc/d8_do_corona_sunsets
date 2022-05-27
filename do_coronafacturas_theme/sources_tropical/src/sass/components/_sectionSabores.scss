@@ -650,7 +650,7 @@
 
             @include mq(tab) {
                 width: 80%;
-                justify-content: flex-end;
+                justify-content: flex-start;
                 padding: 45px;
                 margin-right: 0;
                 margin-bottom: 35px;
@@ -708,8 +708,8 @@
                 }
 
                 @include mq(380) {
-                    width: 230px;
-                    height: 230px;
+                    width: 215px;
+                    height: 215px;
                 }
             }
 
@@ -752,7 +752,7 @@
 
                 @include mq(mobS2) {
                     top: 10%;
-                    left: 85px;
+                    left: 10%;
                     height: 340px;
                     max-width: 125px;
                 }
