@@ -22,6 +22,7 @@ export const page = function () {
     window.onload = function () {
         initialize()
         window.scrollTo(0, 0)
+        ScrollTrigger.refresh();
     }
 }
 
