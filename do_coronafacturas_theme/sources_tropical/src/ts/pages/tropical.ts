@@ -688,6 +688,7 @@ function selectSection() {
             start: "top center",
             end: "100% top",
             scrub: true,
+            duration: 1,
         },
         y: -130,
     })
