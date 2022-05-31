@@ -1119,6 +1119,9 @@ html, body, body *, *, *::before, *::after {
     height: 100vh;
     overflow: hidden; } }
 
+.visually-hidden {
+  display: none; }
+
 /** MIXINS **/
 /** FUNCTIONS **/
 /** PLACEHOLDERS **/
