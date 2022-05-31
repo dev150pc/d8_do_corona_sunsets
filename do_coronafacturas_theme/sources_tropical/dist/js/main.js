@@ -10177,7 +10177,7 @@ function selectSection() {
             trigger: ".containerExperience",
             start: "top center",
             end: "100% top",
-            scrub: 1,
+            scrub: true,
         },
         y: -130,
     });
