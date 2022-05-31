@@ -680,6 +680,18 @@ function selectSection() {
             observer.observe(target)
         }
     })
+
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to(".parts", {
+        scrollTrigger: {
+            trigger: ".containerExperience",
+            start: "top center",
+            end: "100% top",
+            scrub: 1,
+        },
+        y: -130,
+    })
+
 }
 
 function setColorCategory() {

@@ -10171,6 +10171,16 @@ function selectSection() {
             observer.observe(target);
         }
     });
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_9__.ScrollTrigger);
+    gsap__WEBPACK_IMPORTED_MODULE_10__.gsap.to(".parts", {
+        scrollTrigger: {
+            trigger: ".containerExperience",
+            start: "top center",
+            end: "100% top",
+            scrub: 1,
+        },
+        y: -130,
+    });
 }
 function setColorCategory() {
     var categoriesContainer = document.querySelector('.sabores__category');
